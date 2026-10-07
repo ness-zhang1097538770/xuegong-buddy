@@ -74,9 +74,9 @@ const STATS: {
   href?: string;
   query?: string;
 }[] = [
-  { key: "pending_approvals", label: "待我审批", icon: ClipboardList },
+  { key: "pending_approvals", label: "待我审批", icon: ClipboardList, href: "/approvals" },
   { key: "pending_talks", label: "待跟进谈话", icon: MessageSquareHeart, href: "/talks", query: "need_follow=1" },
-  { key: "abnormal_dorms", label: "今日异常宿舍", icon: ShieldAlert },
+  { key: "abnormal_dorms", label: "今日异常宿舍", icon: ShieldAlert, href: "/dorm" },
   { key: "risk_students", label: "学业预警人数", icon: UserRound, href: "/students", query: "risk_level=high" },
 ];
 

@@ -62,25 +62,60 @@ def get_categories() -> list[dict]:
     return index.get("categories", [])
 
 
-def build_messages(expert_id: str, history: list[dict], user_message: str) -> list[dict]:
-    """构建发给大模型的完整消息列表。"""
+def get_expert(expert_id: str) -> dict | None:
+    """按 id 返回专家配置（来自 index.json）。"""
+    index = _load_index()
+    return next((e for e in index.get("experts", []) if e.get("id") == expert_id), None)
+
+
+def get_temperature(expert_id: str) -> float | None:
+    """读取专家温度配置。"""
+    expert = get_expert(expert_id)
+    return expert.get("temperature") if expert else None
+
+
+def build_messages(
+    expert_id: str,
+    history: list[dict],
+    user_message: str,
+    rag_block: str | None = None,
+    rag_no_hit: bool = False,
+) -> tuple[list[dict], dict]:
+    """构建发给大模型的完整消息列表。
+
+    rag_block：检索到的参考材料块；有值时在 system 追加使用规则、在用户消息前置材料。
+    rag_no_hit：检索过但无命中；在 system 追加「未检索到」提示。
+    """
+    from app.services.prompts.expert_rag import (
+        EXPERT_RAG_RULES,
+        EXPERT_RAG_NO_HIT_NOTICE,
+    )
+
     config, system_prompt = _load_expert_prompt(expert_id)
 
-    msgs = [{"role": "system", "content": system_prompt}]
+    system = system_prompt
+    if rag_block:
+        system = system + "\n\n" + EXPERT_RAG_RULES
+    elif rag_no_hit:
+        system = system + "\n\n" + EXPERT_RAG_NO_HIT_NOTICE
+
+    msgs = [{"role": "system", "content": system}]
 
     for h in history:
         role = h.get("role", "user")
         content = h.get("content", "")
-        if role == "assistant":
-            msgs.append({"role": "assistant", "content": content})
-        else:
-            msgs.append({"role": "user", "content": content})
+        msgs.append({"role": "assistant" if role == "assistant" else "user", "content": content})
 
-    msgs.append({"role": "user", "content": user_message})
+    final_user = f"{rag_block}\n\n---\n\n{user_message}" if rag_block else user_message
+    msgs.append({"role": "user", "content": final_user})
     return msgs, config
 
 
-async def chat_stream(expert_id: str, messages: list[dict]) -> AsyncGenerator[str, None]:
+async def chat_stream(
+    expert_id: str,
+    messages: list[dict],
+    temperature: float | None = None,
+) -> AsyncGenerator[str, None]:
     """流式调用大模型，逐个 yield token 供 SSE 输出。
 
     当前使用通义千问 DashScope，后续切换 DeepSeek 只需改此函数。
@@ -95,7 +130,7 @@ async def chat_stream(expert_id: str, messages: list[dict]) -> AsyncGenerator[st
         return
 
     try:
-        gen = Generation.call(
+        kwargs = dict(
             model="qwen-plus",
             api_key=settings.dashscope_api_key,
             messages=messages,
@@ -103,6 +138,10 @@ async def chat_stream(expert_id: str, messages: list[dict]) -> AsyncGenerator[st
             stream=True,
             incremental_output=True,
         )
+        if temperature is not None:
+            kwargs["temperature"] = temperature
+
+        gen = Generation.call(**kwargs)
 
         full_text = ""
         for resp in gen:

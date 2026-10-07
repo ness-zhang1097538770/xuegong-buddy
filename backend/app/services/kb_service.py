@@ -45,8 +45,18 @@ def _extract_text(file_path: str, file_type: str) -> str:
                 text_parts.append(t)
         return "\n".join(text_parts)
     elif file_type == "docx":
-        # python-docx 在此阶段暂不完全启用，返回空并标记
-        raise NotImplementedError("docx 解析将在后续阶段支持")
+        import docx
+        document = docx.Document(file_path)
+        parts = []
+        for para in document.paragraphs:
+            if para.text and para.text.strip():
+                parts.append(para.text.strip())
+        for table in document.tables:
+            for row in table.rows:
+                for cell in row.cells:
+                    if cell.text and cell.text.strip():
+                        parts.append(cell.text.strip())
+        return "\n".join(parts)
     else:
         raise ValueError(f"不支持的文件类型: {file_type}")
 
@@ -114,12 +124,17 @@ def ensure_user_kb(db: Session, user_id: int) -> KnowledgeBase:
     return kb
 
 
-def upload_document(db: Session, user_id: int, file_content: bytes, filename: str) -> Document:
+def upload_document(db: Session, user_id: int, file_content: bytes, filename: str,
+                    category: str = "综合") -> Document:
     """上传文档：保存文件、记录、异步向量化（同步实现）。"""
     # 校验文件大小
     max_bytes = settings.max_upload_size_mb * 1024 * 1024
     if len(file_content) > max_bytes:
         raise ValueError(f"文件大小超过 {settings.max_upload_size_mb}MB 限制")
+
+    # 校验类目
+    if category not in settings.allowed_kb_categories:
+        category = "综合"
 
     # 安全文件名
     safe_name = _safe_filename(filename)
@@ -143,6 +158,7 @@ def upload_document(db: Session, user_id: int, file_content: bytes, filename: st
         filename=safe_name,
         file_path=str(file_path.absolute()),
         file_type=file_type,
+        category=category,
         status="uploaded",
         size_bytes=len(file_content),
     )
@@ -192,7 +208,7 @@ def _vectorize_document(db: Session, doc: Document):
         # 存入 Chroma
         ids = [f"doc_{doc.id}_chunk_{i}" for i in range(len(chunks))]
         metadatas = [
-            {"doc_id": str(doc.id), "doc_name": doc.filename, "chunk_index": i}
+            {"doc_id": str(doc.id), "doc_name": doc.filename, "chunk_index": i, "category": doc.category}
             for i in range(len(chunks))
         ]
         collection.add(

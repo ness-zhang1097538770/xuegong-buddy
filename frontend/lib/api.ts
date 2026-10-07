@@ -22,6 +22,11 @@ import type {
   TemplateDetail,
   TemplateItem,
   UserInfo,
+  ApprovalDetail,
+  ApprovalListResult,
+  DormAnomaly,
+  DormGridResult,
+  ExpertCitation,
 } from "./types";
 
 const BASE = "/api/v1";
@@ -100,9 +105,10 @@ export const authApi = {
 export const kbApi = {
   list: () => request<{ documents: DocumentItem[]; total: number }>("/kb/documents"),
 
-  upload: (file: File) => {
+  upload: (file: File, category?: string) => {
     const fd = new FormData();
     fd.append("file", file);
+    if (category) fd.append("category", category);
     return request<DocumentItem>("/kb/upload", { method: "POST", body: fd });
   },
 
@@ -437,7 +443,7 @@ export async function streamExpertChat(
   },
   handlers: {
     onChunk: (text: string) => void;
-    onDone: (data: { content: string; session_id: number }) => void;
+    onDone: (data: { content: string; session_id: number; citations?: ExpertCitation[] }) => void;
     onError: (message: string) => void;
   },
   signal?: AbortSignal,
@@ -488,6 +494,62 @@ export async function streamExpertChat(
     }
   }
 }
+
+// ============ 事务审批 ============
+
+export const approvalApi = {
+  list: (params?: { type?: string; status?: string; page?: number; size?: number }) => {
+    const qs = new URLSearchParams();
+    if (params?.type) qs.set("type", params.type);
+    if (params?.status) qs.set("status", params.status);
+    if (params?.page) qs.set("page", String(params.page));
+    if (params?.size) qs.set("size", String(params.size));
+    const s = qs.toString();
+    return request<ApprovalListResult>(`/approvals${s ? `?${s}` : ""}`);
+  },
+
+  detail: (id: number) => request<ApprovalDetail>(`/approvals/${id}`),
+
+  resolve: (id: number, action: "approve" | "reject" | "return", opinion?: string) => {
+    const qs = new URLSearchParams({ action });
+    if (opinion) qs.set("opinion", opinion);
+    return request<{ message: string; status: string }>(
+      `/approvals/${id}/resolve?${qs.toString()}`,
+      { method: "POST" },
+    );
+  },
+
+  seedDemo: () => request<{ message: string }>("/approvals/seed-demo", { method: "POST" }),
+};
+
+// ============ 查寝考勤 ============
+
+export const dormApi = {
+  grid: (building?: string) => {
+    const qs = building ? `?building=${encodeURIComponent(building)}` : "";
+    return request<DormGridResult>(`/dorm/grid${qs}`);
+  },
+
+  buildings: () => request<{ buildings: string[] }>("/dorm/buildings"),
+
+  anomalies: () => request<{ anomalies: DormAnomaly[] }>("/dorm/anomalies"),
+
+  check: (
+    dormId: number,
+    status: "normal" | "abnormal",
+    abnormalType?: string,
+    note?: string,
+  ) => {
+    const qs = new URLSearchParams({ dorm_id: String(dormId), status });
+    if (abnormalType) qs.set("abnormal_type", abnormalType);
+    if (note) qs.set("note", note);
+    return request<{ message: string; status: string }>(`/dorm/check?${qs.toString()}`, {
+      method: "POST",
+    });
+  },
+
+  seedDemo: () => request<{ message: string }>("/dorm/seed-demo", { method: "POST" }),
+};
 
 // ============ 下载（需带 token，不能直接用 <a href>）============
 

@@ -28,6 +28,8 @@ class Settings(BaseSettings):
     # 文件限制
     max_upload_size_mb: int = 20
     allowed_upload_types: list[str] = ["pdf", "txt", "docx"]
+    # 知识库文档类目（P1 类目标签）
+    allowed_kb_categories: list[str] = ["综合", "资助", "学风", "心理", "处分"]
 
     # 台账批量生成的并发数（串行时 50 行要等 50 次来回，并发后耗时按批次算）
     ledger_concurrency: int = 6

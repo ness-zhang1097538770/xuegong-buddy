@@ -18,6 +18,7 @@ export interface DocumentItem {
   id: number;
   filename: string;
   file_type: string;
+  category: string;
   status: string;
   chunk_count: number;
   size_bytes: number;
@@ -237,4 +238,74 @@ export interface ExpertsResult {
   categories: ExpertCategory[];
   experts: ExpertItem[];
   sessions: ExpertSessionItem[];
+}
+
+export interface ExpertCitation {
+  index: number;
+  doc_name: string;
+  kb_type: string;
+  chunk_text: string;
+  distance: number | null;
+}
+
+// ============ 事务审批 ============
+
+export interface ApprovalItem {
+  id: number;
+  type: string;
+  type_label: string;
+  type_color: string;
+  title: string;
+  applicant_name: string;
+  applicant_student_id: string;
+  content: string;
+  attachments: string[];
+  status: string;
+  opinion: string;
+  risk_flags: string[];
+  created_at: string;
+}
+
+export interface ApprovalListResult {
+  total: number;
+  page: number;
+  items: ApprovalItem[];
+}
+
+export interface ApprovalDetail extends ApprovalItem {
+  student: {
+    name: string;
+    class_name: string;
+    gpa: number;
+    attendance: number;
+    tags: string[];
+    risk_score: number;
+  } | null;
+  resolved_at: string;
+}
+
+// ============ 查寝考勤 ============
+
+export interface DormRoom {
+  id: number;
+  room: string;
+  members: string[];
+  status: string; // unchecked / normal / abnormal
+  abnormal_type: string;
+  note: string;
+}
+
+export interface DormGridResult {
+  buildings: Record<string, Record<string, DormRoom[]>>;
+  today: string;
+}
+
+export interface DormAnomaly {
+  id: number;
+  dorm_id: number;
+  building: string;
+  room: string;
+  abnormal_type: string;
+  note: string;
+  members: string[];
 }

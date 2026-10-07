@@ -18,6 +18,14 @@
       "accent": "teal",
       "temperature": 0.4,
       "prompt_file": "talk-coach.md",
+      "rag": {
+        "policy": "auto",
+        "scopes": ["shared", "personal"],
+        "categories": ["综合", "处分"],
+        "top_k": 4,
+        "max_distance": 0.65,
+        "trigger_keywords": ["谈话记录", "台账", "格式要求", "学校规定", "归档", "考核", "多少次", "覆盖率"]
+      },
       "platform_bot_id": "",
       "sort": 1,
       "samples": [
@@ -37,6 +45,14 @@
       "accent": "red",
       "temperature": 0.3,
       "prompt_file": "psych-crisis.md",
+      "rag": {
+        "policy": "always",
+        "scopes": ["shared", "personal"],
+        "categories": ["心理", "综合"],
+        "top_k": 5,
+        "max_distance": 0.70,
+        "trigger_keywords": []
+      },
       "platform_bot_id": "",
       "sort": 2,
       "samples": [
@@ -56,6 +72,14 @@
       "accent": "blue",
       "temperature": 0.7,
       "prompt_file": "official-writing.md",
+      "rag": {
+        "policy": "auto",
+        "scopes": ["shared", "personal"],
+        "categories": ["综合"],
+        "top_k": 3,
+        "max_distance": 0.60,
+        "trigger_keywords": ["述职", "工作总结", "数据", "领导", "排序", "学院", "通知格式", "公文"]
+      },
       "platform_bot_id": "",
       "sort": 3,
       "samples": [
@@ -75,6 +99,14 @@
       "accent": "amber",
       "temperature": 0.3,
       "prompt_file": "funding-award.md",
+      "rag": {
+        "policy": "always",
+        "scopes": ["shared", "personal"],
+        "categories": ["资助", "综合"],
+        "top_k": 5,
+        "max_distance": 0.70,
+        "trigger_keywords": []
+      },
       "platform_bot_id": "",
       "sort": 4,
       "samples": [
@@ -94,6 +126,14 @@
       "accent": "coral",
       "temperature": 0.4,
       "prompt_file": "academic-warning.md",
+      "rag": {
+        "policy": "auto",
+        "scopes": ["shared", "personal"],
+        "categories": ["学风", "处分", "综合"],
+        "top_k": 4,
+        "max_distance": 0.65,
+        "trigger_keywords": ["预警", "分级", "标准", "学籍", "退学", "留级", "学分", "家长告知", "学校规定"]
+      },
       "platform_bot_id": "",
       "sort": 5,
       "samples": [

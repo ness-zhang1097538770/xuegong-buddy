@@ -6,7 +6,7 @@ import { Button } from "@/components/ui/button";
 import { Alert, Card, Spinner } from "@/components/ui/feedback";
 import { Textarea } from "@/components/ui/field";
 import { expertApi, streamExpertChat } from "@/lib/api";
-import type { ExpertItem, ExpertSessionItem } from "@/lib/types";
+import type { ExpertCitation, ExpertItem, ExpertSessionItem } from "@/lib/types";
 
 const ACCENTS: Record<string, string> = {
   teal: "#0ea5a4",
@@ -24,6 +24,7 @@ interface Message {
   role: "user" | "assistant";
   content: string;
   streaming?: boolean;
+  citations?: ExpertCitation[];
 }
 
 export default function ExpertsPage() {
@@ -148,7 +149,11 @@ export default function ExpertsPage() {
             setSessionId(data.session_id);
             setMessages((prev) => {
               const next = [...prev];
-              next[next.length - 1] = { role: "assistant", content: data.content };
+              next[next.length - 1] = {
+                role: "assistant",
+                content: data.content,
+                citations: data.citations,
+              };
               return next;
             });
             // 刷新会话列表
@@ -298,7 +303,10 @@ export default function ExpertsPage() {
             )}
 
             {messages.map((m, i) => (
-              <div key={i} className={m.role === "user" ? "flex justify-end" : ""}>
+              <div
+                key={i}
+                className={m.role === "user" ? "flex flex-col items-end" : "flex flex-col items-start"}
+              >
                 <div
                   className={`max-w-[85%] rounded-2xl px-4 py-3 text-sm leading-relaxed whitespace-pre-wrap shadow-[0_1px_2px_rgba(15,23,42,0.04)] ${
                     m.role === "user"
@@ -308,6 +316,26 @@ export default function ExpertsPage() {
                 >
                   {m.content}
                 </div>
+
+                {m.role === "assistant" && m.citations && m.citations.length > 0 && !m.streaming && (
+                  <details className="mt-1.5 max-w-[85%] rounded-[10px] border border-border bg-[#f8fafc] px-3 py-2 text-left">
+                    <summary className="cursor-pointer select-none text-xs font-medium text-muted hover:text-text">
+                      参考依据（{m.citations.length}）
+                    </summary>
+                    <ul className="mt-2 flex flex-col gap-2">
+                      {m.citations.map((c) => (
+                        <li key={c.index} className="text-xs leading-relaxed text-muted">
+                          <span className="font-medium text-text">[{c.index}]</span>{" "}
+                          {c.kb_type === "shared" ? "公共政策库" : "我的知识库"} · 《{c.doc_name}》
+                          {c.distance != null && (
+                            <span className="ml-1 text-muted/70">· 距离 {c.distance.toFixed(3)}</span>
+                          )}
+                          <p className="mt-0.5 line-clamp-3 text-muted/80">{c.chunk_text}</p>
+                        </li>
+                      ))}
+                    </ul>
+                  </details>
+                )}
               </div>
             ))}
             <div ref={bottomRef} />

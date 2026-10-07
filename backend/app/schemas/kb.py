@@ -8,6 +8,7 @@ class DocumentResponse(BaseModel):
     id: int
     filename: str
     file_type: str
+    category: str = "综合"
     status: str
     chunk_count: int
     size_bytes: int

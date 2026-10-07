@@ -20,6 +20,7 @@ export default function ChatPage() {
   const [docs, setDocs] = useState<DocumentItem[]>([]);
   const [docsLoading, setDocsLoading] = useState(true);
   const [uploading, setUploading] = useState(false);
+  const [category, setCategory] = useState("综合");
   const [messages, setMessages] = useState<Message[]>([]);
   const [question, setQuestion] = useState("");
   const [streaming, setStreaming] = useState(false);
@@ -67,7 +68,7 @@ export default function ChatPage() {
     setUploading(true);
     setError("");
     try {
-      for (const file of files) await kbApi.upload(file);
+      for (const file of files) await kbApi.upload(file, category);
       await loadDocs();
     } catch (err) {
       setError(err instanceof ApiError ? err.message : "上传失败");
@@ -172,6 +173,8 @@ export default function ChatPage() {
           <DocumentList
             docs={docs}
             loading={docsLoading}
+            category={category}
+            onCategoryChange={setCategory}
             onUpload={handleUpload}
             onDelete={handleDelete}
           />

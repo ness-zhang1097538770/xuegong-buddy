@@ -10,6 +10,7 @@ from app.core.deps import get_db, get_current_user
 from app.models.user import User
 from app.models.expert import ExpertSession
 from app.services import expert_service
+from app.services import expert_rag
 
 router = APIRouter(prefix="/experts", tags=["专家智能体"])
 
@@ -141,13 +142,28 @@ async def expert_chat(
     if not user_msg:
         raise HTTPException(status_code=400, detail="消息不能为空")
 
-    # 构建完整消息列表
+    # === RAG 检索（失败静默降级）===
     history = session.messages or []
-    llm_messages, config = expert_service.build_messages(body.expert_id, history, user_msg)
+    last_answer = ""
+    if history:
+        last_answer = history[-1].get("content", "") or ""
+
+    chunks, rag_meta = expert_rag.retrieve(db, user.id, body.expert_id, user_msg, last_answer)
+    rag_block = expert_rag.build_context(chunks) if chunks else None
+    rag_no_hit = bool(rag_meta.get("attempted")) and not chunks
+
+    # 构建完整消息列表
+    llm_messages, config = expert_service.build_messages(
+        body.expert_id, history, user_msg,
+        rag_block=rag_block, rag_no_hit=rag_no_hit,
+    )
+    temperature = expert_service.get_temperature(body.expert_id)
 
     async def event_generator():
         full = ""
-        async for chunk in expert_service.chat_stream(body.expert_id, llm_messages):
+        async for chunk in expert_service.chat_stream(
+            body.expert_id, llm_messages, temperature=temperature
+        ):
             if chunk.startswith("data: "):
                 try:
                     d = json.loads(chunk[6:])
@@ -166,8 +182,16 @@ async def expert_chat(
             session.title = user_msg[:30] + ("…" if len(user_msg) > 30 else "")
         db.commit()
 
-        # 返回含 session_id 的 done 事件
-        yield f"event: done\ndata: {json.dumps({'content': full, 'session_id': session_id})}\n\n"
+        # done 事件带上引用（老前端不解析也不受影响）
+        yield (
+            "event: done\ndata: "
+            + json.dumps({
+                "content": full,
+                "session_id": session_id,
+                "citations": expert_rag.to_citations(chunks),
+            }, ensure_ascii=False)
+            + "\n\n"
+        )
 
     return StreamingResponse(
         event_generator(),

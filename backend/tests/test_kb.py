@@ -59,6 +59,50 @@ class TestDocumentUpload:
         assert resp.json()["total"] >= 1
 
     @patch("app.services.kb_service._vectorize_document")
+    def test_upload_with_category(self, mock_vec, client, user_token):
+        resp = client.post(
+            "/api/v1/kb/upload",
+            files={"file": ("policy.txt", b"test")},
+            data={"category": "资助"},
+            headers={"Authorization": f"Bearer {user_token}"},
+        )
+        assert resp.status_code == 201, resp.json()
+        assert resp.json()["category"] == "资助"
+
+    @patch("app.services.kb_service._vectorize_document")
+    def test_upload_default_category(self, mock_vec, client, user_token):
+        resp = client.post(
+            "/api/v1/kb/upload",
+            files={"file": ("policy.txt", b"test")},
+            headers={"Authorization": f"Bearer {user_token}"},
+        )
+        assert resp.status_code == 201, resp.json()
+        assert resp.json()["category"] == "综合"
+
+    def test_extract_text_docx(self):
+        import os
+        import tempfile
+        import docx
+        from app.services import kb_service
+
+        d = docx.Document()
+        d.add_paragraph("第一条：国家助学金名额比例为在校生的 20%")
+        d.add_paragraph("第二条：每年 10 月 15 日前完成评定并公示")
+        table = d.add_table(rows=1, cols=2)
+        table.rows[0].cells[0].text = "类目"
+        table.rows[0].cells[1].text = "资助"
+
+        path = tempfile.mktemp(suffix=".docx")
+        d.save(path)
+        try:
+            text = kb_service._extract_text(path, "docx")
+            assert "国家助学金名额比例" in text
+            assert "10 月 15 日" in text
+            assert "资助" in text  # 表格内容也被提取
+        finally:
+            os.unlink(path)
+
+    @patch("app.services.kb_service._vectorize_document")
     def test_delete_own_document(self, mock_vec, client, user_token):
         # 上传
         client.post(

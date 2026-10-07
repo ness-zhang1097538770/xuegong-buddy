@@ -13,6 +13,7 @@ class Document(Base):
     filename = Column(String(255), nullable=False)
     file_path = Column(String(500), nullable=False)
     file_type = Column(String(20), nullable=False)  # pdf / docx / txt
+    category = Column(String(30), default="综合", nullable=False)  # 类目：资助/学风/心理/处分/综合
     status = Column(String(30), default="uploaded", nullable=False)  # uploaded/chunking/vectorizing/done/failed
     chunk_count = Column(Integer, default=0)
     size_bytes = Column(Integer, default=0)

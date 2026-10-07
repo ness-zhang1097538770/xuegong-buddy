@@ -2,6 +2,8 @@
 
 import {
   Bot,
+  Building2,
+  ClipboardCheck,
   Compass,
   FileText,
   LayoutDashboard,
@@ -32,6 +34,8 @@ export const NAV_GROUPS: NavGroup[] = [
       { href: "/talks", label: "谈话记录仪", shortLabel: "谈话", icon: MessagesSquare },
       { href: "/students", label: "一人一页", shortLabel: "一人一页", icon: UserRound },
       { href: "/notice", label: "通知变材料", shortLabel: "通知", icon: Megaphone },
+      { href: "/approvals", label: "事务审批", shortLabel: "审批", icon: ClipboardCheck },
+      { href: "/dorm", label: "查寝考勤", shortLabel: "查寝", icon: Building2 },
     ],
   },
   {

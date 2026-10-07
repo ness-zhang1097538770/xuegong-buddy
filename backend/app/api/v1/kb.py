@@ -1,7 +1,7 @@
 """知识库 API：上传文档、列表、删除、流式问答、对话历史。"""
 
 import json
-from fastapi import APIRouter, Depends, HTTPException, UploadFile, File, Request, status, Query
+from fastapi import APIRouter, Depends, HTTPException, UploadFile, File, Form, Request, status, Query
 from fastapi.responses import StreamingResponse
 from sqlalchemy.orm import Session
 from app.core.deps import get_db, get_current_user
@@ -22,13 +22,14 @@ router = APIRouter(prefix="/kb", tags=["知识库"])
 @router.post("/upload", status_code=status.HTTP_201_CREATED, response_model=DocumentResponse)
 async def upload(
     file: UploadFile = File(...),
+    category: str = Form("综合"),
     db: Session = Depends(get_db),
     user: User = Depends(get_current_user),
 ):
     # 读取文件内容
     content = await file.read()
     try:
-        doc = upload_document(db, user.id, content, file.filename or "untitled")
+        doc = upload_document(db, user.id, content, file.filename or "untitled", category=category)
         return doc
     except ValueError as e:
         raise HTTPException(status_code=status.HTTP_400_BAD_REQUEST, detail=str(e))

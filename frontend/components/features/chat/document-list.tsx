@@ -3,7 +3,10 @@
 import { FileText, Trash2 } from "lucide-react";
 import { FileDrop } from "@/components/ui/file-drop";
 import { EmptyState, Spinner } from "@/components/ui/feedback";
+import { Select } from "@/components/ui/field";
 import type { DocumentItem } from "@/lib/types";
+
+const KB_CATEGORIES = ["综合", "资助", "学风", "心理", "处分"];
 
 function formatSize(bytes: number): string {
   if (bytes < 1024) return `${bytes} B`;
@@ -14,13 +17,37 @@ function formatSize(bytes: number): string {
 interface Props {
   docs: DocumentItem[];
   loading: boolean;
+  category: string;
+  onCategoryChange: (c: string) => void;
   onUpload: (files: File[]) => void;
   onDelete: (id: number) => void;
 }
 
-export function DocumentList({ docs, loading, onUpload, onDelete }: Props) {
+export function DocumentList({
+  docs,
+  loading,
+  category,
+  onCategoryChange,
+  onUpload,
+  onDelete,
+}: Props) {
   return (
     <div className="flex flex-col gap-3">
+      <div className="flex items-center gap-2">
+        <span className="shrink-0 text-xs text-muted">文件类目</span>
+        <Select
+          value={category}
+          onChange={(e) => onCategoryChange(e.target.value)}
+          className="h-9 flex-1"
+        >
+          {KB_CATEGORIES.map((c) => (
+            <option key={c} value={c}>
+              {c}
+            </option>
+          ))}
+        </Select>
+      </div>
+
       <FileDrop
         accept=".pdf,.txt,.docx"
         hint="支持 PDF / Word / TXT"
@@ -38,7 +65,7 @@ export function DocumentList({ docs, loading, onUpload, onDelete }: Props) {
         <EmptyState
           icon={<FileText size={24} />}
           title="暂无文档"
-          desc="上传学生手册、政策文件后即可基于其内容提问"
+          desc="选择类目后上传政策文件，专家智能体将按类目精准检索"
         />
       ) : (
         <ul className="thin-scroll flex max-h-[420px] flex-col gap-2 overflow-y-auto">
@@ -53,6 +80,9 @@ export function DocumentList({ docs, loading, onUpload, onDelete }: Props) {
               <div className="min-w-0 flex-1">
                 <p className="truncate text-sm font-medium text-text">{doc.filename}</p>
                 <p className="text-xs text-muted">
+                  <span className="mr-1 rounded-[4px] bg-[#eff4ff] px-1.5 py-0.5 text-[11px] text-[#1d4ed8]">
+                    {doc.category || "综合"}
+                  </span>
                   {formatSize(doc.size_bytes)} · {doc.chunk_count} 段 · {doc.status}
                 </p>
               </div>
