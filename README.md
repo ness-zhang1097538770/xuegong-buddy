@@ -8,6 +8,7 @@
 ![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-4-06B6D4?style=flat&logo=tailwindcss&logoColor=white)
 ![ChromaDB](https://img.shields.io/badge/ChromaDB-vector_store-FF7A00?style=flat)
 ![DashScope](https://img.shields.io/badge/DashScope-615CED?style=flat)
+![License: MIT](https://img.shields.io/badge/License-MIT-yellow?style=flat)
 
 > 个人副驾 Copilot：不替辅导员做决定，只替辅导员**记、写、提醒**。
 > AI 输出仅为草稿，涉及学生评价、思政与危机材料必须人工复核。
