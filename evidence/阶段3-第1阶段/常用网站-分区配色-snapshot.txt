@@ -1,0 +1,257 @@
+[p1 "学工 Buddy · 辅导员 AI 助手" | space "学工Buddy 阶段3-第1阶段 验证"(1): 1 managed, 0 untracked — p1* "学工 Buddy · 辅导员 AI 助手"]
+root
+  container
+    container
+      container
+        svg_root
+        container
+          paragraph
+            text "学工 Buddy"
+          paragraph
+            text "辅导员 AI 副驾"
+      container
+        container
+          paragraph
+            text "副驾"
+          container
+            anchor [ref=357, url=http://127.0.0.1:3000/]
+              svg_root
+              text "副驾首页"
+            anchor [ref=358, url=http://127.0.0.1:3000/talks]
+              svg_root
+              text "谈话记录仪"
+            anchor [ref=359, url=http://127.0.0.1:3000/students]
+              svg_root
+              text "一人一页"
+            anchor [ref=360, url=http://127.0.0.1:3000/notice]
+              svg_root
+              text "通知变材料"
+        container
+          paragraph
+            text "生产"
+          container
+            anchor [ref=361, url=http://127.0.0.1:3000/kb]
+              svg_root
+              text "知识库问答"
+            anchor [ref=362, url=http://127.0.0.1:3000/doc]
+              svg_root
+              text "文稿生成"
+            anchor [ref=363, url=http://127.0.0.1:3000/excel]
+              svg_root
+              text "台账处理"
+            anchor [ref=364, url=http://127.0.0.1:3000/experts]
+              svg_root
+              text "专家智能体"
+        container
+          paragraph
+            text "其他"
+          anchor [ref=365, url=http://127.0.0.1:3000/sites]
+            svg_root
+            text "常用网站"
+      paragraph
+        text "AI 输出仅为草稿，涉及学生评价、思政与危机材料必须人工复核。"
+    container
+      container
+        heading
+          text "欢迎回来，"
+          text "pm_v03a@school.edu.cn"
+        button [ref=366]
+          svg_root
+          text "退出"
+      container [ref=367]
+        container
+          heading
+            text "常用网站"
+          paragraph
+            text "辅导员高频站点直达，点击在新标签页打开。"
+        container
+          container
+            svg_root
+            container
+              paragraph
+                text "思政主阵地"
+              paragraph
+                text "建议每天扫一眼"
+          container
+            anchor [ref=368, loc=href:https://www.sizhengwang.cn/, url=https://www.sizhengwang.cn/]
+              container
+                paragraph
+                  text "全国高校思想政治工作网"
+                svg_root
+              paragraph
+                text "教育部思政口权威门户。各类通知、专题研修班、辅导员素质能力训练营、党建“双创”申报系统都在这里。"
+            anchor [ref=369, loc=href:https://dxs.moe.gov.cn/zx/fdy/, url=https://dxs.moe.gov.cn/zx/fdy/]
+              container
+                paragraph
+                  text "中国大学生在线 · 辅导员频道"
+                svg_root
+              paragraph
+                text "教育部主办。免费线上培训、“一站式”学生社区案例库、心理健康资源，配套公众号“高校辅导员在线”。"
+            anchor [ref=370, loc=href:https://www.xuexi.cn/, url=https://www.xuexi.cn/]
+              container
+                paragraph
+                  text "学习强国"
+                svg_root
+              paragraph
+                text "理论原文、思政好课、慕课与答题。备课找素材、个人学习积分一站解决。"
+        container
+          container
+            svg_root
+            container
+              paragraph
+                text "政策与资讯"
+              paragraph
+                text "每周看"
+          container
+            anchor [ref=371, loc=href:https://www.moe.gov.cn/, url=https://www.moe.gov.cn/]
+              container
+                paragraph
+                  text "教育部官网"
+                svg_root
+              paragraph
+                text "所有政策文件的源头。思想政治工作司、高校学生司的通知第一时间发布，转述舆情前先来查原文。"
+            anchor [ref=372, loc=href:https://www.jyb.com.cn/, url=https://www.jyb.com.cn/]
+              container
+                paragraph
+                  text "中国教育新闻网"
+                svg_root
+              paragraph
+                text "《中国教育报》官网。高校党建笔谈、思政典型经验报道，写工作案例的好参照。"
+            anchor [ref=373, loc=href:https://edu.youth.cn/, url=https://edu.youth.cn/]
+              container
+                paragraph
+                  text "中国青年网 · 教育频道"
+                svg_root
+              paragraph
+                text "共青团中央主办。青年视角贴近学生，三下乡、大思政课优秀案例征集常在这里发布。"
+        container
+          container
+            svg_root
+            container
+              paragraph
+                text "工作实操"
+              paragraph
+                text "日常用得上"
+          container
+            anchor [ref=374, loc=href:https://www.yiban.cn/, url=https://www.yiban.cn/]
+              container
+                paragraph
+                  text "易班"
+                svg_root
+              paragraph
+                text "覆盖全国千余所高校的实名制网络思政社区。优课、精品微党课、班级微社区都在这里落地。"
+            anchor [ref=375, loc=href:https://www.ncss.cn/, url=https://www.ncss.cn/]
+              container
+                paragraph
+                  text "国家大学生就业服务平台"
+                svg_root
+              paragraph
+                text "原 24365 平台。岗位推送、就业政策原文、求职防骗提示，做就业指导时最常打开。"
+            anchor [ref=376, loc=href:https://www.smartedu.cn/, url=https://www.smartedu.cn/]
+              container
+                paragraph
+                  text "国家智慧教育公共服务平台"
+                svg_root
+              paragraph
+                text "国家高等教育智慧教育平台在此。课程资源、数字“大思政课”专题，另有办事服务大厅。"
+        container
+          container
+            svg_root
+            container
+              paragraph
+                text "专业成长"
+              paragraph
+                text "写材料、做研究"
+          container
+            anchor [ref=377, loc=href:http://gxfdy.cbpt.cnki.net/, url=http://gxfdy.cbpt.cnki.net/]
+              container
+                paragraph
+                  text "《高校辅导员》期刊"
+                svg_root
+              paragraph
+                text "教育部主管、山东大学主办，全国高校辅导员工作研究会会刊，双月刊。投稿与查文献的首选。"
+            anchor [ref=378, loc=href:http://www.qstheory.cn/, url=http://www.qstheory.cn/]
+              container
+                paragraph
+                  text "求是网"
+                svg_root
+              paragraph
+                text "《求是》杂志官网。理论深度文章，写理论文章、做党课提纲的权威引用来源。"
+            anchor [ref=379, loc=href:http://cpc.people.com.cn/, url=http://cpc.people.com.cn/]
+              container
+                paragraph
+                  text "中国共产党新闻网"
+                svg_root
+              paragraph
+                text "人民网旗下党建门户。党史学习教育资料、重要会议报道，做党团活动素材库。"
+  container
+    svg_root
+    container
+      container
+        container
+          text "👋 Hi，想聊点什么～"
+          text "下笔没话说？"
+          text "告诉我主题，文案、标题、Slogan我都行"
+          text "名词听不懂？"
+          text "别自己搜了，直接问我，三秒给你讲明白"
+          text "脑袋空空了？"
+          text "一起脑暴，给产品起名、给活动想点子"
+          text "方案没头绪？"
+          text "思路我来理，框架我来搭，你来做决策"
+        container
+          svg_root
+          text "新会话"
+        container
+          svg_root
+          text "历史"
+        textbox [ref=380, loc=css:textarea[placeholder="输入您的问题... (Enter 发送，Shift+Enter 换行)"]]
+          text "输入您的问题... (Enter 发送，Shift+Enter 换行)"
+        container
+          image
+          text "智谱GLM-4-Flash"
+          svg_root
+        button "联网" [ref=381, loc=css:button[aria-label="联网"]]
+          image
+          text "联网"
+        svg_root
+        text "内容由AI生成，仅供参考"
+      container
+        container
+          svg_root
+          text "Chat"
+        container
+          svg_root
+          text "云笔记"
+        container
+          svg_root
+          text "账号"
+        container
+          svg_root
+          text "互动"
+        container
+          svg_root
+          text "通知"
+        container
+          svg_root
+          text "设置"
+        anchor [ref=382, loc=href:https://yiban.io/style_center?from=side-panel, url=https://yiban.io/style_center?from=side-panel]
+          svg_root
+        anchor [ref=383, loc=href:https://yiban.io/dashboard?from=side-panel, url=https://yiban.io/dashboard?from=side-panel]
+          svg_root
+        anchor [ref=384, loc=href:https://yiban.io/pricing?from=side-panel, url=https://yiban.io/pricing?from=side-panel]
+          svg_root
+        container
+          image
+          button [ref=385]
+            text "开通"
+  unordered_list
+  container
+    button "Open issues overlay" [ref=386, loc=css:button[aria-label="Open issues overlay"]]
+      svg_root
+      container
+        text "0"
+        text "1"
+      text "Issue"
+    button "Collapse issues badge" [ref=387, loc=css:button[aria-label="Collapse issues badge"]]
+      svg_root
+  alert

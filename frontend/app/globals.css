@@ -1,0 +1,91 @@
+@import "tailwindcss";
+
+/* ============ 学工 Buddy 设计系统 · 温暖专业风 ============ */
+@theme {
+  --color-primary: #2563eb;
+  --color-primary-hover: #1d4ed8;
+  --color-primary-soft: #eff4ff;
+  --color-accent: #0ea5a4;
+  --color-accent-soft: #cdeceb;
+
+  --color-bg: #f5f7fb;
+  --color-surface: #ffffff;
+  --color-text: #0f172a;
+  --color-muted: #64748b;
+  --color-border: #e6ecf3;
+
+  --color-danger: #ef4444;
+  --color-success: #16a34a;
+
+  --radius-btn: 10px;
+  --radius-card: 16px;
+  --radius-pill: 9999px;
+
+  --font-sans: Inter, "PingFang SC", "Microsoft YaHei", system-ui, sans-serif;
+
+  --shadow-card: 0 1px 2px rgba(15, 23, 42, 0.04), 0 12px 28px -18px rgba(15, 23, 42, 0.22);
+  --shadow-soft: 0 1px 2px rgba(15, 23, 42, 0.03), 0 6px 16px -12px rgba(15, 23, 42, 0.16);
+  --shadow-btn: 0 6px 16px -8px rgba(37, 99, 235, 0.5);
+  --gradient-brand: linear-gradient(135deg, #2563eb 0%, #0ea5a4 100%);
+}
+
+:root {
+  --primary: #2563eb;
+  --accent: #0ea5a4;
+  --bg: #f5f7fb;
+  --surface: #ffffff;
+  --text: #0f172a;
+  --muted: #64748b;
+  --border: #e8ebf2;
+  --danger: #ef4444;
+  --success: #16a34a;
+  --gradient-brand: linear-gradient(135deg, #2563eb 0%, #0ea5a4 100%);
+  --shadow-card: 0 1px 2px rgba(15, 23, 42, 0.04), 0 12px 28px -18px rgba(15, 23, 42, 0.22);
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+/* 细滚动条 */
+.thin-scroll::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+.thin-scroll::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 3px;
+}
+.thin-scroll::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8;
+}
+
+/* 流式光标 */
+.stream-cursor::after {
+  content: "▌";
+  margin-left: 2px;
+  animation: blink 1s step-end infinite;
+  color: var(--primary);
+}
+@keyframes blink {
+  50% {
+    opacity: 0;
+  }
+}
+
+/* 通用：品牌渐变文字 */
+.brand-gradient-text {
+  background: var(--gradient-brand);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}

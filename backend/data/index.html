@@ -1,0 +1,1600 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>学工 Buddy · 视觉设计方案</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<!-- ============ 图标 sprite ============ -->
+<svg style="display:none" xmlns="http://www.w3.org/2000/svg">
+<symbol id="i-home" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 10.5 12 3l9 7.5"/><path d="M5 9.5V21h14V9.5"/><path d="M9.5 21v-6h5v6"/></symbol>
+<symbol id="i-users" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></symbol>
+<symbol id="i-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></symbol>
+<symbol id="i-chat" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.4 8.4 0 0 1-9 8.4 8.5 8.5 0 0 1-3.8-.9L3 20.5l1.5-4.2A8.4 8.4 0 0 1 12 3.1a8.4 8.4 0 0 1 9 8.4z"/></symbol>
+<symbol id="i-bed" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 18v-7a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v7"/><path d="M2 14h20"/><path d="M6 9V6a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1v3"/></symbol>
+<symbol id="i-alert" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10.3 3.8 1.8 18a2 2 0 0 0 1.7 3h17a2 2 0 0 0 1.7-3L13.7 3.8a2 2 0 0 0-3.4 0z"/><path d="M12 9v4"/><path d="M12 17h.01"/></symbol>
+<symbol id="i-bell" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.7 21a2 2 0 0 1-3.4 0"/></symbol>
+<symbol id="i-grid" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="3" width="7" height="7" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/><rect x="14" y="14" width="7" height="7" rx="1.5"/></symbol>
+<symbol id="i-chart" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18"/><rect x="7" y="11" width="3" height="6" rx="1"/><rect x="12.5" y="7" width="3" height="10" rx="1"/><rect x="18" y="13" width="3" height="4" rx="1"/></symbol>
+<symbol id="i-setting" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.7 1.7 0 0 0 .3 1.9l.1.1a2 2 0 1 1-2.8 2.8l-.1-.1a1.7 1.7 0 0 0-2.9 1.2V21a2 2 0 1 1-4 0v-.1A1.7 1.7 0 0 0 7 19.4a1.7 1.7 0 0 0-1.9.3l-.1.1a2 2 0 1 1-2.8-2.8l.1-.1a1.7 1.7 0 0 0-1.2-2.9H1a2 2 0 1 1 0-4h.1A1.7 1.7 0 0 0 2.6 7a1.7 1.7 0 0 0-.3-1.9l-.1-.1a2 2 0 1 1 2.8-2.8l.1.1A1.7 1.7 0 0 0 8 2.6h.1A1.7 1.7 0 0 0 9.3 1V1a2 2 0 1 1 4 0v.1a1.7 1.7 0 0 0 2.9 1.2 1.7 1.7 0 0 0 1.9-.3l.1-.1a2 2 0 1 1 2.8 2.8l-.1.1a1.7 1.7 0 0 0 1.2 2.9H23a2 2 0 1 1 0 4h-.1a1.7 1.7 0 0 0-1.5 1z"/></symbol>
+<symbol id="i-search" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/></symbol>
+<symbol id="i-plus" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M5 12h14"/></symbol>
+<symbol id="i-down" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><path d="M7 10l5 5 5-5"/><path d="M12 15V3"/></symbol>
+<symbol id="i-clock" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3.5 2"/></symbol>
+<symbol id="i-cal" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/></symbol>
+<symbol id="i-file" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"/><path d="M14 3v5h5"/></symbol>
+<symbol id="i-award" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="6"/><path d="M8.2 13.3 7 22l5-3 5 3-1.2-8.7"/></symbol>
+<symbol id="i-heart" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.8 5.6a5.2 5.2 0 0 0-7.4 0L12 7l-1.4-1.4a5.2 5.2 0 1 0-7.4 7.4L12 21l8.8-7a5.2 5.2 0 0 0 0-7.4z"/></symbol>
+<symbol id="i-book" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></symbol>
+<symbol id="i-link" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.5.5l3-3a5 5 0 0 0-7-7l-1.7 1.7"/><path d="M14 11a5 5 0 0 0-7.5-.5l-3 3a5 5 0 0 0 7 7l1.7-1.7"/></symbol>
+<symbol id="i-send" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 2 11 13"/><path d="M22 2l-7 20-4-9-9-4 20-7z"/></symbol>
+<symbol id="i-more" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><circle cx="5" cy="12" r="1"/><circle cx="12" cy="12" r="1"/><circle cx="19" cy="12" r="1"/></symbol>
+<symbol id="i-chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></symbol>
+<symbol id="i-star" viewBox="0 0 24 24" fill="currentColor"><path d="M12 3l2.7 5.6 6.1.9-4.4 4.3 1 6.1-5.4-2.9-5.4 2.9 1-6.1L3.2 9.5l6.1-.9z"/></symbol>
+<symbol id="i-filter" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 5h18l-7 8v6l-4 2v-8z"/></symbol>
+<symbol id="i-phone" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="6" y="2" width="12" height="20" rx="2.5"/><path d="M11 18.5h2"/></symbol>
+<symbol id="i-megaphone" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11v2a1 1 0 0 0 1 1h2l4 4V6L6 10H4a1 1 0 0 0-1 1z"/><path d="M14 8a5 5 0 0 1 0 8"/><path d="M17.5 5.5a9 9 0 0 1 0 13"/></symbol>
+<symbol id="i-shield" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></symbol>
+<symbol id="i-edit" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 4H4v16h16v-7"/><path d="M18.5 2.5a2.1 2.1 0 0 1 3 3L12 15l-4 1 1-4z"/></symbol>
+<symbol id="i-wallet" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 8V6a2 2 0 0 0-2-2H5a2 2 0 0 0 0 4h15a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V6"/><circle cx="17" cy="14" r="1.2"/></symbol>
+<symbol id="i-plane" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12l19-7-7 19-2.5-8.5z"/></symbol>
+<symbol id="i-up" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l7-7 7 7"/><path d="M12 19V5"/></symbol>
+</svg>
+
+<!-- ============ 文档顶栏 ============ -->
+<header class="doc-top">
+  <div class="logo">学</div>
+  <div>
+    <h1>学工 Buddy · 前端视觉设计方案</h1>
+    <div class="sub">高校辅导员 / 行政老师工作台 · PC 为主 + 移动端适配</div>
+  </div>
+  <div class="spacer"></div>
+  <div class="meta">v1.0 · 校园蓝主题 · 2026</div>
+</header>
+
+<div class="layout">
+  <!-- ============ 目录 ============ -->
+  <nav class="toc">
+    <div class="grp">设计基础</div>
+    <a href="#tokens">设计令牌 Tokens</a>
+    <a href="#components">组件库 Components</a>
+    <div class="grp">PC 端界面</div>
+    <a href="#home">01 工作台首页</a>
+    <a href="#students">02 学生信息档案</a>
+    <a href="#approval">03 事务审批</a>
+    <a href="#talk">04 谈心谈话</a>
+    <a href="#dorm">05 查寝考勤</a>
+    <a href="#links">06 常用网站导航</a>
+    <div class="grp">移动端</div>
+    <a href="#mobile">07 手机端关键页</a>
+  </nav>
+
+  <main class="content">
+
+  <!-- ==================== Tokens ==================== -->
+  <section id="tokens">
+    <div class="sec-head">
+      <span class="kicker">01 · DESIGN TOKENS</span>
+      <h2>设计令牌</h2>
+      <p>整套视觉的唯一事实来源。主色用「校园蓝 #2563EB」，关联色青绿做活力点缀；语义色严格对应状态，不混用。所有界面只引用变量，不写死色值。</p>
+    </div>
+
+    <div class="grid-tokens">
+      <div class="panel">
+        <h3>品牌主色 · 校园蓝</h3>
+        <div class="swatches">
+          <div class="sw"><div class="chip" style="background:#EFF6FF"></div><div class="nm">brand-50</div><div class="hex">#EFF6FF</div></div>
+          <div class="sw"><div class="chip" style="background:#DBEAFE"></div><div class="nm">brand-100</div><div class="hex">#DBEAFE</div></div>
+          <div class="sw"><div class="chip" style="background:#BFDBFE"></div><div class="nm">brand-200</div><div class="hex">#BFDBFE</div></div>
+          <div class="sw"><div class="chip" style="background:#60A5FA"></div><div class="nm">brand-400</div><div class="hex">#60A5FA</div></div>
+          <div class="sw"><div class="chip" style="background:#3B82F6"></div><div class="nm">brand-500</div><div class="hex">#3B82F6</div></div>
+          <div class="sw"><div class="chip" style="background:#2563EB"></div><div class="nm">brand-600 ★</div><div class="hex">#2563EB</div></div>
+          <div class="sw"><div class="chip" style="background:#1D4ED8"></div><div class="nm">brand-700</div><div class="hex">#1D4ED8</div></div>
+        </div>
+        <div class="mt14 fs12 muted">主色用于：主按钮、选中态、链接、关键数据。渐变条用 <span class="b">蓝 → 青绿</span>（#2563EB → #0EA5A4）体现「校园 + 成长」。</div>
+      </div>
+
+      <div class="panel">
+        <h3>辅助色</h3>
+        <div class="swatches">
+          <div class="sw"><div class="chip" style="background:#0EA5A4"></div><div class="nm">Teal 活力青</div><div class="hex">#0EA5A4</div></div>
+          <div class="sw"><div class="chip" style="background:#7C3AED"></div><div class="nm">Violet 紫</div><div class="hex">#7C3AED</div></div>
+          <div class="sw"><div class="chip" style="background:#F59E0B"></div><div class="nm">Amber 橙</div><div class="hex">#F59E0B</div></div>
+          <div class="sw"><div class="chip" style="background:#16A34A"></div><div class="nm">Green 绿</div><div class="hex">#16A34A</div></div>
+          <div class="sw"><div class="chip" style="background:#EF4444"></div><div class="nm">Rose 红</div><div class="hex">#EF4444</div></div>
+        </div>
+        <div class="mt14 fs12 muted">辅助色只做「分类标识」（标签、图标底色、图表系列），不承担交互语义。</div>
+      </div>
+
+      <div class="panel">
+        <h3>语义色 · 状态</h3>
+        <div class="sem-row">
+          <div class="sem ok"><i class="d"></i>通过 / 正常 / 已办结</div>
+          <div class="sem warn"><i class="d"></i>待处理 / 晚归 / 预警</div>
+          <div class="sem err"><i class="d"></i>驳回 / 缺勤 / 高风险</div>
+          <div class="sem inf"><i class="d"></i>进行中 / 提示 / 新消息</div>
+        </div>
+        <div class="mt14 fs12 muted">语义色 = 浅底（50）+ 深字（700）+ 浅边框，保证在白卡片上不刺眼、可批量扫描。</div>
+      </div>
+
+      <div class="panel">
+        <h3>中性色与层级</h3>
+        <div class="swatches">
+          <div class="sw"><div class="chip" style="background:#0F172A"></div><div class="nm">ink-900 标题</div><div class="hex">#0F172A</div></div>
+          <div class="sw"><div class="chip" style="background:#334155"></div><div class="nm">ink-700 正文</div><div class="hex">#334155</div></div>
+          <div class="sw"><div class="chip" style="background:#64748B"></div><div class="nm">ink-500 次要</div><div class="hex">#64748B</div></div>
+          <div class="sw"><div class="chip" style="background:#94A3B8"></div><div class="nm">ink-400 弱/占位</div><div class="hex">#94A3B8</div></div>
+          <div class="sw"><div class="chip" style="background:#E6ECF3"></div><div class="nm">line 边框</div><div class="hex">#E6ECF3</div></div>
+          <div class="sw"><div class="chip" style="background:#F5F7FB"></div><div class="nm">bg 页面底</div><div class="hex">#F5F7FB</div></div>
+        </div>
+        <div class="mt14 fs12 muted">页面底 #F5F7FB（冷灰蓝）而非纯灰，让白色卡片「浮」起来；边框统一 1px 极浅，靠阴影分层。</div>
+      </div>
+
+      <div class="panel">
+        <h3>字阶</h3>
+        <div class="type-row">
+          <div><span class="tagx">20 / 700</span><span style="font-size:20px;font-weight:700">页面问候语</span></div>
+          <div><span class="tagx">19 / 700</span><span style="font-size:19px;font-weight:700">页面主标题 H2</span></div>
+          <div><span class="tagx">14 / 700</span><span style="font-size:14px;font-weight:700">卡片标题 H4</span></div>
+          <div><span class="tagx">13.5 / 600</span><span style="font-size:13.5px;font-weight:600">列表主文案（学生姓名）</span></div>
+          <div><span class="tagx">13 / 400</span><span style="font-size:13px">表格正文 / 表单值</span></div>
+          <div><span class="tagx">11.5 / 500</span><span style="font-size:11.5px;color:#64748B">辅助说明、时间戳</span></div>
+          <div><span class="tagx">25 / 800</span><span style="font-size:25px;font-weight:800">数据指标 KPI</span></div>
+        </div>
+        <div class="mt14 fs12 muted">字体栈：PingFang SC → HarmonyOS Sans → 微软雅黑。数字全部 <span class="b">tabular-nums</span> 等宽，表格对齐不跳。</div>
+      </div>
+
+      <div class="panel">
+        <h3>圆角 · 阴影 · 间距</h3>
+        <div class="radius-row">
+          <div><div class="rbox" style="border-radius:6px">6 标签</div></div>
+          <div><div class="rbox" style="border-radius:8px">8 按钮/小卡</div></div>
+          <div><div class="rbox" style="border-radius:12px">12 卡片</div></div>
+          <div><div class="rbox" style="border-radius:16px">16 大容器</div></div>
+          <div><div class="rbox" style="border-radius:22px">22 Hero</div></div>
+        </div>
+        <div class="shadow-row mt14">
+          <div class="sbox" style="box-shadow:var(--sh-1)">sh-1 静止</div>
+          <div class="sbox" style="box-shadow:var(--sh-2)">sh-2 悬浮</div>
+          <div class="sbox" style="box-shadow:var(--sh-3)">sh-3 弹层</div>
+          <div class="sbox" style="box-shadow:var(--sh-brand)">brand 主按钮</div>
+        </div>
+        <div class="mt14 fs12 muted">间距走 4px 基准：4 / 8 / 12 / 16 / 20 / 24 / 32。卡片内边距 16，页面边距 20，栅格间距 14。</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== Components ==================== -->
+  <section id="components">
+    <div class="sec-head">
+      <span class="kicker">02 · COMPONENTS</span>
+      <h2>组件库</h2>
+      <p>办公产品的高频组件。所有控件统一 34px 高（小号 28），圆角 9px，保证工具栏里按钮、输入框、下拉视觉齐平。</p>
+    </div>
+    <div class="comp-grid">
+      <div class="comp">
+        <div class="lb">按钮 Button</div>
+        <div class="row">
+          <button class="btn btn-primary">同意审批</button>
+          <button class="btn btn-secondary">驳回</button>
+          <button class="btn btn-soft">导出名单</button>
+          <button class="btn btn-danger">删除</button>
+          <button class="btn btn-ghost">取消</button>
+        </div>
+        <div class="row mt10">
+          <button class="btn btn-primary btn-lg">大号 40</button>
+          <button class="btn btn-secondary">默认 34</button>
+          <button class="btn btn-secondary btn-sm">小号 28</button>
+          <button class="btn btn-primary" disabled>禁用</button>
+        </div>
+      </div>
+
+      <div class="comp">
+        <div class="lb">表单 Form</div>
+        <div class="col" style="gap:10px">
+          <div class="field"><label>学生姓名</label><input class="input" placeholder="输入姓名 / 学号"></div>
+          <div class="flex" style="gap:10px">
+            <div class="field" style="flex:1"><label>学院</label><select class="input select"><option>机械工程学院</option></select></div>
+            <div class="field" style="flex:1"><label>年级</label><select class="input select"><option>2023 级</option></select></div>
+          </div>
+          <div class="seg mt6"><span class="on">全部</span><span>待处理</span><span>已办结</span></div>
+        </div>
+      </div>
+
+      <div class="comp">
+        <div class="lb">标签 Tag</div>
+        <div class="row">
+          <span class="tag tag-blue"><i class="dot"></i>请假</span>
+          <span class="tag tag-green"><i class="dot"></i>奖助贷</span>
+          <span class="tag tag-amber"><i class="dot"></i>学业预警</span>
+          <span class="tag tag-red"><i class="dot"></i>心理关注</span>
+          <span class="tag tag-violet"><i class="dot"></i>学生干部</span>
+          <span class="tag tag-gray">共青团员</span>
+        </div>
+        <div class="lb" style="margin:16px 0 8px">头像 Avatar</div>
+        <div class="flex">
+          <div class="av">张</div><div class="av a2">李</div><div class="av a3">王</div><div class="av a4">赵</div><div class="av a5">陈</div>
+          <div class="avatars"><div class="av sm a6">刘</div><div class="av sm a2">周</div><div class="av sm a3">吴</div><div class="av sm a4">+5</div></div>
+        </div>
+      </div>
+
+      <div class="comp">
+        <div class="lb">选择控件</div>
+        <div class="row">
+          <div class="cbx on"></div><span class="fs13">已选</span>
+          <div class="cbx"></div><span class="fs13">未选</span>
+          <div style="width:16px"></div>
+          <div class="switch"></div><span class="fs13">开启提醒</span>
+          <div class="switch off"></div><span class="fs13">关闭</span>
+        </div>
+        <div class="lb" style="margin:16px 0 8px">进度条 Progress</div>
+        <div class="col" style="gap:9px">
+          <div><div class="fs12 muted" style="margin-bottom:5px">学业完成度 78%</div><div class="bar"><i style="width:78%"></i></div></div>
+          <div><div class="fs12 muted" style="margin-bottom:5px">出勤率 92%</div><div class="bar"><i class="g" style="width:92%"></i></div></div>
+          <div><div class="fs12 muted" style="margin-bottom:5px">贫困认定 · 待补充材料 40%</div><div class="bar"><i class="a" style="width:40%"></i></div></div>
+          <div><div class="fs12 muted" style="margin-bottom:5px">心理测评风险 65%</div><div class="bar"><i class="r" style="width:65%"></i></div></div>
+        </div>
+      </div>
+
+      <div class="comp">
+        <div class="lb">空状态 Empty</div>
+        <div class="empty">
+          <div class="ico"><svg width="24" height="24"><use href="#i-check"/></svg></div>
+          <p>暂无待审批事项，今天可以早点下班</p>
+          <div class="mt10"><button class="btn btn-soft btn-sm">查看历史审批</button></div>
+        </div>
+      </div>
+
+      <div class="comp">
+        <div class="lb">反馈 Toast</div>
+        <div class="col" style="gap:10px">
+          <div class="toast"><i class="ic" style="background:var(--success-bg);color:var(--success)"><svg width="12" height="12"><use href="#i-check"/></svg></i>已同意李明的请假申请</div>
+          <div class="toast"><i class="ic" style="background:var(--danger-bg);color:var(--danger)"><svg width="12" height="12"><use href="#i-alert"/></svg></i>请先填写驳回理由</div>
+          <div class="toast"><i class="ic" style="background:var(--info-bg);color:var(--brand-600)"><svg width="12" height="12"><use href="#i-send"/></svg></i>通知已发送给 128 名学生</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== 01 工作台首页 ==================== -->
+  <section id="home">
+    <div class="sec-head">
+      <span class="kicker">03 · PC 界面</span>
+      <h2>01 工作台首页</h2>
+      <p>辅导员的「一天从这里开始」。设计目标：<b>3 秒看到今天必须做的事</b>。从上到下依次是——身份与周期（Hero）→ 四个关键数字 → 今日待办（主视觉重心）→ 快捷入口 → 常用网站。</p>
+    </div>
+    <div class="zoomwrap">
+    <div class="screen">
+      <div class="screen-bar"><i class="dot"></i><i class="dot"></i><i class="dot"></i><span class="title">工作台首页 · Workbench</span><span class="right">1440 × 900 自适应</span></div>
+      <div class="screen-body">
+        <div class="app">
+          <!-- 侧边栏 -->
+          <aside class="side">
+            <div class="brand"><div class="lg">学</div><div class="nm">学工<span>Buddy</span></div></div>
+            <div class="nav">
+              <a class="active"><svg class="ic" width="18" height="18"><use href="#i-home"/></svg>工作台</a>
+              <a><svg class="ic" width="18" height="18"><use href="#i-users"/></svg>学生管理</a>
+              <a><svg class="ic" width="18" height="18"><use href="#i-check"/></svg>事务审批<span class="badge">12</span></a>
+              <a><svg class="ic" width="18" height="18"><use href="#i-chat"/></svg>谈心谈话<span class="badge gray">4</span></a>
+              <a><svg class="ic" width="18" height="18"><use href="#i-bed"/></svg>查寝考勤</a>
+              <div class="sec">专项工作</div>
+              <a><svg class="ic" width="18" height="18"><use href="#i-heart"/></svg>心理预警<span class="badge">3</span></a>
+              <a><svg class="ic" width="18" height="18"><use href="#i-award"/></svg>奖助贷</a>
+              <a><svg class="ic" width="18" height="18"><use href="#i-megaphone"/></svg>通知公告</a>
+              <a><svg class="ic" width="18" height="18"><use href="#i-chart"/></svg>数据报表</a>
+              <div class="sec">工具</div>
+              <a><svg class="ic" width="18" height="18"><use href="#i-link"/></svg>常用网站</a>
+              <a><svg class="ic" width="18" height="18"><use href="#i-file"/></svg>材料归档</a>
+              <a><svg class="ic" width="18" height="18"><use href="#i-setting"/></svg>设置</a>
+            </div>
+            <div class="me">
+              <div class="av">张</div>
+              <div><div class="nm">张明老师</div><div class="rl">机械工程学院 · 辅导员</div></div>
+              <svg style="margin-left:auto;color:var(--ink-400)" width="16" height="16"><use href="#i-more"/></svg>
+            </div>
+          </aside>
+
+          <!-- 主区 -->
+          <div class="main">
+            <div class="topbar">
+              <div class="crumb">工作台 / <b>首页</b></div>
+              <div class="chip-school">机械工程学院 <svg width="12" height="12"><use href="#i-chev"/></svg></div>
+              <div class="search"><svg width="15" height="15" style="color:var(--ink-400)"><use href="#i-search"/></svg><input placeholder="搜学生 / 审批 / 通知（⌘K）"></div>
+              <div class="iconbtn"><svg width="18" height="18"><use href="#i-bell"/></svg><i class="pip"></i></div>
+              <div class="iconbtn"><svg width="18" height="18"><use href="#i-setting"/></svg></div>
+              <div class="divider-v"></div>
+              <div class="av">张</div>
+            </div>
+
+            <div class="page">
+              <!-- Hero -->
+              <div class="hero">
+                <div>
+                  <div class="t1">张老师，早上好</div>
+                  <div class="t2">2026 春季学期 · 第 4 教学周 · 周三 · 距期末考试还有 9 周</div>
+                </div>
+                <div class="stats">
+                  <div class="st"><div class="n">12</div><div class="l">待我审批</div></div>
+                  <div class="st"><div class="n">5</div><div class="l">今日谈话</div></div>
+                  <div class="st"><div class="n">3</div><div class="l">考勤异常</div></div>
+                  <div class="st"><div class="n">2</div><div class="l">待交材料</div></div>
+                </div>
+              </div>
+
+              <!-- KPI -->
+              <div class="kpis mt14">
+                <div class="kpi">
+                  <div class="top"><div class="ic b"><svg width="18" height="18"><use href="#i-check"/></svg></div><div class="lb">待我审批</div></div>
+                  <div class="n">12 <small>件</small></div>
+                  <div class="ft"><span class="up"><svg style="display:inline;vertical-align:-2px" width="11" height="11"><use href="#i-up"/></svg> 4</span> 较昨日 · 平均停留 6.2h</div>
+                  <svg class="spark" width="64" height="26" viewBox="0 0 64 26"><polyline points="2,20 12,15 22,18 32,10 42,13 52,6 62,4" fill="none" stroke="#93C5FD" stroke-width="2" stroke-linecap="round"/></svg>
+                </div>
+                <div class="kpi">
+                  <div class="top"><div class="ic g"><svg width="18" height="18"><use href="#i-chat"/></svg></div><div class="lb">本周谈心谈话</div></div>
+                  <div class="n">8 <small>/ 12 人</small></div>
+                  <div class="ft">进度 67% · 还差 <span class="b" style="color:var(--ink-600)">4</span> 人，周日前完成</div>
+                  <div class="bar mt6" style="width:70%"><i class="g" style="width:67%"></i></div>
+                </div>
+                <div class="kpi">
+                  <div class="top"><div class="ic a"><svg width="18" height="18"><use href="#i-bed"/></svg></div><div class="lb">昨晚考勤异常</div></div>
+                  <div class="n">3 <small>人</small></div>
+                  <div class="ft"><span class="up"><svg style="display:inline;vertical-align:-2px" width="11" height="11"><use href="#i-up"/></svg> 2</span> 较前日 · 含 1 名重点关注</div>
+                  <svg class="spark" width="64" height="26" viewBox="0 0 64 26"><polyline points="2,22 12,20 22,21 32,17 42,18 52,12 62,9" fill="none" stroke="#FCD34D" stroke-width="2" stroke-linecap="round"/></svg>
+                </div>
+                <div class="kpi">
+                  <div class="top"><div class="ic v"><svg width="18" height="18"><use href="#i-alert"/></svg></div><div class="lb">重点关注学生</div></div>
+                  <div class="n">23 <small>人</small></div>
+                  <div class="ft">心理 5 · 学业 11 · 经济 7 · 本周新增 2</div>
+                  <div class="flex mt6" style="gap:6px">
+                    <span class="tag tag-red">心理 5</span><span class="tag tag-amber">学业 11</span><span class="tag tag-blue">经济 7</span>
+                  </div>
+                </div>
+              </div>
+
+              <!-- 待办 + 关注 -->
+              <div class="g2 mt14">
+                <div class="card">
+                  <div class="ch">
+                    <h4>今日待办</h4>
+                    <span class="tag tag-blue">22 项</span>
+                    <div class="more">全部待办 <svg style="display:inline;vertical-align:-2px" width="12" height="12"><use href="#i-chev"/></svg></div>
+                  </div>
+                  <div class="cb" style="padding:0">
+                    <div class="todo">
+                      <div class="ic" style="background:var(--brand-50);color:var(--brand-600)"><svg width="17" height="17"><use href="#i-check"/></svg></div>
+                      <div class="tx"><div class="t">12 条请假申请待审批 <span class="tag tag-red">超时 2</span></div><div class="s">最早提交于 2 天前，超过 24h 未处理将标红提醒</div></div>
+                      <div class="tm">今天 18:00 前</div>
+                      <button class="btn btn-primary btn-sm">去审批</button>
+                    </div>
+                    <div class="todo">
+                      <div class="ic" style="background:var(--violet-50);color:var(--violet-500)"><svg width="17" height="17"><use href="#i-chat"/></svg></div>
+                      <div class="tx"><div class="t">与王雨桐同学谈心谈话</div><div class="s">心理中心反馈：近两周情绪低落，建议本周内面谈</div></div>
+                      <div class="tm">今天 15:00</div>
+                      <button class="btn btn-secondary btn-sm">记录</button>
+                    </div>
+                    <div class="todo">
+                      <div class="ic" style="background:var(--warning-bg);color:var(--warning)"><svg width="17" height="17"><use href="#i-bed"/></svg></div>
+                      <div class="tx"><div class="t">3 人昨晚未归，需核实</div><div class="s">李浩然、陈思远、刘畅 · 已短信通知，未回复</div></div>
+                      <div class="tm">今天 20:00 前</div>
+                      <button class="btn btn-secondary btn-sm">处理</button>
+                    </div>
+                    <div class="todo">
+                      <div class="ic" style="background:var(--success-bg);color:var(--success)"><svg width="17" height="17"><use href="#i-award"/></svg></div>
+                      <div class="tx"><div class="t">国家助学金初审名单公示</div><div class="s">共 68 人 · 公示期 3 天，需上传盖章扫描件</div></div>
+                      <div class="tm">明天 12:00</div>
+                      <button class="btn btn-secondary btn-sm">查看</button>
+                    </div>
+                    <div class="todo">
+                      <div class="ic" style="background:var(--brand-50);color:var(--brand-600)"><svg width="17" height="17"><use href="#i-megaphone"/></svg></div>
+                      <div class="tx"><div class="t">发布「五一假期安全教育」通知</div><div class="s">模板已备好，需确认接收范围：机械学院全体本科生</div></div>
+                      <div class="tm">本周五前</div>
+                      <button class="btn btn-secondary btn-sm">发布</button>
+                    </div>
+                    <div class="todo">
+                      <div class="ic" style="background:var(--fill);color:var(--ink-500)"><svg width="17" height="17"><use href="#i-file"/></svg></div>
+                      <div class="tx"><div class="t">提交 4 月思政教育工作月报</div><div class="s">学工处要求每月 5 日前提交，含数据附件</div></div>
+                      <div class="tm">4 月 30 日</div>
+                      <button class="btn btn-ghost btn-sm">稍后</button>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="card">
+                  <div class="ch"><h4>重点关注</h4><div class="more">查看全部 23 人</div></div>
+                  <div class="cb">
+                    <div class="focus">
+                      <div class="av a5">王</div>
+                      <div class="tx"><div class="n">王雨桐 <span class="tag tag-red">心理</span></div><div class="r">测评高风险 · 已 14 天未约谈</div></div>
+                      <button class="btn btn-soft btn-sm">约谈</button>
+                    </div>
+                    <div class="focus">
+                      <div class="av a3">李</div>
+                      <div class="tx"><div class="n">李浩然 <span class="tag tag-amber">学业</span></div><div class="r">3 门挂科预警 · 连续 2 次未归</div></div>
+                      <button class="btn btn-soft btn-sm">约谈</button>
+                    </div>
+                    <div class="focus">
+                      <div class="av a6">陈</div>
+                      <div class="tx"><div class="n">陈思远 <span class="tag tag-amber">考勤</span></div><div class="r">本月缺课 6 节 · 未说明理由</div></div>
+                      <button class="btn btn-soft btn-sm">约谈</button>
+                    </div>
+                    <div class="focus">
+                      <div class="av a2">赵</div>
+                      <div class="tx"><div class="n">赵梦琪 <span class="tag tag-blue">经济</span></div><div class="r">家庭突发变故 · 待认定困难等级</div></div>
+                      <button class="btn btn-soft btn-sm">约谈</button>
+                    </div>
+                    <div class="focus">
+                      <div class="av a4">刘</div>
+                      <div class="tx"><div class="n">刘畅 <span class="tag tag-amber">学业</span></div><div class="r">GPA 1.8 · 试读警告边缘</div></div>
+                      <button class="btn btn-soft btn-sm">约谈</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- 快捷入口 -->
+              <div class="card mt14">
+                <div class="ch"><h4>快捷入口</h4><div class="more">自定义</div></div>
+                <div class="cb">
+                  <div class="quick">
+                    <div class="qi"><div class="ic" style="background:var(--brand-50);color:var(--brand-600)"><svg width="19" height="19"><use href="#i-check"/></svg></div><div class="t">请假审批</div></div>
+                    <div class="qi"><div class="ic" style="background:var(--violet-50);color:var(--violet-500)"><svg width="19" height="19"><use href="#i-chat"/></svg></div><div class="t">谈心谈话</div></div>
+                    <div class="qi"><div class="ic" style="background:var(--success-bg);color:var(--success)"><svg width="19" height="19"><use href="#i-bed"/></svg></div><div class="t">查寝打卡</div></div>
+                    <div class="qi"><div class="ic" style="background:var(--amber-50);color:var(--amber-500)"><svg width="19" height="19"><use href="#i-megaphone"/></svg></div><div class="t">发布通知</div></div>
+                    <div class="qi"><div class="ic" style="background:var(--teal-50);color:var(--teal-500)"><svg width="19" height="19"><use href="#i-award"/></svg></div><div class="t">奖助学金</div></div>
+                    <div class="qi"><div class="ic" style="background:var(--brand-50);color:var(--brand-600)"><svg width="19" height="19"><use href="#i-users"/></svg></div><div class="t">学生档案</div></div>
+                    <div class="qi"><div class="ic" style="background:var(--danger-bg);color:var(--danger)"><svg width="19" height="19"><use href="#i-heart"/></svg></div><div class="t">心理预警</div></div>
+                    <div class="qi"><div class="ic" style="background:var(--fill);color:var(--ink-600)"><svg width="19" height="19"><use href="#i-chart"/></svg></div><div class="t">数据报表</div></div>
+                    <div class="qi"><div class="ic" style="background:var(--brand-50);color:var(--brand-600)"><svg width="19" height="19"><use href="#i-file"/></svg></div><div class="t">材料收集</div></div>
+                    <div class="qi"><div class="ic" style="background:var(--teal-50);color:var(--teal-500)"><svg width="19" height="19"><use href="#i-cal"/></svg></div><div class="t">日程安排</div></div>
+                    <div class="qi"><div class="ic" style="background:var(--violet-50);color:var(--violet-500)"><svg width="19" height="19"><use href="#i-link"/></svg></div><div class="t">常用网站</div></div>
+                    <div class="qi"><div class="ic" style="background:var(--fill);color:var(--ink-600)"><svg width="19" height="19"><use href="#i-plus"/></svg></div><div class="t">添加</div></div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- 常用网站条 -->
+              <div class="card mt14">
+                <div class="ch"><h4>常用网站</h4><span class="fs12 muted">按你最近 7 天访问排序</span><div class="more">管理</div></div>
+                <div class="cb">
+                  <div class="links">
+                    <div class="link"><div class="ic" style="background:linear-gradient(135deg,#3B82F6,#1D4ED8)">教</div><div><div class="t">教务管理系统</div><div class="d">排课 · 成绩 · 学籍</div></div><svg class="star on" width="14" height="14"><use href="#i-star"/></svg></div>
+                    <div class="link"><div class="ic" style="background:linear-gradient(135deg,#0EA5A4,#0F766E)">学</div><div><div class="t">学工管理系统</div><div class="d">上级平台 · 数据上报</div></div><svg class="star on" width="14" height="14"><use href="#i-star"/></svg></div>
+                    <div class="link"><div class="ic" style="background:linear-gradient(135deg,#7C3AED,#5B21B6)">财</div><div><div class="t">财务缴费平台</div><div class="d">学费 · 奖助发放</div></div><svg class="star" width="14" height="14"><use href="#i-star"/></svg></div>
+                    <div class="link"><div class="ic" style="background:linear-gradient(135deg,#F59E0B,#D97706)">心</div><div><div class="t">心理健康中心</div><div class="d">测评 · 预约 · 转介</div></div><svg class="star on" width="14" height="14"><use href="#i-star"/></svg></div>
+                    <div class="link"><div class="ic" style="background:linear-gradient(135deg,#16A34A,#15803D)">宿</div><div><div class="t">宿舍管理平台</div><div class="d">住宿 · 调宿 · 报修</div></div><svg class="star" width="14" height="14"><use href="#i-star"/></svg></div>
+                    <div class="link"><div class="ic" style="background:linear-gradient(135deg,#64748B,#334155)">图</div><div><div class="t">图书馆</div><div class="d">借阅 · 座位预约</div></div><svg class="star" width="14" height="14"><use href="#i-star"/></svg></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    </div>
+    <div class="screen-caption">
+      <div><b>信息优先级</b> Hero 只放身份+周期+4 个数字，不塞广告位</div>
+      <div><b>待办即入口</b> 每条待办自带操作按钮，不要求学生老师二次跳转</div>
+      <div><b>红色克制</b> 只有「超时/异常」用红，避免告警疲劳</div>
+    </div>
+  </section>
+
+  <!-- ==================== 02 学生信息档案 ==================== -->
+  <section id="students">
+    <div class="sec-head">
+      <span class="kicker">03 · PC 界面</span>
+      <h2>02 学生信息档案</h2>
+      <p>辅导员最高频的「查人」场景。左侧多维筛选（学院/年级/班级/标签/风险），中间高密度表格，右侧滑出档案抽屉——<b>筛选 → 定位 → 查看详情</b> 三步内完成，不需要离开当前页。</p>
+    </div>
+    <div class="zoomwrap">
+    <div class="screen">
+      <div class="screen-bar"><i class="dot"></i><i class="dot"></i><i class="dot"></i><span class="title">学生信息档案 · Students</span><span class="right">表格密度：紧凑 44px 行高</span></div>
+      <div class="screen-body">
+        <div class="app">
+          <aside class="side">
+            <div class="brand"><div class="lg">学</div><div class="nm">学工<span>Buddy</span></div></div>
+            <div class="nav">
+              <a><svg class="ic" width="18" height="18"><use href="#i-home"/></svg>工作台</a>
+              <a class="active"><svg class="ic" width="18" height="18"><use href="#i-users"/></svg>学生管理</a>
+              <a><svg class="ic" width="18" height="18"><use href="#i-check"/></svg>事务审批<span class="badge">12</span></a>
+              <a><svg class="ic" width="18" height="18"><use href="#i-chat"/></svg>谈心谈话<span class="badge gray">4</span></a>
+              <a><svg class="ic" width="18" height="18"><use href="#i-bed"/></svg>查寝考勤</a>
+              <div class="sec">专项工作</div>
+              <a><svg class="ic" width="18" height="18"><use href="#i-heart"/></svg>心理预警<span class="badge">3</span></a>
+              <a><svg class="ic" width="18" height="18"><use href="#i-award"/></svg>奖助贷</a>
+              <a><svg class="ic" width="18" height="18"><use href="#i-megaphone"/></svg>通知公告</a>
+              <a><svg class="ic" width="18" height="18"><use href="#i-chart"/></svg>数据报表</a>
+              <div class="sec">工具</div>
+              <a><svg class="ic" width="18" height="18"><use href="#i-link"/></svg>常用网站</a>
+              <a><svg class="ic" width="18" height="18"><use href="#i-file"/></svg>材料归档</a>
+              <a><svg class="ic" width="18" height="18"><use href="#i-setting"/></svg>设置</a>
+            </div>
+            <div class="me"><div class="av">张</div><div><div class="nm">张明老师</div><div class="rl">机械工程学院 · 辅导员</div></div><svg style="margin-left:auto;color:var(--ink-400)" width="16" height="16"><use href="#i-more"/></svg></div>
+          </aside>
+
+          <div class="main">
+            <div class="topbar">
+              <div class="crumb">学生管理 / <b>学生档案</b></div>
+              <div class="chip-school">机械工程学院 <svg width="12" height="12"><use href="#i-chev"/></svg></div>
+              <div class="search"><svg width="15" height="15" style="color:var(--ink-400)"><use href="#i-search"/></svg><input placeholder="搜姓名 / 学号 / 手机号"></div>
+              <div class="iconbtn"><svg width="18" height="18"><use href="#i-bell"/></svg><i class="pip"></i></div>
+              <div class="divider-v"></div><div class="av">张</div>
+            </div>
+
+            <div style="flex:1;display:flex;min-height:0;">
+              <div class="page" style="flex:1;min-width:0;padding:16px;">
+                <div class="card">
+                  <div class="toolbar">
+                    <input class="input" style="width:200px" placeholder="搜索姓名 / 学号">
+                    <select class="input select" style="width:126px"><option>机械工程学院</option></select>
+                    <select class="input select" style="width:100px"><option>2023 级</option></select>
+                    <select class="input select" style="width:120px"><option>机制 2301 班</option></select>
+                    <select class="input select" style="width:132px"><option>全部标签</option></select>
+                    <button class="btn btn-secondary btn-sm"><svg width="14" height="14"><use href="#i-filter"/></svg>更多筛选</button>
+                    <button class="btn btn-ghost btn-sm">重置</button>
+                    <div class="sp"></div>
+                    <button class="btn btn-secondary btn-sm"><svg width="14" height="14"><use href="#i-down"/></svg>导出</button>
+                    <button class="btn btn-primary btn-sm"><svg width="14" height="14"><use href="#i-plus"/></svg>新增学生</button>
+                  </div>
+
+                  <div style="padding:10px 16px;background:#FCFDFF;border-bottom:1px solid var(--line-soft);display:flex;align-items:center;gap:18px;flex-wrap:wrap">
+                    <span class="fs12" style="color:var(--ink-500)">共 <b style="color:var(--ink-900)">428</b> 名学生</span>
+                    <span class="fs12" style="color:var(--ink-500)">男 <b style="color:var(--ink-900)">261</b> / 女 <b style="color:var(--ink-900)">167</b></span>
+                    <span class="fs12" style="color:var(--ink-500)">重点关注 <b style="color:var(--danger)">23</b></span>
+                    <span class="fs12" style="color:var(--ink-500)">党员 <b style="color:var(--ink-900)">34</b></span>
+                    <div style="margin-left:auto" class="flex">
+                      <span class="fs12 muted">已应用筛选：</span>
+                      <span class="tag tag-blue">2023 级 <svg width="10" height="10"><use href="#i-plus" style="transform:rotate(45deg)"/></svg></span>
+                      <span class="tag tag-blue">机制 2301 班 ×</span>
+                    </div>
+                  </div>
+
+                  <table class="tb">
+                    <thead><tr>
+                      <th style="width:36px"><div class="cbx"></div></th>
+                      <th>学生</th><th>班级</th><th>政治面貌</th><th>宿舍</th><th>标签</th><th style="width:132px">学业 (GPA)</th><th>出勤</th><th style="width:110px">操作</th>
+                    </tr></thead>
+                    <tbody>
+                      <tr class="sel">
+                        <td><div class="cbx on"></div></td>
+                        <td><div class="stu"><div class="av">王</div><div><div class="n">王雨桐</div><div class="i">2023010101</div></div></div></td>
+                        <td>机制 2301</td><td>共青团员</td><td>梅园 3-412</td>
+                        <td><div class="tags"><span class="tag tag-red">心理关注</span><span class="tag tag-amber">学业预警</span></div></td>
+                        <td><div class="flex"><span class="b" style="color:var(--danger)">1.92</span><div class="bar" style="flex:1"><i class="r" style="width:48%"></i></div></div></td>
+                        <td><span class="b" style="color:var(--warning)">86%</span></td>
+                        <td><div class="flex" style="gap:4px"><button class="btn btn-ghost btn-sm">查看</button><button class="btn btn-ghost btn-sm">谈话</button></div></td>
+                      </tr>
+                      <tr>
+                        <td><div class="cbx on"></div></td>
+                        <td><div class="stu"><div class="av a2">李</div><div><div class="n">李浩然</div><div class="i">2023010108</div></div></div></td>
+                        <td>机制 2301</td><td>共青团员</td><td>梅园 3-412</td>
+                        <td><div class="tags"><span class="tag tag-amber">学业预警</span><span class="tag tag-red">考勤异常</span></div></td>
+                        <td><div class="flex"><span class="b">2.11</span><div class="bar" style="flex:1"><i class="a" style="width:53%"></i></div></div></td>
+                        <td><span class="b" style="color:var(--danger)">72%</span></td>
+                        <td><div class="flex" style="gap:4px"><button class="btn btn-ghost btn-sm">查看</button><button class="btn btn-ghost btn-sm">谈话</button></div></td>
+                      </tr>
+                      <tr>
+                        <td><div class="cbx"></div></td>
+                        <td><div class="stu"><div class="av a3">陈</div><div><div class="n">陈思远</div><div class="i">2023010115</div></div></div></td>
+                        <td>机制 2301</td><td>群众</td><td>梅园 3-413</td>
+                        <td><div class="tags"><span class="tag tag-amber">考勤异常</span></div></td>
+                        <td><div class="flex"><span class="b">2.48</span><div class="bar" style="flex:1"><i class="a" style="width:62%"></i></div></div></td>
+                        <td><span class="b" style="color:var(--danger)">68%</span></td>
+                        <td><div class="flex" style="gap:4px"><button class="btn btn-ghost btn-sm">查看</button><button class="btn btn-ghost btn-sm">谈话</button></div></td>
+                      </tr>
+                      <tr>
+                        <td><div class="cbx"></div></td>
+                        <td><div class="stu"><div class="av a4">赵</div><div><div class="n">赵梦琪</div><div class="i">2023010122</div></div></div></td>
+                        <td>机制 2301</td><td>中共预备党员</td><td>兰园 5-201</td>
+                        <td><div class="tags"><span class="tag tag-blue">经济困难</span><span class="tag tag-violet">学生干部</span></div></td>
+                        <td><div class="flex"><span class="b" style="color:var(--success)">3.62</span><div class="bar" style="flex:1"><i class="g" style="width:90%"></i></div></div></td>
+                        <td><span class="b" style="color:var(--success)">98%</span></td>
+                        <td><div class="flex" style="gap:4px"><button class="btn btn-ghost btn-sm">查看</button><button class="btn btn-ghost btn-sm">谈话</button></div></td>
+                      </tr>
+                      <tr>
+                        <td><div class="cbx"></div></td>
+                        <td><div class="stu"><div class="av a6">刘</div><div><div class="n">刘畅</div><div class="i">2023010129</div></div></div></td>
+                        <td>机制 2301</td><td>共青团员</td><td>梅园 3-413</td>
+                        <td><div class="tags"><span class="tag tag-amber">学业预警</span></div></td>
+                        <td><div class="flex"><span class="b" style="color:var(--danger)">1.80</span><div class="bar" style="flex:1"><i class="r" style="width:45%"></i></div></div></td>
+                        <td><span class="b">88%</span></td>
+                        <td><div class="flex" style="gap:4px"><button class="btn btn-ghost btn-sm">查看</button><button class="btn btn-ghost btn-sm">谈话</button></div></td>
+                      </tr>
+                      <tr>
+                        <td><div class="cbx"></div></td>
+                        <td><div class="stu"><div class="av a2">周</div><div><div class="n">周子涵</div><div class="i">2023010136</div></div></div></td>
+                        <td>机制 2301</td><td>共青团员</td><td>梅园 3-414</td>
+                        <td><div class="tags"><span class="tag tag-green">奖学金</span></div></td>
+                        <td><div class="flex"><span class="b" style="color:var(--success)">3.81</span><div class="bar" style="flex:1"><i class="g" style="width:95%"></i></div></div></td>
+                        <td><span class="b" style="color:var(--success)">100%</span></td>
+                        <td><div class="flex" style="gap:4px"><button class="btn btn-ghost btn-sm">查看</button><button class="btn btn-ghost btn-sm">谈话</button></div></td>
+                      </tr>
+                      <tr>
+                        <td><div class="cbx"></div></td>
+                        <td><div class="stu"><div class="av a5">吴</div><div><div class="n">吴俊杰</div><div class="i">2023010143</div></div></div></td>
+                        <td>机制 2301</td><td>群众</td><td>梅园 3-414</td>
+                        <td><div class="tags"><span class="tag tag-gray">走读生</span></div></td>
+                        <td><div class="flex"><span class="b">2.95</span><div class="bar" style="flex:1"><i style="width:74%"></i></div></div></td>
+                        <td><span class="b">94%</span></td>
+                        <td><div class="flex" style="gap:4px"><button class="btn btn-ghost btn-sm">查看</button><button class="btn btn-ghost btn-sm">谈话</button></div></td>
+                      </tr>
+                      <tr>
+                        <td><div class="cbx"></div></td>
+                        <td><div class="stu"><div class="av a3">孙</div><div><div class="n">孙嘉怡</div><div class="i">2023010150</div></div></div></td>
+                        <td>机制 2301</td><td>共青团员</td><td>兰园 5-202</td>
+                        <td><div class="tags"><span class="tag tag-violet">学生干部</span><span class="tag tag-blue">经济困难</span></div></td>
+                        <td><div class="flex"><span class="b" style="color:var(--success)">3.24</span><div class="bar" style="flex:1"><i class="g" style="width:81%"></i></div></div></td>
+                        <td><span class="b" style="color:var(--success)">96%</span></td>
+                        <td><div class="flex" style="gap:4px"><button class="btn btn-ghost btn-sm">查看</button><button class="btn btn-ghost btn-sm">谈话</button></div></td>
+                      </tr>
+                    </tbody>
+                  </table>
+
+                  <div class="pager">
+                    <span>共 428 条 · 每页 20 条</span>
+                    <div class="pg"><span>‹</span><span class="on">1</span><span>2</span><span>3</span><span>…</span><span>22</span><span>›</span></div>
+                  </div>
+                </div>
+
+                <!-- 批量操作条 -->
+                <div class="bulkbar mt14">
+                  <svg width="16" height="16"><use href="#i-check"/></svg>
+                  <span class="n">已选 2 名学生</span>
+                  <div style="width:1px;height:18px;background:rgba(255,255,255,.3)"></div>
+                  <div class="b"><svg width="13" height="13"><use href="#i-send"/></svg> 发送通知</div>
+                  <div class="b"><svg width="13" height="13"><use href="#i-plus"/></svg> 添加标签</div>
+                  <div class="b"><svg width="13" height="13"><use href="#i-chat"/></svg> 批量约谈</div>
+                  <div class="b"><svg width="13" height="13"><use href="#i-down"/></svg> 导出名单</div>
+                  <div class="b x">取消选择</div>
+                </div>
+              </div>
+
+              <!-- 档案抽屉 -->
+              <aside class="drawer">
+                <div class="dh">
+                  <div class="av lg">王</div>
+                  <div><h4>王雨桐</h4><div class="fs12 muted">2023010101 · 机制 2301 班</div></div>
+                  <div style="margin-left:auto" class="flex" style="gap:6px">
+                    <button class="btn btn-ghost btn-sm"><svg width="14" height="14"><use href="#i-edit"/></svg></button>
+                    <button class="btn btn-ghost btn-sm"><svg width="14" height="14"><use href="#i-more"/></svg></button>
+                  </div>
+                </div>
+                <div class="db">
+                  <div class="flex" style="gap:6px;flex-wrap:wrap">
+                    <span class="tag tag-red"><i class="dot"></i>心理关注</span>
+                    <span class="tag tag-amber"><i class="dot"></i>学业预警</span>
+                    <span class="tag tag-blue"><i class="dot"></i>经济困难</span>
+                  </div>
+
+                  <div class="subh">基本信息</div>
+                  <div class="info-grid">
+                    <div><div class="k">性别 / 年龄</div><div class="v">女 · 20 岁</div></div>
+                    <div><div class="k">政治面貌</div><div class="v">共青团员</div></div>
+                    <div><div class="k">生源地</div><div class="v">湖南 · 常德</div></div>
+                    <div><div class="k">民族</div><div class="v">汉族</div></div>
+                    <div><div class="k">手机号</div><div class="v">138****6721</div></div>
+                    <div><div class="k">宿舍</div><div class="v">梅园 3-412</div></div>
+                    <div><div class="k">辅导员</div><div class="v">张明</div></div>
+                    <div><div class="k">入学方式</div><div class="v">普通高考</div></div>
+                  </div>
+                  <div style="margin-top:12px"><div class="k fs12 muted">紧急联系人</div><div class="v fs13 b" style="margin-top:2px">王建国（父）· 139****0082</div></div>
+
+                  <div class="subh">学业概览</div>
+                  <div class="col" style="gap:10px">
+                    <div><div class="flex fs12"><span class="muted">GPA</span><span style="margin-left:auto" class="b" style="color:var(--danger)">1.92 / 4.0</span></div><div class="bar mt6"><i class="r" style="width:48%"></i></div></div>
+                    <div><div class="flex fs12"><span class="muted">必修课通过率</span><span style="margin-left:auto" class="b">74%</span></div><div class="bar mt6"><i class="a" style="width:74%"></i></div></div>
+                    <div><div class="flex fs12"><span class="muted">出勤率</span><span style="margin-left:auto" class="b" style="color:var(--warning)">86%</span></div><div class="bar mt6"><i class="a" style="width:86%"></i></div></div>
+                  </div>
+                  <div class="flex mt10" style="gap:6px;flex-wrap:wrap">
+                    <span class="tag tag-red">挂科 3 门</span><span class="tag tag-amber">缺课 8 节</span><span class="tag tag-gray">学业试读边缘</span>
+                  </div>
+
+                  <div class="subh">近期动态</div>
+                  <div class="tl">
+                    <div class="it warn">
+                      <div class="h"><span class="n">心理测评高风险</span><span class="tag tag-red">待跟进</span><span class="d">3 天前</span></div>
+                      <div class="c">SCL-90 抑郁因子得分 3.2，建议 1 周内面谈并通知心理中心。</div>
+                    </div>
+                    <div class="it">
+                      <div class="h"><span class="n">提交请假申请</span><span class="d">5 天前</span></div>
+                      <div class="c">病假 2 天（4.12–4.13），已上传医院证明，已通过。</div>
+                    </div>
+                    <div class="it">
+                      <div class="h"><span class="n">谈心谈话记录</span><span class="d">2 周前</span></div>
+                      <div class="c">线上沟通，主要谈学业压力。情绪尚可，已约定下次面谈。</div>
+                    </div>
+                    <div class="it">
+                      <div class="h"><span class="n">家庭经济困难认定</span><span class="d">1 个月前</span></div>
+                      <div class="c">认定为「特殊困难」，本学年助学金已发放。</div>
+                    </div>
+                  </div>
+                </div>
+                <div style="padding:12px 16px;border-top:1px solid var(--line-soft);display:flex;gap:8px">
+                  <button class="btn btn-primary" style="flex:1"><svg width="14" height="14"><use href="#i-chat"/></svg>发起谈话</button>
+                  <button class="btn btn-secondary"><svg width="14" height="14"><use href="#i-phone"/></svg>联系</button>
+                </div>
+              </aside>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    </div>
+    <div class="screen-caption">
+      <div><b>行高 44px</b> 一屏可见 12 行，比常规 56px 多 40% 信息量</div>
+      <div><b>风险可视化</b> GPA / 出勤率直接上进度条，扫视即可定位异常</div>
+      <div><b>抽屉不跳页</b> 详情在右侧展开，筛选条件与滚动位置全部保留</div>
+    </div>
+  </section>
+
+  <!-- ==================== 03 事务审批 ==================== -->
+  <section id="approval">
+    <div class="sec-head">
+      <span class="kicker">03 · PC 界面</span>
+      <h2>03 事务审批（请假 / 奖助贷 / 违纪）</h2>
+      <p>辅导员的「流水线作业」场景，设计重点是<b>不用来回点开就能判断</b>：卡片里直接给出学生画像速览、时长、事由、附件与流程进度；右侧常驻审批助手，提供历史记录和常用驳回语，支持批量处理。</p>
+    </div>
+    <div class="zoomwrap">
+    <div class="screen">
+      <div class="screen-bar"><i class="dot"></i><i class="dot"></i><i class="dot"></i><span class="title">事务审批 · Approval</span><span class="right">支持批量同意 / 键盘快捷键 A·R</span></div>
+      <div class="screen-body">
+        <div class="app">
+          <aside class="side">
+            <div class="brand"><div class="lg">学</div><div class="nm">学工<span>Buddy</span></div></div>
+            <div class="nav">
+              <a><svg class="ic" width="18" height="18"><use href="#i-home"/></svg>工作台</a>
+              <a><svg class="ic" width="18" height="18"><use href="#i-users"/></svg>学生管理</a>
+              <a class="active"><svg class="ic" width="18" height="18"><use href="#i-check"/></svg>事务审批<span class="badge">12</span></a>
+              <a><svg class="ic" width="18" height="18"><use href="#i-chat"/></svg>谈心谈话<span class="badge gray">4</span></a>
+              <a><svg class="ic" width="18" height="18"><use href="#i-bed"/></svg>查寝考勤</a>
+              <div class="sec">专项工作</div>
+              <a><svg class="ic" width="18" height="18"><use href="#i-heart"/></svg>心理预警<span class="badge">3</span></a>
+              <a><svg class="ic" width="18" height="18"><use href="#i-award"/></svg>奖助贷</a>
+              <a><svg class="ic" width="18" height="18"><use href="#i-megaphone"/></svg>通知公告</a>
+              <a><svg class="ic" width="18" height="18"><use href="#i-chart"/></svg>数据报表</a>
+              <div class="sec">工具</div>
+              <a><svg class="ic" width="18" height="18"><use href="#i-link"/></svg>常用网站</a>
+              <a><svg class="ic" width="18" height="18"><use href="#i-file"/></svg>材料归档</a>
+              <a><svg class="ic" width="18" height="18"><use href="#i-setting"/></svg>设置</a>
+            </div>
+            <div class="me"><div class="av">张</div><div><div class="nm">张明老师</div><div class="rl">机械工程学院 · 辅导员</div></div><svg style="margin-left:auto;color:var(--ink-400)" width="16" height="16"><use href="#i-more"/></svg></div>
+          </aside>
+
+          <div class="main">
+            <div class="topbar">
+              <div class="crumb">事务审批 / <b>待我审批</b></div>
+              <div class="search" style="width:200px"><svg width="15" height="15" style="color:var(--ink-400)"><use href="#i-search"/></svg><input placeholder="搜学生 / 单号"></div>
+              <div class="iconbtn"><svg width="18" height="18"><use href="#i-bell"/></svg><i class="pip"></i></div>
+              <div class="divider-v"></div><div class="av">张</div>
+            </div>
+
+            <div style="flex:1;display:flex;min-height:0;">
+              <div class="page" style="flex:1;min-width:0;padding:16px;">
+                <div class="tabs" style="padding:0 4px;background:transparent;border:0;margin-bottom:14px">
+                  <span class="t on">待我审批 <span class="cnt">12</span></span>
+                  <span class="t">我发起的 <span class="cnt">3</span></span>
+                  <span class="t">已处理 <span class="cnt">268</span></span>
+                  <span class="t">抄送我的 <span class="cnt">7</span></span>
+                </div>
+
+                <div class="flex" style="gap:8px;margin-bottom:12px;flex-wrap:wrap">
+                  <div class="cbx"></div><span class="fs13" style="margin-right:6px">全选本页</span>
+                  <select class="input select" style="width:112px;height:30px"><option>全部类型</option></select>
+                  <select class="input select" style="width:112px;height:30px"><option>按提交时间</option></select>
+                  <select class="input select" style="width:112px;height:30px"><option>全部班级</option></select>
+                  <div class="sp" style="flex:1"></div>
+                  <button class="btn btn-secondary btn-sm"><svg width="14" height="14"><use href="#i-down"/></svg>导出台账</button>
+                </div>
+
+                <div class="col" style="gap:12px">
+                  <!-- 卡片 1 -->
+                  <div class="appr t-leave">
+                    <div class="hd">
+                      <div class="cbx"></div>
+                      <span class="tag tag-blue"><i class="dot"></i>请假 · 病假</span>
+                      <span class="fs12 muted">单号 QJ20260412008</span>
+                      <span class="tag tag-red">已超时 26h</span>
+                      <div style="margin-left:auto" class="fs12 muted"><svg style="display:inline;vertical-align:-2px" width="12" height="12"><use href="#i-clock"/></svg> 4 月 12 日 09:14 提交</div>
+                    </div>
+                    <div class="bd">
+                      <div class="flex" style="gap:10px">
+                        <div class="av">李</div>
+                        <div>
+                          <div class="fs13 b">李浩然 <span class="tag tag-amber" style="margin-left:4px">学业预警</span><span class="tag tag-red">近 30 天请假 2 次</span></div>
+                          <div class="fs12 muted">2023010108 · 机制 2301 班 · 梅园 3-412</div>
+                        </div>
+                      </div>
+                      <div class="row" style="gap:34px">
+                        <div class="kv"><div class="k">请假时间</div><div class="v">4/14 08:00 – 4/16 22:00</div></div>
+                        <div class="kv"><div class="k">时长</div><div class="v" style="color:var(--warning)">3 天（含 2 个教学日）</div></div>
+                        <div class="kv"><div class="k">影响课程</div><div class="v">高等数学、工程制图 共 4 节</div></div>
+                        <div class="kv"><div class="k">联系方式</div><div class="v">137****2233</div></div>
+                      </div>
+                      <div class="reason">请假事由：感冒发烧，校医院建议居家休息三天，返校后补交病假条。家长已知情（父亲 139****0088）。</div>
+                      <div class="files">
+                        <div class="file"><i class="ic">JPG</i>校医院诊断证明.jpg</div>
+                        <div class="file"><i class="ic">PDF</i>请假申请表.pdf</div>
+                      </div>
+                      <div class="steps">
+                        <div class="s"><i class="d done"></i><span class="t done">学生提交</span></div><i class="ln done"></i>
+                        <div class="s"><i class="d now"></i><span class="t now">辅导员审核</span></div><i class="ln"></i>
+                        <div class="s"><i class="d todo"></i><span class="t">学院备案</span></div><i class="ln"></i>
+                        <div class="s"><i class="d todo"></i><span class="t">完成</span></div>
+                      </div>
+                    </div>
+                    <div class="ft">
+                      <button class="btn btn-secondary btn-sm"><svg width="13" height="13"><use href="#i-chat"/></svg>询问详情</button>
+                      <button class="btn btn-secondary btn-sm"><svg width="13" height="13"><use href="#i-users"/></svg>查看档案</button>
+                      <div class="sp"></div>
+                      <input class="input" style="width:220px;height:28px;font-size:12px" placeholder="审批意见（可选）">
+                      <button class="btn btn-danger btn-sm">驳回</button>
+                      <button class="btn btn-primary btn-sm">同意</button>
+                    </div>
+                  </div>
+
+                  <!-- 卡片 2 -->
+                  <div class="appr t-aid">
+                    <div class="hd">
+                      <div class="cbx"></div>
+                      <span class="tag tag-green"><i class="dot"></i>奖助贷 · 国家助学金</span>
+                      <span class="fs12 muted">单号 ZX20260410021</span>
+                      <div style="margin-left:auto" class="fs12 muted"><svg style="display:inline;vertical-align:-2px" width="12" height="12"><use href="#i-clock"/></svg> 4 月 10 日 15:32 提交</div>
+                    </div>
+                    <div class="bd">
+                      <div class="flex" style="gap:10px">
+                        <div class="av a4">赵</div>
+                        <div>
+                          <div class="fs13 b">赵梦琪 <span class="tag tag-blue" style="margin-left:4px">已认定特殊困难</span><span class="tag tag-green">GPA 3.62</span></div>
+                          <div class="fs12 muted">2023010122 · 机制 2301 班 · 兰园 5-201</div>
+                        </div>
+                      </div>
+                      <div class="row" style="gap:34px">
+                        <div class="kv"><div class="k">申请档位</div><div class="v">一等助学金 ¥4,400/年</div></div>
+                        <div class="kv"><div class="k">困难等级</div><div class="v">特殊困难（已认定）</div></div>
+                        <div class="kv"><div class="k">班级评议</div><div class="v" style="color:var(--success)">12/15 票通过</div></div>
+                        <div class="kv"><div class="k">材料完整度</div><div class="v">5 / 5 已上传</div></div>
+                      </div>
+                      <div class="reason">家庭情况：父亲因工伤丧失劳动能力，母亲务农，家中两子女同时在读。村委与乡镇民政已出具证明。</div>
+                      <div class="files">
+                        <div class="file"><i class="ic">PDF</i>家庭经济困难认定表.pdf</div>
+                        <div class="file"><i class="ic">JPG</i>低保证.jpg</div>
+                        <div class="file"><i class="ic">PDF</i>班级评议记录.pdf</div>
+                      </div>
+                      <div class="steps">
+                        <div class="s"><i class="d done"></i><span class="t done">学生申请</span></div><i class="ln done"></i>
+                        <div class="s"><i class="d done"></i><span class="t done">班级评议</span></div><i class="ln done"></i>
+                        <div class="s"><i class="d now"></i><span class="t now">辅导员审核</span></div><i class="ln"></i>
+                        <div class="s"><i class="d todo"></i><span class="t">学院公示</span></div>
+                      </div>
+                    </div>
+                    <div class="ft">
+                      <button class="btn btn-secondary btn-sm"><svg width="13" height="13"><use href="#i-file"/></svg>核对材料</button>
+                      <div class="sp"></div>
+                      <input class="input" style="width:220px;height:28px;font-size:12px" placeholder="审批意见（可选）">
+                      <button class="btn btn-danger btn-sm">驳回</button>
+                      <button class="btn btn-primary btn-sm">同意</button>
+                    </div>
+                  </div>
+
+                  <!-- 卡片 3 -->
+                  <div class="appr t-pun">
+                    <div class="hd">
+                      <div class="cbx"></div>
+                      <span class="tag tag-red"><i class="dot"></i>违纪处理 · 夜不归宿</span>
+                      <span class="fs12 muted">单号 WJ20260411003</span>
+                      <div style="margin-left:auto" class="fs12 muted"><svg style="display:inline;vertical-align:-2px" width="12" height="12"><use href="#i-clock"/></svg> 4 月 11 日 20:05 提交</div>
+                    </div>
+                    <div class="bd">
+                      <div class="flex" style="gap:10px">
+                        <div class="av a6">陈</div>
+                        <div>
+                          <div class="fs13 b">陈思远 <span class="tag tag-amber" style="margin-left:4px">本月第 2 次</span><span class="tag tag-amber">出勤 68%</span></div>
+                          <div class="fs12 muted">2023010115 · 机制 2301 班 · 梅园 3-413</div>
+                        </div>
+                      </div>
+                      <div class="row" style="gap:34px">
+                        <div class="kv"><div class="k">违纪时间</div><div class="v">4 月 10 日 23:40 查寝未归</div></div>
+                        <div class="kv"><div class="k">上报单位</div><div class="v">宿管中心 · 梅园 3 号楼</div></div>
+                        <div class="kv"><div class="k">学生说明</div><div class="v">称在校外兼职，未提供证明</div></div>
+                      </div>
+                      <div class="reason">处理建议：按《学生宿舍管理办法》第 12 条，给予通报批评并通知家长；建议同步约谈了解兼职情况，排查经济困难。</div>
+                      <div class="files"><div class="file"><i class="ic">JPG</i>查寝记录表.jpg</div></div>
+                      <div class="steps">
+                        <div class="s"><i class="d done"></i><span class="t done">宿管上报</span></div><i class="ln done"></i>
+                        <div class="s"><i class="d now"></i><span class="t now">辅导员核实</span></div><i class="ln"></i>
+                        <div class="s"><i class="d todo"></i><span class="t">学院处分</span></div><i class="ln"></i>
+                        <div class="s"><i class="d todo"></i><span class="t">归档</span></div>
+                      </div>
+                    </div>
+                    <div class="ft">
+                      <button class="btn btn-secondary btn-sm"><svg width="13" height="13"><use href="#i-chat"/></svg>约谈学生</button>
+                      <button class="btn btn-secondary btn-sm"><svg width="13" height="13"><use href="#i-phone"/></svg>联系家长</button>
+                      <div class="sp"></div>
+                      <input class="input" style="width:220px;height:28px;font-size:12px" placeholder="处理意见（必填）">
+                      <button class="btn btn-danger btn-sm">退回补充</button>
+                      <button class="btn btn-primary btn-sm">提交学院</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- 审批助手 -->
+              <aside class="drawer" style="width:300px">
+                <div class="dh"><svg width="16" height="16" style="color:var(--brand-600)"><use href="#i-shield"/></svg><h4>审批助手</h4></div>
+                <div class="db">
+                  <div class="card" style="box-shadow:none">
+                    <div class="cb" style="padding:12px;background:var(--brand-50);border-radius:10px">
+                      <div class="fs12 b" style="color:var(--brand-700)">本页共 3 条</div>
+                      <div class="fs12" style="color:var(--brand-700);opacity:.85;margin-top:3px">其中 1 条已超时，建议优先处理</div>
+                      <button class="btn btn-primary btn-sm mt10" style="width:100%">批量同意（3）</button>
+                    </div>
+                  </div>
+
+                  <div class="subh">学生画像速览</div>
+                  <div class="card" style="box-shadow:none">
+                    <div class="cb" style="padding:12px">
+                      <div class="flex"><div class="av sm">李</div><div class="fs13 b">李浩然</div><span class="tag tag-amber" style="margin-left:auto">预警</span></div>
+                      <div class="mt10"><div class="flex fs12"><span class="muted">近 30 天请假</span><span class="b" style="margin-left:auto">2 次 / 5 天</span></div></div>
+                      <div class="mt6"><div class="flex fs12"><span class="muted">出勤率</span><span class="b" style="margin-left:auto;color:var(--danger)">72%</span></div></div>
+                      <div class="mt6"><div class="flex fs12"><span class="muted">GPA</span><span class="b" style="margin-left:auto">2.11</span></div></div>
+                      <div class="mt6"><div class="flex fs12"><span class="muted">上次谈话</span><span class="b" style="margin-left:auto">21 天前</span></div></div>
+                      <div class="mt10 fs12" style="background:var(--warning-bg);color:#B45309;padding:8px 10px;border-radius:8px">⚠ 请假 3 天将影响 4 节必修课，且该生已有 3 门挂科预警，建议附条件同意。</div>
+                    </div>
+                  </div>
+
+                  <div class="subh">常用审批意见</div>
+                  <div class="col" style="gap:8px">
+                    <div class="file" style="width:100%">同意，请按时返校并补交材料</div>
+                    <div class="file" style="width:100%">同意，返校后请主动补课</div>
+                    <div class="file" style="width:100%">材料不全，请补充后重新提交</div>
+                    <div class="file" style="width:100%">请假时间过长，请家长电话确认</div>
+                    <div class="file" style="width:100%;color:var(--brand-600);border-color:var(--brand-200)"><svg width="12" height="12"><use href="#i-plus"/></svg> 新增常用语</div>
+                  </div>
+
+                  <div class="subh">今日审批效率</div>
+                  <div class="card" style="box-shadow:none">
+                    <div class="cb" style="padding:12px">
+                      <div class="flex"><div><div class="fs12 muted">已处理</div><div class="fs13 b">9 件</div></div><div style="margin-left:auto"><div class="fs12 muted">平均耗时</div><div class="fs13 b">42 秒</div></div></div>
+                      <div class="bar mt10"><i style="width:75%"></i></div>
+                      <div class="fs12 muted mt6">比昨日快 18%，已处理完今日 75% 的申请</div>
+                    </div>
+                  </div>
+                </div>
+              </aside>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    </div>
+    <div class="screen-caption">
+      <div><b>左侧色条分类</b> 蓝=请假 / 绿=奖助贷 / 红=违纪，扫视即分辨</div>
+      <div><b>决策信息前置</b> 学生画像标签、历史请假、影响课程直接印在卡片上</div>
+      <div><b>审批助手常驻</b> 风险提示 + 常用语，减少重复打字</div>
+    </div>
+  </section>
+
+  <!-- ==================== 04 谈心谈话 ==================== -->
+  <section id="talk">
+    <div class="sec-head">
+      <span class="kicker">03 · PC 界面</span>
+      <h2>04 谈心谈话</h2>
+      <p>思政工作的留痕场景，最怕「事后补记录」。所以做成<b>左边看计划与历史、右边直接写</b>的并排结构：点开学生就能录，录完自动进入时间线，并支持设置下次跟进提醒形成闭环。</p>
+    </div>
+    <div class="zoomwrap">
+    <div class="screen">
+      <div class="screen-bar"><i class="dot"></i><i class="dot"></i><i class="dot"></i><span class="title">谈心谈话 · Talk Records</span><span class="right">支持语音转写录入 · 自动生成台账</span></div>
+      <div class="screen-body">
+        <div class="app">
+          <aside class="side">
+            <div class="brand"><div class="lg">学</div><div class="nm">学工<span>Buddy</span></div></div>
+            <div class="nav">
+              <a><svg class="ic" width="18" height="18"><use href="#i-home"/></svg>工作台</a>
+              <a><svg class="ic" width="18" height="18"><use href="#i-users"/></svg>学生管理</a>
+              <a><svg class="ic" width="18" height="18"><use href="#i-check"/></svg>事务审批<span class="badge">12</span></a>
+              <a class="active"><svg class="ic" width="18" height="18"><use href="#i-chat"/></svg>谈心谈话<span class="badge">4</span></a>
+              <a><svg class="ic" width="18" height="18"><use href="#i-bed"/></svg>查寝考勤</a>
+              <div class="sec">专项工作</div>
+              <a><svg class="ic" width="18" height="18"><use href="#i-heart"/></svg>心理预警<span class="badge">3</span></a>
+              <a><svg class="ic" width="18" height="18"><use href="#i-award"/></svg>奖助贷</a>
+              <a><svg class="ic" width="18" height="18"><use href="#i-megaphone"/></svg>通知公告</a>
+              <a><svg class="ic" width="18" height="18"><use href="#i-chart"/></svg>数据报表</a>
+              <div class="sec">工具</div>
+              <a><svg class="ic" width="18" height="18"><use href="#i-link"/></svg>常用网站</a>
+              <a><svg class="ic" width="18" height="18"><use href="#i-file"/></svg>材料归档</a>
+              <a><svg class="ic" width="18" height="18"><use href="#i-setting"/></svg>设置</a>
+            </div>
+            <div class="me"><div class="av">张</div><div><div class="nm">张明老师</div><div class="rl">机械工程学院 · 辅导员</div></div><svg style="margin-left:auto;color:var(--ink-400)" width="16" height="16"><use href="#i-more"/></svg></div>
+          </aside>
+
+          <div class="main">
+            <div class="topbar">
+              <div class="crumb">谈心谈话 / <b>谈话记录</b></div>
+              <div class="search" style="width:200px"><svg width="15" height="15" style="color:var(--ink-400)"><use href="#i-search"/></svg><input placeholder="搜学生 / 关键词"></div>
+              <div class="iconbtn"><svg width="18" height="18"><use href="#i-bell"/></svg><i class="pip"></i></div>
+              <div class="divider-v"></div><div class="av">张</div>
+            </div>
+
+            <div class="page" style="padding:16px">
+              <div class="g2">
+                <!-- 左列 -->
+                <div class="col">
+                  <div class="card">
+                    <div class="ch"><h4>本周谈话计划</h4><span class="tag tag-blue">8 / 12 已完成</span><div class="more">查看学期计划</div></div>
+                    <div class="cb">
+                      <div class="flex" style="gap:14px">
+                        <div style="flex:1">
+                          <div class="flex fs12"><span class="muted">完成进度</span><span class="b" style="margin-left:auto">67%</span></div>
+                          <div class="bar mt6"><i style="width:67%"></i></div>
+                        </div>
+                        <div style="width:1px;height:34px;background:var(--line)"></div>
+                        <div><div class="fs12 muted">逾期未完成</div><div class="fs13 b" style="color:var(--danger)">2 人</div></div>
+                        <div><div class="fs12 muted">本周新增</div><div class="fs13 b">4 条</div></div>
+                      </div>
+                      <div class="flex mt14" style="gap:8px;flex-wrap:wrap">
+                        <span class="tag tag-violet">学业压力 5</span>
+                        <span class="tag tag-red">心理疏导 3</span>
+                        <span class="tag tag-blue">经济困难 2</span>
+                        <span class="tag tag-green">就业指导 1</span>
+                        <span class="tag tag-gray">日常关心 1</span>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="card">
+                    <div class="ch"><h4>谈话记录</h4><div class="seg" style="margin-left:10px"><span class="on">全部</span><span>需跟进</span><span>我的</span></div><div class="more">导出台账</div></div>
+                    <div class="cb" style="padding:16px 18px">
+                      <div class="tl">
+                        <div class="it warn">
+                          <div class="h"><div class="av sm a5" style="display:inline-grid">王</div><span class="n">王雨桐</span><span class="tag tag-red">心理疏导</span><span class="tag tag-amber">需跟进</span><span class="d">今天 15:00 · 面谈</span></div>
+                          <div class="c">情绪较上次明显低落，自述近两周失眠、食欲下降，课程跟不上产生放弃念头。已耐心倾听，肯定其努力，建议前往心理健康中心做专业评估，并约定下周三再谈。已同步心理中心李老师。</div>
+                          <div class="flex mt6" style="gap:6px"><span class="tag tag-gray">时长 42 分钟</span><span class="tag tag-gray">地点：辅导员办公室</span><span class="tag tag-blue">已通知心理中心</span></div>
+                        </div>
+                        <div class="it">
+                          <div class="h"><div class="av sm a3" style="display:inline-grid">李</div><span class="n">李浩然</span><span class="tag tag-violet">学业压力</span><span class="d">4 月 9 日 · 面谈</span></div>
+                          <div class="c">挂科 3 门主要原因集中在高数与制图。已帮其梳理补考时间表，安排班级学霸一对一帮扶，要求每周汇报一次学习进度。</div>
+                          <div class="flex mt6" style="gap:6px"><span class="tag tag-gray">时长 25 分钟</span><span class="tag tag-green">已安排帮扶对子</span></div>
+                        </div>
+                        <div class="it warn">
+                          <div class="h"><div class="av sm a6" style="display:inline-grid">陈</div><span class="n">陈思远</span><span class="tag tag-blue">生活困难</span><span class="tag tag-amber">需跟进</span><span class="d">4 月 7 日 · 线上</span></div>
+                          <div class="c">承认在外兼职送外卖导致晚归，家庭确实存在经济压力。已讲解勤工助学岗位与临时困难补助政策，协助其申请校内图书馆助理岗。</div>
+                          <div class="flex mt6" style="gap:6px"><span class="tag tag-gray">时长 30 分钟</span><span class="tag tag-blue">已推荐勤工助学</span></div>
+                        </div>
+                        <div class="it">
+                          <div class="h"><div class="av sm a4" style="display:inline-grid">赵</div><span class="n">赵梦琪</span><span class="tag tag-violet">学业压力</span><span class="d">4 月 3 日 · 面谈</span></div>
+                          <div class="c">成绩优异但压力大，担心保研。已分享往届数据，建议合理规划，注意休息。状态良好，无需特殊跟进。</div>
+                          <div class="flex mt6" style="gap:6px"><span class="tag tag-gray">时长 20 分钟</span><span class="tag tag-green">状态良好</span></div>
+                        </div>
+                        <div class="it">
+                          <div class="h"><div class="av sm a2" style="display:inline-grid">周</div><span class="n">周子涵</span><span class="tag tag-green">就业指导</span><span class="d">3 月 28 日 · 面谈</span></div>
+                          <div class="c">咨询考研与就业选择。已分析其成绩排名与兴趣方向，建议以保研为主、同步准备秋招。已推荐 3 家对口企业实习信息。</div>
+                          <div class="flex mt6" style="gap:6px"><span class="tag tag-gray">时长 35 分钟</span><span class="tag tag-green">已闭环</span></div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- 右列：新建记录 -->
+                <div class="card" style="align-self:flex-start">
+                  <div class="ch">
+                    <svg width="15" height="15" style="color:var(--brand-600)"><use href="#i-edit"/></svg>
+                    <h4>新建谈话记录</h4>
+                    <div class="more"><svg width="14" height="14"><use href="#i-phone"/></svg></div>
+                  </div>
+                  <div class="cb">
+                    <div class="field"><label>谈话对象 <span style="color:var(--danger)">*</span></label>
+                      <div class="flex" style="gap:8px;padding:7px 10px;border:1px solid var(--brand-400);border-radius:9px;background:var(--brand-50)">
+                        <div class="av sm a5">王</div>
+                        <div style="flex:1"><div class="fs13 b">王雨桐</div><div class="fs11 muted" style="font-size:11px">机制 2301 · 心理关注</div></div>
+                        <span class="tag tag-blue">已选</span>
+                      </div>
+                    </div>
+
+                    <div class="form-row mt10">
+                      <div class="field"><label>谈话日期</label><input class="input" value="2026-04-15"></div>
+                      <div class="field"><label>时长（分钟）</label><input class="input" value="42"></div>
+                    </div>
+
+                    <div class="field mt10"><label>谈话方式</label>
+                      <div class="seg" style="width:100%;display:flex"><span class="on" style="flex:1;text-align:center">面谈</span><span style="flex:1;text-align:center">线上</span><span style="flex:1;text-align:center">电话</span><span style="flex:1;text-align:center">宿舍走访</span></div>
+                    </div>
+
+                    <div class="field mt10"><label>谈话类型</label>
+                      <div class="flex" style="gap:6px;flex-wrap:wrap">
+                        <span class="tag tag-violet" style="height:26px;padding:0 10px">学业压力</span>
+                        <span class="tag tag-red" style="height:26px;padding:0 10px">心理疏导</span>
+                        <span class="tag tag-blue" style="height:26px;padding:0 10px">生活困难</span>
+                        <span class="tag tag-green" style="height:26px;padding:0 10px">就业指导</span>
+                        <span class="tag tag-gray" style="height:26px;padding:0 10px">日常关心</span>
+                      </div>
+                    </div>
+
+                    <div class="field mt10"><label>谈话内容摘要</label>
+                      <textarea class="input" style="height:104px" placeholder="记录学生诉求、情绪状态、你的判断与处理措施…">情绪较上次明显低落，自述近两周失眠、食欲下降…</textarea>
+                      <div class="fs11 muted" style="font-size:11px;text-align:right">已输入 86 字 · 支持语音转写</div>
+                    </div>
+
+                    <div class="field mt10"><label>学生情绪状态</label>
+                      <div class="flex" style="gap:14px">
+                        <span class="fs13 flex" style="gap:5px"><div class="cbx"></div>低落</span>
+                        <span class="fs13 flex" style="gap:5px"><div class="cbx on"></div>平稳</span>
+                        <span class="fs13 flex" style="gap:5px"><div class="cbx"></div>积极</span>
+                        <span class="fs13 flex" style="gap:5px"><div class="cbx"></div>激动</span>
+                      </div>
+                    </div>
+
+                    <div class="field mt10"><label>是否需要跟进</label>
+                      <div class="flex"><div class="switch"></div><span class="fs13" style="color:var(--ink-600)">是 · 并设置下次提醒</span></div>
+                    </div>
+                    <div class="form-row mt10">
+                      <div class="field"><label>下次谈话日期</label><input class="input" value="2026-04-22"></div>
+                      <div class="field"><label>提醒方式</label><select class="input select"><option>站内 + 短信</option></select></div>
+                    </div>
+
+                    <div class="field mt10"><label>附件 / 佐证材料</label>
+                      <div style="border:1.5px dashed var(--line);border-radius:10px;padding:14px;text-align:center;background:#FCFDFF">
+                        <svg width="20" height="20" style="margin:0 auto;color:var(--brand-500)"><use href="#i-plus"/></svg>
+                        <div class="fs12 muted mt6">拖拽或点击上传照片 / 录音</div>
+                      </div>
+                    </div>
+
+                    <div class="flex mt14" style="gap:8px">
+                      <button class="btn btn-secondary" style="flex:1">存为草稿</button>
+                      <button class="btn btn-primary" style="flex:1"><svg width="14" height="14"><use href="#i-check"/></svg>保存记录</button>
+                    </div>
+                    <div class="fs12 muted mt10" style="text-align:center">保存后自动归入学期台账，可一键导出上报</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    </div>
+    <div class="screen-caption">
+      <div><b>录入即归档</b> 表单与时间线同屏，写完立刻能核对，不用切页面</div>
+      <div><b>闭环提醒</b> 「是否需要跟进」打开后自动排下次谈话，避免漏跟</div>
+      <div><b>情绪可统计</b> 结构化字段让期末台账、心理月报自动生成</div>
+    </div>
+  </section>
+
+  <!-- ==================== 05 查寝考勤 ==================== -->
+  <section id="dorm">
+    <div class="sec-head">
+      <span class="kicker">03 · PC 界面</span>
+      <h2>05 查寝考勤</h2>
+      <p>晚间高频、时间紧的操作场景，所以用<b>「宿舍网格 + 颜色状态」</b>替代长名单：一眼看到哪间有问题，点开即处理。顶部汇总数字，底部异常名单，形成「发现 → 核实 → 上报」闭环。</p>
+    </div>
+    <div class="zoomwrap">
+    <div class="screen">
+      <div class="screen-bar"><i class="dot"></i><i class="dot"></i><i class="dot"></i><span class="title">查寝考勤 · Dorm Check</span><span class="right">支持手机端扫码/定位打卡</span></div>
+      <div class="screen-body">
+        <div class="app">
+          <aside class="side">
+            <div class="brand"><div class="lg">学</div><div class="nm">学工<span>Buddy</span></div></div>
+            <div class="nav">
+              <a><svg class="ic" width="18" height="18"><use href="#i-home"/></svg>工作台</a>
+              <a><svg class="ic" width="18" height="18"><use href="#i-users"/></svg>学生管理</a>
+              <a><svg class="ic" width="18" height="18"><use href="#i-check"/></svg>事务审批<span class="badge">12</span></a>
+              <a><svg class="ic" width="18" height="18"><use href="#i-chat"/></svg>谈心谈话<span class="badge gray">4</span></a>
+              <a class="active"><svg class="ic" width="18" height="18"><use href="#i-bed"/></svg>查寝考勤</a>
+              <div class="sec">专项工作</div>
+              <a><svg class="ic" width="18" height="18"><use href="#i-heart"/></svg>心理预警<span class="badge">3</span></a>
+              <a><svg class="ic" width="18" height="18"><use href="#i-award"/></svg>奖助贷</a>
+              <a><svg class="ic" width="18" height="18"><use href="#i-megaphone"/></svg>通知公告</a>
+              <a><svg class="ic" width="18" height="18"><use href="#i-chart"/></svg>数据报表</a>
+              <div class="sec">工具</div>
+              <a><svg class="ic" width="18" height="18"><use href="#i-link"/></svg>常用网站</a>
+              <a><svg class="ic" width="18" height="18"><use href="#i-file"/></svg>材料归档</a>
+              <a><svg class="ic" width="18" height="18"><use href="#i-setting"/></svg>设置</a>
+            </div>
+            <div class="me"><div class="av">张</div><div><div class="nm">张明老师</div><div class="rl">机械工程学院 · 辅导员</div></div><svg style="margin-left:auto;color:var(--ink-400)" width="16" height="16"><use href="#i-more"/></svg></div>
+          </aside>
+
+          <div class="main">
+            <div class="topbar">
+              <div class="crumb">查寝考勤 / <b>宿舍检查</b></div>
+              <div class="chip-school">2026-04-14 23:00 <svg width="12" height="12"><use href="#i-chev"/></svg></div>
+              <div class="search" style="width:180px"><svg width="15" height="15" style="color:var(--ink-400)"><use href="#i-search"/></svg><input placeholder="搜宿舍 / 姓名"></div>
+              <div class="iconbtn"><svg width="18" height="18"><use href="#i-bell"/></svg><i class="pip"></i></div>
+              <div class="divider-v"></div><div class="av">张</div>
+            </div>
+
+            <div class="page" style="padding:16px">
+              <div class="kpis">
+                <div class="kpi"><div class="top"><div class="ic b"><svg width="18" height="18"><use href="#i-users"/></svg></div><div class="lb">应到人数</div></div><div class="n">428 <small>人</small></div><div class="ft">覆盖 3 栋楼 · 108 间宿舍</div></div>
+                <div class="kpi"><div class="top"><div class="ic g"><svg width="18" height="18"><use href="#i-check"/></svg></div><div class="lb">已核实在寝</div></div><div class="n">419 <small>人</small></div><div class="ft">核实率 97.9%</div></div>
+                <div class="kpi"><div class="top"><div class="ic a"><svg width="18" height="18"><use href="#i-clock"/></svg></div><div class="lb">请假 / 走读</div></div><div class="n">6 <small>人</small></div><div class="ft">均已提交审批并备案</div></div>
+                <div class="kpi"><div class="top"><div class="ic v"><svg width="18" height="18"><use href="#i-alert"/></svg></div><div class="lb">异常未归</div></div><div class="n" style="color:var(--danger)">3 <small>人</small></div><div class="ft"><span class="up">较昨日 +2</span> · 需今晚核实</div></div>
+              </div>
+
+              <div class="card mt14">
+                <div class="toolbar">
+                  <div class="seg"><span class="on">梅园 3 号楼</span><span>梅园 4 号楼</span><span>兰园 5 号楼</span></div>
+                  <select class="input select" style="width:96px"><option>4 层</option></select>
+                  <select class="input select" style="width:112px"><option>全部状态</option></select>
+                  <button class="btn btn-ghost btn-sm"><svg width="14" height="14"><use href="#i-cal"/></svg>查看历史</button>
+                  <div class="sp"></div>
+                  <span class="fs12 muted">上次同步：23:04 · 宿管已提交</span>
+                  <button class="btn btn-secondary btn-sm"><svg width="14" height="14"><use href="#i-down"/></svg>导出</button>
+                  <button class="btn btn-primary btn-sm"><svg width="14" height="14"><use href="#i-plus"/></svg>开始查寝</button>
+                </div>
+                <div class="cb">
+                  <div class="flex" style="gap:14px;font-size:12px;color:var(--ink-500);margin-bottom:10px">
+                    <span class="flex" style="gap:5px"><i style="width:10px;height:10px;border-radius:3px;background:var(--success-line);border:1px solid var(--success)"></i>全员在寝</span>
+                    <span class="flex" style="gap:5px"><i style="width:10px;height:10px;border-radius:3px;background:var(--warning-line);border:1px solid var(--warning)"></i>晚归 / 请假</span>
+                    <span class="flex" style="gap:5px"><i style="width:10px;height:10px;border-radius:3px;background:var(--danger-line);border:1px solid var(--danger)"></i>未归 / 缺勤</span>
+                  </div>
+                  <div class="rooms">
+                    <div class="room ok"><div class="rn">3-401 <span class="st">在寝</span></div><div class="mem"><div class="avatars"><div class="av sm">张</div><div class="av sm a2">李</div><div class="av sm a3">王</div><div class="av sm a4">赵</div></div></div></div>
+                    <div class="room ok"><div class="rn">3-402 <span class="st">在寝</span></div><div class="mem"><div class="avatars"><div class="av sm a5">刘</div><div class="av sm a6">陈</div><div class="av sm">周</div><div class="av sm a2">吴</div></div></div></div>
+                    <div class="room abs"><div class="rn">3-403 <span class="st">缺 1</span></div><div class="mem"><div class="avatars"><div class="av sm a3">李</div><div class="av sm a4">孙</div><div class="av sm a5">郑</div></div><span style="color:#B91C1C;font-weight:700">李浩然</span></div></div>
+                    <div class="room ok"><div class="rn">3-404 <span class="st">在寝</span></div><div class="mem"><div class="avatars"><div class="av sm a6">冯</div><div class="av sm">蒋</div><div class="av sm a2">韩</div><div class="av sm a3">杨</div></div></div></div>
+                    <div class="room late"><div class="rn">3-405 <span class="st">晚归</span></div><div class="mem"><div class="avatars"><div class="av sm a4">朱</div><div class="av sm a5">秦</div><div class="av sm a6">许</div></div><span style="color:#B45309;font-weight:700">何 23:40</span></div></div>
+                    <div class="room ok"><div class="rn">3-406 <span class="st">在寝</span></div><div class="mem"><div class="avatars"><div class="av sm">何</div><div class="av sm a2">吕</div><div class="av sm a3">施</div><div class="av sm a4">张</div></div></div></div>
+                    <div class="room late"><div class="rn">3-407 <span class="st">请假</span></div><div class="mem"><div class="avatars"><div class="av sm a5">孔</div><div class="av sm a6">曹</div><div class="av sm">严</div></div><span style="color:#B45309;font-weight:700">华 · 病假</span></div></div>
+                    <div class="room ok"><div class="rn">3-408 <span class="st">在寝</span></div><div class="mem"><div class="avatars"><div class="av sm a2">金</div><div class="av sm a3">魏</div><div class="av sm a4">陶</div><div class="av sm a5">姜</div></div></div></div>
+                    <div class="room abs"><div class="rn">3-409 <span class="st">缺 1</span></div><div class="mem"><div class="avatars"><div class="av sm a6">戚</div><div class="av sm">谢</div><div class="av sm a2">邹</div></div><span style="color:#B91C1C;font-weight:700">陈思远</span></div></div>
+                    <div class="room ok"><div class="rn">3-410 <span class="st">在寝</span></div><div class="mem"><div class="avatars"><div class="av sm a3">喻</div><div class="av sm a4">柏</div><div class="av sm a5">水</div><div class="av sm a6">窦</div></div></div></div>
+                    <div class="room ok"><div class="rn">3-411 <span class="st">在寝</span></div><div class="mem"><div class="avatars"><div class="av sm">章</div><div class="av sm a2">云</div><div class="av sm a3">苏</div><div class="av sm a4">潘</div></div></div></div>
+                    <div class="room abs"><div class="rn">3-412 <span class="st">缺 1</span></div><div class="mem"><div class="avatars"><div class="av sm a5">葛</div><div class="av sm a6">奚</div><div class="av sm">范</div></div><span style="color:#B91C1C;font-weight:700">刘畅</span></div></div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="card mt14">
+                <div class="ch"><h4>异常名单 · 需今晚核实</h4><span class="tag tag-red">3 人</span>
+                  <div class="more">生成违纪上报单</div>
+                </div>
+                <div class="cb" style="padding:0">
+                  <div class="todo">
+                    <div class="av a3">李</div>
+                    <div class="tx"><div class="t">李浩然 <span class="tag tag-amber">学业预警</span><span class="tag tag-red">近 30 天第 2 次</span></div><div class="s">机制 2301 · 梅园 3-403 · 23:40 未归 · 短信已发未回复</div></div>
+                    <button class="btn btn-secondary btn-sm">打电话</button>
+                    <button class="btn btn-primary btn-sm">登记核实</button>
+                  </div>
+                  <div class="todo">
+                    <div class="av a6">陈</div>
+                    <div class="tx"><div class="t">陈思远 <span class="tag tag-amber">上月已通报 1 次</span></div><div class="s">机制 2301 · 梅园 3-409 · 23:40 未归 · 电话未接通</div></div>
+                    <button class="btn btn-secondary btn-sm">打电话</button>
+                    <button class="btn btn-primary btn-sm">登记核实</button>
+                  </div>
+                  <div class="todo">
+                    <div class="av a4">刘</div>
+                    <div class="tx"><div class="t">刘畅 <span class="tag tag-amber">学业预警</span></div><div class="s">机制 2301 · 梅园 3-412 · 23:40 未归 · 室友称去图书馆</div></div>
+                    <button class="btn btn-secondary btn-sm">打电话</button>
+                    <button class="btn btn-primary btn-sm">登记核实</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    </div>
+    <div class="screen-caption">
+      <div><b>网格化呈现</b> 108 间宿舍压缩成一屏，异常房间自动置顶标红</div>
+      <div><b>三色语义</b> 绿=在寝 / 黄=晚归请假 / 红=未归，夜间扫视零学习成本</div>
+      <div><b>异常闭环</b> 底部名单直接打电话、登记核实、一键生成违纪单</div>
+    </div>
+  </section>
+
+  <!-- ==================== 06 常用网站导航 ==================== -->
+  <section id="links">
+    <div class="sec-head">
+      <span class="kicker">03 · PC 界面</span>
+      <h2>06 常用网站导航</h2>
+      <p>辅导员每天要在教务、学工、财务、宿管、心理等七八个系统之间来回跳。这一页把散落各处的入口收拢成<b>可自定义、按使用频率排序的导航台</b>，支持加自建链接与团队共享，减少「找系统」的时间。</p>
+    </div>
+    <div class="zoomwrap">
+    <div class="screen">
+      <div class="screen-bar"><i class="dot"></i><i class="dot"></i><i class="dot"></i><span class="title">常用网站 · Shortcuts</span><span class="right">支持拖拽排序 / 团队共享分组</span></div>
+      <div class="screen-body" style="height:700px">
+        <div class="app">
+          <aside class="side">
+            <div class="brand"><div class="lg">学</div><div class="nm">学工<span>Buddy</span></div></div>
+            <div class="nav">
+              <a><svg class="ic" width="18" height="18"><use href="#i-home"/></svg>工作台</a>
+              <a><svg class="ic" width="18" height="18"><use href="#i-users"/></svg>学生管理</a>
+              <a><svg class="ic" width="18" height="18"><use href="#i-check"/></svg>事务审批<span class="badge">12</span></a>
+              <a><svg class="ic" width="18" height="18"><use href="#i-chat"/></svg>谈心谈话<span class="badge gray">4</span></a>
+              <a><svg class="ic" width="18" height="18"><use href="#i-bed"/></svg>查寝考勤</a>
+              <div class="sec">专项工作</div>
+              <a><svg class="ic" width="18" height="18"><use href="#i-heart"/></svg>心理预警<span class="badge">3</span></a>
+              <a><svg class="ic" width="18" height="18"><use href="#i-award"/></svg>奖助贷</a>
+              <a><svg class="ic" width="18" height="18"><use href="#i-megaphone"/></svg>通知公告</a>
+              <a><svg class="ic" width="18" height="18"><use href="#i-chart"/></svg>数据报表</a>
+              <div class="sec">工具</div>
+              <a class="active"><svg class="ic" width="18" height="18"><use href="#i-link"/></svg>常用网站</a>
+              <a><svg class="ic" width="18" height="18"><use href="#i-file"/></svg>材料归档</a>
+              <a><svg class="ic" width="18" height="18"><use href="#i-setting"/></svg>设置</a>
+            </div>
+            <div class="me"><div class="av">张</div><div><div class="nm">张明老师</div><div class="rl">机械工程学院 · 辅导员</div></div><svg style="margin-left:auto;color:var(--ink-400)" width="16" height="16"><use href="#i-more"/></svg></div>
+          </aside>
+
+          <div class="main">
+            <div class="topbar">
+              <div class="crumb">工具 / <b>常用网站</b></div>
+              <div class="search" style="width:200px"><svg width="15" height="15" style="color:var(--ink-400)"><use href="#i-search"/></svg><input placeholder="搜索网站名称"></div>
+              <div class="iconbtn"><svg width="18" height="18"><use href="#i-bell"/></svg><i class="pip"></i></div>
+              <div class="divider-v"></div><div class="av">张</div>
+            </div>
+
+            <div class="page" style="padding:16px">
+              <div class="tabs" style="padding:0 4px;background:transparent;border:0;margin-bottom:14px">
+                <span class="t on">全部 <span class="cnt">18</span></span>
+                <span class="t">教务教学 <span class="cnt">5</span></span>
+                <span class="t">学工团学 <span class="cnt">4</span></span>
+                <span class="t">后勤宿管 <span class="cnt">3</span></span>
+                <span class="t">财务资助 <span class="cnt">3</span></span>
+                <span class="t">我的收藏 <span class="cnt">6</span></span>
+                <div style="margin-left:auto" class="flex">
+                  <button class="btn btn-secondary btn-sm"><svg width="14" height="14"><use href="#i-grid"/></svg>排序：使用频率</button>
+                  <button class="btn btn-primary btn-sm"><svg width="14" height="14"><use href="#i-plus"/></svg>添加网站</button>
+                </div>
+              </div>
+
+              <div class="links">
+                <div class="link"><div class="ic" style="background:linear-gradient(135deg,#3B82F6,#1D4ED8)">教</div><div><div class="t">教务管理系统</div><div class="d">排课 · 成绩录入 · 学籍异动</div></div><svg class="star on" width="14" height="14"><use href="#i-star"/></svg></div>
+                <div class="link"><div class="ic" style="background:linear-gradient(135deg,#0EA5A4,#0F766E)">学</div><div><div class="t">学工管理系统</div><div class="d">上级平台 · 数据上报 · 考核</div></div><svg class="star on" width="14" height="14"><use href="#i-star"/></svg></div>
+                <div class="link"><div class="ic" style="background:linear-gradient(135deg,#7C3AED,#5B21B6)">财</div><div><div class="t">财务缴费平台</div><div class="d">学费缴纳 · 奖助发放记录</div></div><svg class="star" width="14" height="14"><use href="#i-star"/></svg></div>
+                <div class="link"><div class="ic" style="background:linear-gradient(135deg,#F59E0B,#D97706)">心</div><div><div class="t">心理健康中心</div><div class="d">心理测评 · 咨询预约 · 转介</div></div><svg class="star on" width="14" height="14"><use href="#i-star"/></svg></div>
+                <div class="link"><div class="ic" style="background:linear-gradient(135deg,#16A34A,#15803D)">宿</div><div><div class="t">宿舍管理平台</div><div class="d">住宿分配 · 调宿 · 报修</div></div><svg class="star" width="14" height="14"><use href="#i-star"/></svg></div>
+                <div class="link"><div class="ic" style="background:linear-gradient(135deg,#64748B,#334155)">图</div><div><div class="t">图书馆系统</div><div class="d">借阅查询 · 自习室预约</div></div><svg class="star" width="14" height="14"><use href="#i-star"/></svg></div>
+                <div class="link"><div class="ic" style="background:linear-gradient(135deg,#EF4444,#B91C1C)">团</div><div><div class="t">智慧团建</div><div class="d">团员管理 · 组织关系转接</div></div><svg class="star" width="14" height="14"><use href="#i-star"/></svg></div>
+                <div class="link"><div class="ic" style="background:linear-gradient(135deg,#3B82F6,#0EA5A4)">就</div><div><div class="t">就业信息网</div><div class="d">招聘信息 · 三方协议 · 派遣</div></div><svg class="star on" width="14" height="14"><use href="#i-star"/></svg></div>
+                <div class="link"><div class="ic" style="background:linear-gradient(135deg,#F59E0B,#EF4444)">资</div><div><div class="t">资助管理系统</div><div class="d">助学金 · 助学贷款 · 勤工助学</div></div><svg class="star on" width="14" height="14"><use href="#i-star"/></svg></div>
+                <div class="link"><div class="ic" style="background:linear-gradient(135deg,#7C3AED,#3B82F6)">党</div><div><div class="t">党建信息平台</div><div class="d">党员发展 · 组织生活记录</div></div><svg class="star" width="14" height="14"><use href="#i-star"/></svg></div>
+                <div class="link"><div class="ic" style="background:linear-gradient(135deg,#0EA5A4,#16A34A)">保</div><div><div class="t">医保与保险</div><div class="d">参保登记 · 理赔进度</div></div><svg class="star" width="14" height="14"><use href="#i-star"/></svg></div>
+                <div class="link"><div class="ic" style="background:linear-gradient(135deg,#16A34A,#0EA5A4)">考</div><div><div class="t">考务与四六级</div><div class="d">报名 · 考场编排 · 成绩</div></div><svg class="star" width="14" height="14"><use href="#i-star"/></svg></div>
+                <div class="link" style="border:1.5px dashed var(--brand-300);background:var(--brand-50);display:flex;align-items:center;justify-content:center;flex-direction:column;gap:6px;min-height:74px">
+                  <svg width="20" height="20" style="color:var(--brand-600)"><use href="#i-plus"/></svg>
+                  <div class="fs12 b" style="color:var(--brand-700)">添加自定义网站</div>
+                </div>
+              </div>
+
+              <div class="card mt14">
+                <div class="ch"><h4>团队共享分组</h4><div class="more">申请加入</div></div>
+                <div class="cb">
+                  <div class="flex" style="gap:10px;flex-wrap:wrap">
+                    <div class="file" style="height:auto;padding:9px 12px"><div class="ic" style="background:var(--brand-50);color:var(--brand-600)">机</div><div><div class="b fs12">机械工程学院常用</div><div class="fs12 muted">18 个网站 · 12 人使用</div></div></div>
+                    <div class="file" style="height:auto;padding:9px 12px"><div class="ic" style="background:var(--success-bg);color:var(--success)">新</div><div><div class="b fs12">新辅导员必备</div><div class="fs12 muted">9 个网站 · 由学工处维护</div></div></div>
+                    <div class="file" style="height:auto;padding:9px 12px"><div class="ic" style="background:var(--violet-50);color:var(--violet-500)">期</div><div><div class="b fs12">期末工作专用</div><div class="fs12 muted">7 个网站 · 6 人使用</div></div></div>
+                  </div>
+                  <div class="fs12 muted mt10">提示：把分组共享给同院系同事，新辅导员入职即可一键导入全部入口，不用再一个个问。</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    </div>
+    <div class="screen-caption">
+      <div><b>渐变图标块</b> 用首字 + 渐变色块做标识，比通用图标更好认</div>
+      <div><b>频率排序</b> 默认按最近 7 天访问排序，常用系统永远在前排</div>
+      <div><b>团队共享</b> 一个分组解决「新辅导员不知道有哪些系统」的痛点</div>
+    </div>
+  </section>
+
+  <!-- ==================== 07 移动端 ==================== -->
+  <section id="mobile">
+    <div class="sec-head">
+      <span class="kicker">04 · 移动端</span>
+      <h2>07 手机端关键页</h2>
+      <p>手机端不做 PC 的等比缩小，而是<b>只保留随时随地的三件事：看待办、秒审批、现场打卡</b>。底部五宫格 Tab 常驻，审批页把操作按钮固定在底部拇指区，查寝页支持扫码／定位打卡。</p>
+    </div>
+
+    <div class="phones">
+      <!-- 手机 1：首页 -->
+      <div>
+        <div class="phone">
+          <div class="notch">9:41 <span class="dots"><i></i><i></i><i></i></span></div>
+          <div class="pbody">
+            <div class="m-top">
+              <div class="r1"><div class="av sm" style="border:1.5px solid rgba(255,255,255,.5)">张</div><div class="n">张老师，早上好</div><div class="b">第 4 周 · 周三</div></div>
+              <div class="r2">今天有 22 项待办，其中 1 项已超时</div>
+            </div>
+            <div class="m-kpis">
+              <div class="m-kpi"><div class="n" style="color:var(--brand-600)">12</div><div class="l">待审批</div></div>
+              <div class="m-kpi"><div class="n">5</div><div class="l">待谈话</div></div>
+              <div class="m-kpi"><div class="n" style="color:var(--danger)">3</div><div class="l">考勤异常</div></div>
+              <div class="m-kpi"><div class="n">2</div><div class="l">待交材料</div></div>
+            </div>
+            <div class="m-sec" style="padding-top:0">
+              <div class="m-card">
+                <div class="h">快捷操作 <span class="m">自定义</span></div>
+                <div class="m-quick">
+                  <div class="m-qi"><div class="ic" style="background:var(--brand-50);color:var(--brand-600)"><svg width="17" height="17"><use href="#i-check"/></svg></div><div class="t">审批</div></div>
+                  <div class="m-qi"><div class="ic" style="background:var(--violet-50);color:var(--violet-500)"><svg width="17" height="17"><use href="#i-chat"/></svg></div><div class="t">谈话</div></div>
+                  <div class="m-qi"><div class="ic" style="background:var(--success-bg);color:var(--success)"><svg width="17" height="17"><use href="#i-bed"/></svg></div><div class="t">查寝</div></div>
+                  <div class="m-qi"><div class="ic" style="background:var(--amber-50);color:var(--amber-500)"><svg width="17" height="17"><use href="#i-megaphone"/></svg></div><div class="t">通知</div></div>
+                  <div class="m-qi"><div class="ic" style="background:var(--brand-50);color:var(--brand-600)"><svg width="17" height="17"><use href="#i-users"/></svg></div><div class="t">学生</div></div>
+                  <div class="m-qi"><div class="ic" style="background:var(--danger-bg);color:var(--danger)"><svg width="17" height="17"><use href="#i-heart"/></svg></div><div class="t">预警</div></div>
+                  <div class="m-qi"><div class="ic" style="background:var(--teal-50);color:var(--teal-500)"><svg width="17" height="17"><use href="#i-award"/></svg></div><div class="t">奖助</div></div>
+                  <div class="m-qi"><div class="ic" style="background:var(--fill);color:var(--ink-600)"><svg width="17" height="17"><use href="#i-grid"/></svg></div><div class="t">全部</div></div>
+                </div>
+              </div>
+              <div class="m-card">
+                <div class="h">今日待办 <span class="m">全部 22</span></div>
+                <div class="m-todo"><div class="ic" style="background:var(--brand-50);color:var(--brand-600)"><svg width="14" height="14"><use href="#i-check"/></svg></div><div style="flex:1"><div class="t">12 条请假待审批 <span class="tag tag-red">超时</span></div><div class="s">最早提交于 2 天前</div></div><svg width="14" height="14" style="color:var(--ink-300)"><use href="#i-chev"/></svg></div>
+                <div class="m-todo"><div class="ic" style="background:var(--violet-50);color:var(--violet-500)"><svg width="14" height="14"><use href="#i-chat"/></svg></div><div style="flex:1"><div class="t">与王雨桐谈心谈话</div><div class="s">今天 15:00 · 心理中心建议</div></div><svg width="14" height="14" style="color:var(--ink-300)"><use href="#i-chev"/></svg></div>
+                <div class="m-todo"><div class="ic" style="background:var(--warning-bg);color:var(--warning)"><svg width="14" height="14"><use href="#i-bed"/></svg></div><div style="flex:1"><div class="t">3 人昨晚未归需核实</div><div class="s">今晚 20:00 前处理</div></div><svg width="14" height="14" style="color:var(--ink-300)"><use href="#i-chev"/></svg></div>
+                <div class="m-todo"><div class="ic" style="background:var(--success-bg);color:var(--success)"><svg width="14" height="14"><use href="#i-award"/></svg></div><div style="flex:1"><div class="t">助学金名单公示</div><div class="s">明天 12:00 截止</div></div><svg width="14" height="14" style="color:var(--ink-300)"><use href="#i-chev"/></svg></div>
+              </div>
+              <div class="m-card">
+                <div class="h">重点关注 <span class="m">23 人</span></div>
+                <div class="m-todo"><div class="av sm a5">王</div><div style="flex:1"><div class="t">王雨桐</div><div class="s">心理高风险 · 14 天未约谈</div></div><button class="btn btn-soft btn-sm">约谈</button></div>
+                <div class="m-todo"><div class="av sm a3">李</div><div style="flex:1"><div class="t">李浩然</div><div class="s">学业预警 · 连续 2 次未归</div></div><button class="btn btn-soft btn-sm">约谈</button></div>
+              </div>
+            </div>
+            <div class="m-fab"><svg width="22" height="22"><use href="#i-plus"/></svg></div>
+            <div class="m-tabbar">
+              <div class="tb on"><svg width="19" height="19"><use href="#i-home"/></svg>首页</div>
+              <div class="tb"><svg width="19" height="19"><use href="#i-check"/></svg>审批</div>
+              <div class="tb"><svg width="19" height="19"><use href="#i-bed"/></svg>查寝</div>
+              <div class="tb"><svg width="19" height="19"><use href="#i-bell"/></svg>消息</div>
+              <div class="tb"><svg width="19" height="19"><use href="#i-users"/></svg>我的</div>
+            </div>
+          </div>
+        </div>
+        <div class="fs12 muted mt10" style="text-align:center">① 首页 · 待办驱动</div>
+      </div>
+
+      <!-- 手机 2：审批详情 -->
+      <div>
+        <div class="phone">
+          <div class="notch">9:41 <span class="dots"><i></i><i></i><i></i></span></div>
+          <div class="pbody">
+            <div class="m-nav"><svg width="18" height="18" style="color:var(--ink-600)"><use href="#i-chev" transform="rotate(180 12 12)"/></svg><div class="t">请假审批详情</div><svg width="16" height="16" style="color:var(--ink-400)"><use href="#i-more"/></svg></div>
+            <div class="m-sec">
+              <div class="m-card" style="padding:14px">
+                <div class="flex">
+                  <div class="av">李</div>
+                  <div style="flex:1"><div class="fs13 b">李浩然</div><div class="fs11 muted">2023010108 · 机制 2301</div></div>
+                  <span class="tag tag-red">超时 26h</span>
+                </div>
+                <div class="flex mt10" style="gap:6px;flex-wrap:wrap">
+                  <span class="tag tag-amber">学业预警</span><span class="tag tag-amber">近 30 天请假 2 次</span><span class="tag tag-gray">出勤 72%</span>
+                </div>
+              </div>
+
+              <div class="m-card" style="padding:14px">
+                <div class="h" style="margin-bottom:10px">请假信息</div>
+                <div class="flex" style="margin-bottom:9px"><span class="fs12 muted" style="width:70px">类型</span><span class="fs12 b">病假</span></div>
+                <div class="flex" style="margin-bottom:9px"><span class="fs12 muted" style="width:70px">时间</span><span class="fs12 b">4/14 08:00 – 4/16 22:00</span></div>
+                <div class="flex" style="margin-bottom:9px"><span class="fs12 muted" style="width:70px">时长</span><span class="fs12 b" style="color:var(--warning)">3 天（含 2 教学日）</span></div>
+                <div class="flex" style="margin-bottom:9px"><span class="fs12 muted" style="width:70px">影响课程</span><span class="fs12 b">高数、制图 共 4 节</span></div>
+                <div class="flex"><span class="fs12 muted" style="width:70px">联系方式</span><span class="fs12 b">137****2233</span></div>
+                <div style="background:var(--fill);border-radius:9px;padding:10px;margin-top:10px" class="fs12">
+                  请假事由：感冒发烧，校医院建议居家休息三天，返校后补交病假条。家长已知情。
+                </div>
+                <div class="files"><div class="file"><i class="ic">JPG</i>诊断证明.jpg</div><div class="file"><i class="ic">PDF</i>申请表.pdf</div></div>
+              </div>
+
+              <div class="m-card" style="padding:14px">
+                <div class="h" style="margin-bottom:10px">审批流程</div>
+                <div class="steps" style="margin-top:0;flex-wrap:wrap">
+                  <div class="s"><i class="d done"></i><span class="t done">学生提交</span></div><i class="ln done"></i>
+                  <div class="s"><i class="d now"></i><span class="t now">辅导员审核</span></div><i class="ln"></i>
+                  <div class="s"><i class="d todo"></i><span class="t">学院备案</span></div>
+                </div>
+                <div class="fs12 mt10" style="background:var(--warning-bg);color:#B45309;padding:9px 10px;border-radius:9px">
+                  ⚠ 该生已有 3 门挂科预警，建议附条件同意并要求补课。
+                </div>
+              </div>
+            </div>
+            <div class="m-btnbar">
+              <button class="btn btn-secondary">驳回</button>
+              <button class="btn btn-primary">同意</button>
+            </div>
+          </div>
+        </div>
+        <div class="fs12 muted mt10" style="text-align:center">② 审批详情 · 底部拇指操作区</div>
+      </div>
+
+      <!-- 手机 3：查寝打卡 -->
+      <div>
+        <div class="phone">
+          <div class="notch">23:04 <span class="dots"><i></i><i></i><i></i></span></div>
+          <div class="pbody">
+            <div class="m-nav"><svg width="18" height="18" style="color:var(--ink-600)"><use href="#i-chev" transform="rotate(180 12 12)"/></svg><div class="t">查寝打卡</div><span class="tag tag-blue">梅园 3 号楼</span></div>
+            <div class="m-sec">
+              <div class="m-card" style="padding:14px">
+                <div class="flex">
+                  <div style="flex:1"><div class="fs12 muted">已核实 / 应到</div><div class="fs13 b">105 / 108 间</div></div>
+                  <div style="flex:1"><div class="fs12 muted">异常</div><div class="fs13 b" style="color:var(--danger)">3 人未归</div></div>
+                </div>
+                <div class="bar mt10"><i style="width:97%"></i></div>
+                <div class="fs12 muted mt6">核实率 97% · 还剩 3 间未打卡</div>
+              </div>
+
+              <div class="m-card" style="padding:12px">
+                <div class="h" style="margin-bottom:8px">待打卡宿舍</div>
+                <div class="room abs" style="margin-bottom:8px">
+                  <div class="rn">3-403 <span class="st">缺 1</span></div>
+                  <div class="mem"><div class="avatars"><div class="av sm a3">李</div><div class="av sm a4">孙</div><div class="av sm a5">郑</div></div><span style="color:#B91C1C;font-weight:700;margin-left:auto">李浩然</span></div>
+                  <div class="flex mt6" style="gap:6px"><button class="btn btn-secondary btn-sm" style="flex:1">未归</button><button class="btn btn-primary btn-sm" style="flex:1">在寝</button></div>
+                </div>
+                <div class="room late" style="margin-bottom:8px">
+                  <div class="rn">3-405 <span class="st">晚归</span></div>
+                  <div class="mem"><div class="avatars"><div class="av sm a4">朱</div><div class="av sm a5">秦</div><div class="av sm a6">许</div></div><span style="color:#B45309;font-weight:700;margin-left:auto">何 23:40</span></div>
+                  <div class="flex mt6" style="gap:6px"><button class="btn btn-secondary btn-sm" style="flex:1">晚归</button><button class="btn btn-primary btn-sm" style="flex:1">在寝</button></div>
+                </div>
+                <div class="room ok">
+                  <div class="rn">3-408 <span class="st">已打卡</span></div>
+                  <div class="mem"><div class="avatars"><div class="av sm a2">金</div><div class="av sm a3">魏</div><div class="av sm a4">陶</div><div class="av sm a5">姜</div></div><span style="color:#15803D;font-weight:700;margin-left:auto">✓ 23:02</span></div>
+                </div>
+              </div>
+
+              <div class="m-card" style="padding:12px">
+                <div class="h" style="margin-bottom:8px">快捷操作</div>
+                <div class="m-quick" style="grid-template-columns:repeat(3,1fr)">
+                  <div class="m-qi"><div class="ic" style="background:var(--brand-50);color:var(--brand-600)"><svg width="17" height="17"><use href="#i-grid"/></svg></div><div class="t">扫码打卡</div></div>
+                  <div class="m-qi"><div class="ic" style="background:var(--brand-50);color:var(--brand-600)"><svg width="17" height="17"><use href="#i-shield"/></svg></div><div class="t">定位打卡</div></div>
+                  <div class="m-qi"><div class="ic" style="background:var(--amber-50);color:var(--amber-500)"><svg width="17" height="17"><use href="#i-megaphone"/></svg></div><div class="t">通知楼长</div></div>
+                </div>
+              </div>
+            </div>
+            <div class="m-tabbar">
+              <div class="tb"><svg width="19" height="19"><use href="#i-home"/></svg>首页</div>
+              <div class="tb"><svg width="19" height="19"><use href="#i-check"/></svg>审批</div>
+              <div class="tb on"><svg width="19" height="19"><use href="#i-bed"/></svg>查寝</div>
+              <div class="tb"><svg width="19" height="19"><use href="#i-bell"/></svg>消息</div>
+              <div class="tb"><svg width="19" height="19"><use href="#i-users"/></svg>我的</div>
+            </div>
+          </div>
+        </div>
+        <div class="fs12 muted mt10" style="text-align:center">③ 查寝打卡 · 现场单手操作</div>
+      </div>
+    </div>
+
+    <div class="screen-caption mt14">
+      <div><b>不做等比缩放</b> 手机端只留 3 个高频场景，复杂表格与台账留在 PC</div>
+      <div><b>拇指操作区</b> 审批同意/驳回固定底部，查寝打卡按钮放大到 40px</div>
+      <div><b>夜间友好</b> 查寝场景建议提供深色模式，避免走廊刺眼</div>
+    </div>
+  </section>
+
+  <!-- ==================== 收尾 ==================== -->
+  <section id="next">
+    <div class="sec-head">
+      <span class="kicker">05 · 下一步</span>
+      <h2>落地建议</h2>
+      <p>这套稿子可以直接交给前端还原，也可以先拿去和辅导员做一次可用性走查。几个建议先定的事情：</p>
+    </div>
+    <div class="grid-tokens">
+      <div class="panel">
+        <h3>① 先把 tokens 落地成 CSS 变量</h3>
+        <p class="fs13 muted">本稿所有颜色都来自 <span class="b">styles.css 里的 :root 变量</span>。前端接入时直接复用，后续换主题（比如开学季换暖色）只改一处。</p>
+      </div>
+      <div class="panel">
+        <h3>② 建立图标与插画规范</h3>
+        <p class="fs13 muted">统一 2px 描边、24px 网格、圆头圆角。空状态建议做一组「校园生活」插画（宿舍、图书馆、操场），比通用插画更有归属感。</p>
+      </div>
+      <div class="panel">
+        <h3>③ 关键路径做一次真人走查</h3>
+        <p class="fs13 muted">找 2–3 位一线辅导员，用真实数据跑「审批一张假条」「录入一次谈话」「查一次寝」三个任务，记录卡点再改，比评审会更有效。</p>
+      </div>
+      <div class="panel">
+        <h3>④ 深色模式优先级</h3>
+        <p class="fs13 muted">查寝场景多在夜间使用，建议移动端单独提供深色模式；PC 端可延后。</p>
+      </div>
+    </div>
+  </section>
+
+  </main>
+</div>
+
+<footer style="padding:26px 32px;border-top:1px solid var(--line);color:var(--ink-400);font-size:12px;background:#fff">
+  学工 Buddy · 前端视觉设计方案 v1.0 — PC 为主、移动端适配 · 校园蓝主题
+</footer>
+
+</body>
+</html>

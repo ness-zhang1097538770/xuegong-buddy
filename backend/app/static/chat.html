@@ -1,0 +1,1015 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>学工Buddy · V0.2</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<svg style="display:none" xmlns="http://www.w3.org/2000/svg">
+<symbol id="i-home" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 10.5 12 3l9 7.5"/><path d="M5 9.5V21h14V9.5"/><path d="M9.5 21v-6h5v6"/></symbol>
+<symbol id="i-chat" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.4 8.4 0 0 1-9 8.4 8.5 8.5 0 0 1-3.8-.9L3 20.5l1.5-4.2A8.4 8.4 0 0 1 12 3.1a8.4 8.4 0 0 1 9 8.4z"/></symbol>
+<symbol id="i-file" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"/><path d="M14 3v5h5"/></symbol>
+<symbol id="i-grid" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="3" width="7" height="7" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/><rect x="14" y="14" width="7" height="7" rx="1.5"/></symbol>
+<symbol id="i-setting" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.7 1.7 0 0 0 .3 1.9l.1.1a2 2 0 1 1-2.8 2.8l-.1-.1a1.7 1.7 0 0 0-2.9 1.2V21a2 2 0 1 1-4 0v-.1A1.7 1.7 0 0 0 7 19.4a1.7 1.7 0 0 0-1.9.3l-.1.1a2 2 0 1 1-2.8-2.8l.1-.1a1.7 1.7 0 0 0-1.2-2.9H1a2 2 0 1 1 0-4h.1A1.7 1.7 0 0 0 2.6 7a1.7 1.7 0 0 0-.3-1.9l-.1-.1a2 2 0 1 1 2.8-2.8l.1.1A1.7 1.7 0 0 0 8 2.6h.1A1.7 1.7 0 0 0 9.3 1V1a2 2 0 1 1 4 0v.1a1.7 1.7 0 0 0 2.9 1.2 1.7 1.7 0 0 0 1.9-.3l.1-.1a2 2 0 1 1 2.8 2.8l-.1.1a1.7 1.7 0 0 0 1.2 2.9H23a2 2 0 1 1 0 4h-.1a1.7 1.7 0 0 0-1.5 1z"/></symbol>
+<symbol id="i-search" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/></symbol>
+<symbol id="i-plus" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M5 12h14"/></symbol>
+<symbol id="i-send" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 2 11 13"/><path d="M22 2l-7 20-4-9-9-4 20-7z"/></symbol>
+<symbol id="i-down" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><path d="M7 10l5 5 5-5"/><path d="M12 15V3"/></symbol>
+<symbol id="i-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></symbol>
+<symbol id="i-users" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></symbol>
+<symbol id="i-brain" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 4a3 3 0 0 0-3 3c0 1 .5 2 1 3H7a3 3 0 0 0-3 3"/><path d="M12 4a3 3 0 0 1 3 3c0 1-.5 2-1 3h3a3 3 0 0 1 3 3"/><path d="M6 13v2a2 2 0 0 0 2 2h1a2 2 0 0 0 1.5-.7l.5-.6"/><path d="M18 13v2a2 2 0 0 1-2 2h-1a2 2 0 0 1-1.5-.7l-.5-.6"/><circle cx="12" cy="17" r="1"/></symbol>
+<symbol id="i-edit" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 4H4v16h16v-7"/><path d="M18.5 2.5a2.1 2.1 0 0 1 3 3L12 15l-4 1 1-4z"/></symbol>
+<symbol id="i-link" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.5.5l3-3a5 5 0 0 0-7-7l-1.7 1.7"/><path d="M14 11a5 5 0 0 0-7.5-.5l-3 3a5 5 0 0 0 7 7l1.7-1.7"/></symbol>
+<symbol id="i-chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></symbol>
+<symbol id="i-alert" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10.3 3.8 1.8 18a2 2 0 0 0 1.7 3h17a2 2 0 0 0 1.7-3L13.7 3.8a2 2 0 0 0-3.4 0z"/><path d="M12 9v4"/><path d="M12 17h.01"/></symbol>
+<symbol id="i-bed" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 18v-7a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v7"/><path d="M2 14h20"/><path d="M6 9V6a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1v3"/></symbol>
+<symbol id="i-bell" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.7 21a2 2 0 0 1-3.4 0"/></symbol>
+</svg>
+
+<!-- 登录覆盖层 -->
+<div id="login-overlay" style="position:fixed;inset:0;z-index:100;background:var(--bg);display:flex;align-items:center;justify-content:center">
+  <div style="width:400px;max-width:90vw">
+    <div style="text-align:center;margin-bottom:24px">
+      <div style="width:52px;height:52px;margin:0 auto 12px;border-radius:12px;background:linear-gradient(135deg,var(--brand-600),var(--teal-500));color:#fff;display:flex;align-items:center;justify-content:center;font-size:24px;font-weight:700">学</div>
+      <h2 style="font-size:20px;font-weight:700;color:var(--ink-900)">学工Buddy</h2>
+      <p style="font-size:13px;color:var(--ink-400);margin-top:4px">辅导员 · 高校行政 AI 助手</p>
+    </div>
+    <div class="card">
+      <div class="tabs" style="margin-bottom:0">
+        <span class="t on" id="auth-tab-login" onclick="switchAuthTab('login')">登录</span>
+        <span class="t" id="auth-tab-register" onclick="switchAuthTab('register')">注册</span>
+      </div>
+      <div class="cb">
+        <div id="login-form">
+          <div class="field" style="margin-bottom:10px"><label>邮箱</label><input class="input" type="email" id="login-email" placeholder="请输入邮箱"></div>
+          <div class="field" style="margin-bottom:14px"><label>密码</label><input class="input" type="password" id="login-password" placeholder="请输入密码"></div>
+          <button class="btn btn-primary btn-lg" style="width:100%;justify-content:center" onclick="doLogin()">登录</button>
+          <p class="text-sm" style="color:var(--danger);margin-top:8px;display:none" id="login-error"></p>
+        </div>
+        <div id="register-form" style="display:none">
+          <div class="field" style="margin-bottom:10px"><label>邮箱</label><input class="input" type="email" id="reg-email" placeholder="请输入邮箱"></div>
+          <div class="field" style="margin-bottom:10px"><label>密码</label><input class="input" type="password" id="reg-password" placeholder="至少6位"></div>
+          <div class="field" style="margin-bottom:14px"><label>邀请码</label><input class="input" type="text" id="reg-invite-code" placeholder="请输入邀请码"></div>
+          <button class="btn btn-primary btn-lg" style="width:100%;justify-content:center" onclick="doRegister()">注册</button>
+          <p class="text-sm" style="color:var(--danger);margin-top:8px;display:none" id="reg-error"></p>
+          <p class="text-sm" style="color:var(--success);margin-top:8px;display:none" id="reg-success"></p>
+        </div>
+      </div>
+    </div>
+    <div class="disclaimer" style="text-align:center;margin-top:12px">
+      ⚠️ AI输出仅为草稿，涉及学生/思政/危机材料必须人工复核
+    </div>
+  </div>
+</div>
+
+<!-- 主应用 -->
+<div class="app" id="main-app" style="display:none">
+
+  <!-- 侧边栏 -->
+  <aside class="side">
+    <div class="brand">
+      <div class="lg">学</div>
+      <div class="nm">学工<span>Buddy</span></div>
+    </div>
+    <nav class="nav">
+      <div class="sec">办理</div>
+      <a class="active" data-tab="home" onclick="switchNav('home')">
+        <svg class="ic" width="17" height="17"><use href="#i-home"/></svg>工作台首页
+      </a>
+      <a data-tab="students" onclick="switchNav('students')">
+        <svg class="ic" width="17" height="17"><use href="#i-users"/></svg>学生档案
+      </a>
+      <a data-tab="talks" onclick="switchNav('talks')">
+        <svg class="ic" width="17" height="17"><use href="#i-chat"/></svg>谈心谈话
+      </a>
+      <a data-tab="dorm" onclick="switchNav('dorm')">
+        <svg class="ic" width="17" height="17"><use href="#i-bed"/></svg>查寝考勤
+      </a>
+      <div class="sec">生产</div>
+      <a data-tab="chat" onclick="switchNav('chat')">
+        <svg class="ic" width="17" height="17"><use href="#i-chat"/></svg>知识库问答
+      </a>
+      <a data-tab="doc" onclick="switchNav('doc')">
+        <svg class="ic" width="17" height="17"><use href="#i-edit"/></svg>文稿生成
+      </a>
+      <a data-tab="excel" onclick="switchNav('excel')">
+        <svg class="ic" width="17" height="17"><use href="#i-grid"/></svg>台账处理
+      </a>
+      <div class="sec">智能体</div>
+      <a data-tab="experts" onclick="switchNav('experts')">
+        <svg class="ic" width="17" height="17"><use href="#i-brain"/></svg>专家智能体
+      </a>
+      <div class="sec">其他</div>
+      <a data-tab="links" onclick="switchNav('links')">
+        <svg class="ic" width="17" height="17"><use href="#i-link"/></svg>常用网站
+      </a>
+      <a data-tab="settings" onclick="switchNav('settings')">
+        <svg class="ic" width="17" height="17"><use href="#i-setting"/></svg>设置
+      </a>
+    </nav>
+    <div class="me">
+      <div class="av" id="sidebar-avatar"></div>
+      <div>
+        <div class="nm" id="sidebar-email"></div>
+        <div class="rl">辅导员</div>
+      </div>
+      <div style="margin-left:auto;cursor:pointer;color:var(--ink-400);font-size:12px" onclick="doLogout()" title="退出">退出</div>
+    </div>
+  </aside>
+
+  <!-- 主区域 -->
+  <div class="main">
+    <div class="topbar">
+      <div class="crumb" id="topbar-crumb">学工Buddy / <b>工作台首页</b></div>
+      <div class="spacer"></div>
+      <div class="disclaimer" style="margin:0;padding:5px 10px;font-size:11px;border-radius:6px">
+        ⚠️ AI输出仅为草稿，需人工复核
+      </div>
+    </div>
+
+    <div class="page" id="page-content">
+
+      <!-- ===== 工作台首页 ===== -->
+      <div id="tab-home">
+        <div class="hero">
+          <div>
+            <div class="t1" id="hero-greeting">你好，辅导员</div>
+            <div class="t2" id="hero-subtitle">2026 秋季学期 · 今日待办一览</div>
+          </div>
+          <div class="stats">
+            <div class="st"><div class="n" id="stat-talks" style="color:#fff">-</div><div class="l">待跟进谈话</div></div>
+            <div class="st"><div class="n" id="stat-dorms" style="color:#fff">-</div><div class="l">异常宿舍</div></div>
+            <div class="st"><div class="n" id="stat-risks" style="color:#fff">-</div><div class="l">学业预警</div></div>
+          </div>
+        </div>
+
+        <div class="kpis" style="margin-bottom:14px;grid-template-columns:repeat(3,1fr)">
+          <div class="kpi" onclick="switchNav('talks')">
+            <div class="top"><div class="ic g"><svg width="18" height="18"><use href="#i-chat"/></svg></div><div class="lb">待跟进谈话</div></div>
+            <div class="n" id="kpi-talks">- <small>人</small></div>
+            <div class="ft">逾期置顶提醒</div>
+          </div>
+          <div class="kpi" onclick="switchNav('dorm')">
+            <div class="top"><div class="ic a"><svg width="18" height="18"><use href="#i-bed"/></svg></div><div class="lb">异常宿舍</div></div>
+            <div class="n" id="kpi-dorms">- <small>间</small></div>
+            <div class="ft">需今日核实</div>
+          </div>
+          <div class="kpi" onclick="switchNav('students')">
+            <div class="top"><div class="ic v"><svg width="18" height="18"><use href="#i-alert"/></svg></div><div class="lb">学业预警</div></div>
+            <div class="n" id="kpi-risks">- <small>人</small></div>
+            <div class="ft">点击查看名单</div>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="ch"><h4>今日待办</h4><span class="text-sm text-muted" id="todo-count"></span></div>
+          <div class="cb" style="padding:0" id="todo-list">
+            <div class="empty"><p>加载中...</p></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ===== 学生档案 ===== -->
+      <div id="tab-students" style="display:none">
+        <div class="hero" style="margin-bottom:14px">
+          <div>
+            <div class="t1">📋 学生档案</div>
+            <div class="t2">一屏看清全班，进度条直扫异常，点击右侧抽屉看详情</div>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="toolbar">
+            <div class="search" style="width:200px">
+              <svg width="14" height="14" style="color:var(--ink-400)"><use href="#i-search"/></svg>
+              <input placeholder="搜姓名 / 学号" id="stu-search" onkeydown="if(event.key==='Enter')loadStudents()">
+            </div>
+            <select class="input select" style="width:110px;height:30px" id="stu-grade" onchange="loadStudents()">
+              <option value="">全部年级</option>
+            </select>
+            <select class="input select" style="width:130px;height:30px" id="stu-class" onchange="loadStudents()">
+              <option value="">全部班级</option>
+            </select>
+            <select class="input select" style="width:120px;height:30px" id="stu-risk" onchange="loadStudents()">
+              <option value="">全部风险</option>
+              <option value="high">高风险</option>
+              <option value="medium">中风险</option>
+              <option value="none">无风险</option>
+            </select>
+            <div class="spacer"></div>
+            <button class="btn btn-secondary btn-sm" onclick="document.getElementById('stu-import-file').click()">
+              <svg width="13" height="13"><use href="#i-plus"/></svg>导入 Excel
+            </button>
+            <input type="file" id="stu-import-file" accept=".xlsx,.xls" style="display:none" onchange="importStudents()">
+          </div>
+
+          <div style="padding:10px 16px;background:#FCFDFF;border-bottom:1px solid var(--line-soft)">
+            <span class="text-sm text-muted">共 <b style="color:var(--ink-900)" id="stu-total">-</b> 名学生</span>
+          </div>
+
+          <div style="overflow-x:auto" id="stu-table-wrap">
+            <table class="tb" id="stu-table">
+              <thead><tr>
+                <th style="width:130px">学生</th><th style="width:100px">班级</th>
+                <th style="width:140px">GPA</th><th style="width:120px">出勤率</th>
+                <th style="width:120px">标签</th><th style="width:80px">操作</th>
+              </tr></thead>
+              <tbody id="stu-tbody">
+              </tbody>
+            </table>
+          </div>
+
+          <div class="pager" id="stu-pager" style="display:none">
+            <span id="stu-page-info"></span>
+            <div class="pg">
+              <span onclick="loadStudents(currentStuPage-1)" id="stu-prev">‹</span>
+              <span id="stu-pages"></span>
+              <span onclick="loadStudents(currentStuPage+1)" id="stu-next">›</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 学生详情抽屉 -->
+      <div id="student-drawer-overlay" style="display:none;position:fixed;inset:0;z-index:50;background:rgba(15,23,42,0.3)" onclick="closeStudentDrawer()"></div>
+      <div id="student-drawer" style="display:none;position:fixed;right:0;top:0;bottom:0;width:520px;z-index:51;background:var(--card-bg);box-shadow:var(--sh-3);overflow-y:auto">
+        <div style="display:flex;align-items:center;padding:14px 18px;border-bottom:1px solid var(--line)">
+          <div class="av lg" id="drawer-avatar"></div>
+          <div style="margin-left:12px">
+            <h4 style="font-size:15px" id="drawer-name"></h4>
+            <div class="text-sm text-muted" id="drawer-info"></div>
+          </div>
+          <button class="btn btn-ghost btn-sm" style="margin-left:auto" onclick="closeStudentDrawer()">✕</button>
+        </div>
+        <div style="padding:16px 18px" id="drawer-body">
+          <div class="subh">基本信息</div>
+          <div class="info-grid" id="drawer-basic"></div>
+          <div class="subh">学业概览</div>
+          <div id="drawer-academic"></div>
+          <div class="subh">标签</div>
+          <div class="flex flex-wrap" id="drawer-tags"></div>
+        </div>
+      </div>
+
+      <!-- ===== 知识库问答 ===== -->
+      <div id="tab-chat" style="display:none">
+        <div class="hero" style="margin-bottom:14px"><div><div class="t1">💬 知识库问答</div><div class="t2">基于上传的政策文档，智能问答辅助日常学工</div></div></div>
+        <div class="card" style="margin-bottom:14px">
+          <div class="ch"><h4>📄 我的知识库</h4></div>
+          <div class="cb">
+            <div class="flex" style="margin-bottom:10px">
+              <input type="file" id="file-input" accept=".pdf,.txt,.docx" style="display:none" onchange="doUpload()">
+              <button class="btn btn-secondary btn-sm" onclick="document.getElementById('file-input').click()"><svg width="13" height="13"><use href="#i-plus"/></svg>上传文档</button>
+              <span class="text-sm text-muted">支持 PDF / TXT / DOCX，≤20MB</span>
+            </div>
+            <p class="text-sm" style="color:var(--danger);display:none" id="upload-error"></p>
+            <p class="text-sm" style="color:var(--success);display:none" id="upload-success"></p>
+            <div class="doc-list" id="doc-list"><p class="text-sm text-muted">暂无文档</p></div>
+          </div>
+        </div>
+        <div class="card">
+          <div class="ch"><h4>💬 智能问答</h4></div>
+          <div class="cb" style="padding-bottom:12px">
+            <div class="chat-area" id="chat-area"><div class="empty"><p>在下方输入问题</p></div></div>
+            <div class="flex">
+              <input class="input flex-1" type="text" id="chat-input" placeholder="输入问题，如：奖学金申请条件是什么？" onkeydown="if(event.key==='Enter')doChat()">
+              <button class="btn btn-primary" id="chat-btn" onclick="doChat()"><svg width="14" height="14"><use href="#i-send"/></svg>发送</button>
+            </div>
+            <p class="text-sm" style="color:var(--danger);margin-top:6px;display:none" id="chat-error"></p>
+          </div>
+        </div>
+      </div>
+
+      <!-- ===== 文稿生成 ===== -->
+      <div id="tab-doc" style="display:none">
+        <div class="hero" style="margin-bottom:14px"><div><div class="t1">📝 文稿生成</div><div class="t2">从模板出发，AI帮你起草辅导员常用文书</div></div></div>
+        <div class="card" style="margin-bottom:14px">
+          <div class="ch"><h4>选择模板并填写</h4></div>
+          <div class="cb">
+            <div class="form-row" style="margin-bottom:10px">
+              <div class="field"><label>文稿模板</label><select class="input select" id="doc-template" onchange="loadTemplateDetail()"><option value="">-- 选择模板 --</option></select></div>
+              <div class="field" style="max-width:150px"><label>文风</label><select class="input select" id="doc-style"><option value="formal">正式上报</option><option value="soft">谈心柔和</option><option value="brief">简洁简报</option></select></div>
+            </div>
+            <div class="doc-vars" id="doc-variables"></div>
+            <button class="btn btn-primary" id="doc-btn" onclick="doGenerateDoc()"><svg width="14" height="14"><use href="#i-edit"/></svg>生成文稿</button>
+            <p class="text-sm" style="color:var(--danger);margin-top:8px;display:none" id="doc-error"></p>
+          </div>
+        </div>
+        <div class="card" id="doc-result-card" style="display:none">
+          <div class="ch"><h4>生成结果</h4><span class="text-sm text-muted" id="doc-task-id"></span></div>
+          <div class="cb"><div class="doc-result" id="doc-content"></div><div class="doc-actions"><button class="btn btn-primary btn-sm" onclick="downloadDocx()"><svg width="13" height="13"><use href="#i-down"/></svg>下载 Word</button></div></div>
+        </div>
+      </div>
+
+      <!-- ===== 台账处理 ===== -->
+      <div id="tab-excel" style="display:none">
+        <div class="hero" style="margin-bottom:14px"><div><div class="t1">📊 台账批量处理</div><div class="t2">上传名单 Excel，AI批量生成评语</div></div></div>
+        <div class="card" style="margin-bottom:14px">
+          <div class="ch"><h4>上传 Excel</h4></div>
+          <div class="cb">
+            <input type="file" id="excel-input" accept=".xlsx,.xls" style="display:none" onchange="uploadExcel()">
+            <button class="btn btn-secondary btn-sm" onclick="document.getElementById('excel-input').click()"><svg width="13" height="13"><use href="#i-plus"/></svg>选择 Excel</button>
+            <span class="text-sm text-muted" style="margin-left:10px">支持 .xlsx / .xls</span>
+            <p class="text-sm" style="color:var(--danger);display:none;margin-top:8px" id="excel-error"></p>
+          </div>
+        </div>
+        <div class="card" id="excel-preview-card" style="display:none;margin-bottom:14px">
+          <div class="ch"><h4>数据预览</h4><span class="text-sm text-muted" id="excel-info"></span></div>
+          <div class="cb">
+            <div class="excel-preview" id="excel-table"></div>
+            <div class="flex" style="margin-top:10px">
+              <button class="btn btn-primary btn-sm" id="batch-btn" onclick="doBatchGenerate()">🪄 批量生成评语</button>
+              <input class="input" type="number" id="batch-max-rows" value="10" min="1" max="100" style="width:70px">
+              <span class="text-sm text-muted">行数</span>
+            </div>
+            <p class="text-sm" style="color:var(--danger);margin-top:6px;display:none" id="batch-error"></p>
+          </div>
+        </div>
+        <div class="card" id="batch-result-card" style="display:none">
+          <div class="ch"><h4>生成结果</h4></div>
+          <div class="cb">
+            <button class="btn btn-primary btn-sm" onclick="downloadExcel()"><svg width="13" height="13"><use href="#i-down"/></svg>下载结果 Excel</button>
+            <span class="text-sm text-muted" style="margin-left:10px" id="batch-download-url"></span>
+          </div>
+        </div>
+      </div>
+
+      <!-- ===== 专家智能体 ===== -->
+      <div id="tab-experts" style="display:none">
+        <div class="hero" style="margin-bottom:14px"><div><div class="t1">🧠 专家智能体</div><div class="t2">谈心教练 / 心理危机顾问 / 笔杆子 / 资助评奖 / 学业预警 — 选专家，直接问</div></div></div>
+        <div style="display:grid;grid-template-columns:1fr 360px;gap:14px">
+          <!-- 左侧：对话区 -->
+          <div class="card" id="expert-chat-card">
+            <div class="ch" style="display:flex;align-items:center;gap:8px">
+              <span id="expert-chat-name" style="font-weight:700;font-size:14px">选择一位专家开始</span>
+              <span class="tag" id="expert-chat-cat" style="display:none"></span>
+              <div class="spacer"></div>
+              <button class="btn btn-ghost btn-sm" onclick="loadExpertSessions()" title="历史会话">📋</button>
+              <button class="btn btn-ghost btn-sm" onclick="newExpertChat()" title="新建会话">＋</button>
+            </div>
+            <div class="cb" style="padding:0">
+              <div id="expert-messages" style="min-height:400px;max-height:480px;overflow-y:auto;padding:16px">
+                <div class="empty" id="expert-empty"><div class="ico">🧠</div><p>在右侧选择一个专家开始对话</p><p class="text-sm text-muted mt4">每个专家擅长的领域不同，选对专家事半功倍</p></div>
+              </div>
+              <div style="border-top:1px solid var(--line-soft);padding:12px 16px;display:flex;gap:8px" id="expert-input-row">
+                <input class="input" id="expert-input" placeholder="输入你的问题…" style="flex:1" onkeydown="if(event.key==='Enter')sendExpertMsg()">
+                <button class="btn btn-primary" id="expert-send-btn" onclick="sendExpertMsg()">发送</button>
+                <button class="btn btn-secondary" id="expert-stop-btn" style="display:none" onclick="stopExpertStream()">停止</button>
+              </div>
+            </div>
+          </div>
+          <!-- 右侧：专家列表 + 历史 -->
+          <div style="display:flex;flex-direction:column;gap:10px">
+            <div class="card" id="expert-list-card">
+              <div class="ch"><h4>专家广场</h4></div>
+              <div class="cb" style="padding:0;max-height:440px;overflow-y:auto" id="expert-grid">
+                <div class="empty" style="padding:20px"><p>加载中…</p></div>
+              </div>
+            </div>
+            <div class="card" id="expert-sessions-card" style="display:none">
+              <div class="ch"><h4>最近会话</h4></div>
+              <div class="cb" style="padding:0;max-height:200px;overflow-y:auto" id="expert-sessions-list"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ===== 常用网站 ===== -->
+      <div id="tab-links" style="display:none">
+        <div class="hero" style="margin-bottom:14px"><div><div class="t1">🔗 常用网站导航</div><div class="t2">辅导员高频系统入口，按分类聚合</div></div></div>
+        <div class="card" style="margin-bottom:14px">
+          <div class="ch"><h4>常用系统</h4></div>
+          <div class="cb"><div class="links-grid" id="links-grid"><div class="empty"><p>加载中...</p></div></div></div>
+        </div>
+        <div class="card">
+          <div class="ch"><h4>快捷入口</h4></div>
+          <div class="cb">
+            <div class="quick-actions">
+              <div class="qi-item" onclick="switchNav('doc')"><div class="qi-icon" style="background:var(--brand-50);color:var(--brand-600)"><svg width="18" height="18"><use href="#i-edit"/></svg></div><div class="qi-label">文稿生成</div></div>
+              <div class="qi-item" onclick="switchNav('excel')"><div class="qi-icon" style="background:var(--green-50);color:var(--success)"><svg width="18" height="18"><use href="#i-grid"/></svg></div><div class="qi-label">台账处理</div></div>
+              <div class="qi-item" onclick="switchNav('chat')"><div class="qi-icon" style="background:var(--violet-50);color:var(--violet-500)"><svg width="18" height="18"><use href="#i-chat"/></svg></div><div class="qi-label">知识库问答</div></div>
+              <div class="qi-item" onclick="switchNav('students')"><div class="qi-icon" style="background:var(--amber-50);color:var(--amber-500)"><svg width="18" height="18"><use href="#i-users"/></svg></div><div class="qi-label">学生档案</div></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ===== 谈心谈话 ===== -->
+      <div id="tab-talks" style="display:none">
+        <div class="hero" style="margin-bottom:14px"><div><div class="t1">💬 谈心谈话</div><div class="t2">左看历史，右直接写，保存即归档，跟进自动排期</div></div></div>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:14px">
+          <!-- 左：历史记录 -->
+          <div class="card">
+            <div class="ch"><h4>谈话记录</h4><button class="btn btn-ghost btn-sm" onclick="loadTalks(1)">刷新</button></div>
+            <div class="cb" style="padding:0;max-height:620px;overflow-y:auto" id="talk-history">
+              <div class="empty"><p>暂无谈话记录</p></div>
+            </div>
+          </div>
+          <!-- 右：新建记录 -->
+          <div class="card">
+            <div class="ch"><h4>新建谈话记录</h4></div>
+            <div class="cb">
+              <div class="field" style="margin-bottom:8px"><label>学生姓名 *</label><input class="input" id="talk-student" placeholder="输入姓名"></div>
+              <div class="form-row" style="margin-bottom:8px">
+                <div class="field"><label>谈话方式</label><select class="input select" id="talk-method"><option>面谈</option><option>线上</option><option>电话</option><option>宿舍走访</option></select></div>
+                <div class="field"><label>主题</label><select class="input select" id="talk-topic"><option value="">选择主题</option><option>学业压力</option><option>心理疏导</option><option>生活困难</option><option>就业指导</option><option>日常关心</option></select></div>
+              </div>
+              <div class="field" style="margin-bottom:8px"><label>谈话内容 *</label><textarea class="input" id="talk-content" rows="3" placeholder="记录谈话要点..."></textarea></div>
+              <div class="field" style="margin-bottom:8px"><label>结论 *</label><input class="input" id="talk-conclusion" placeholder="结论摘要"></div>
+              <div class="form-row" style="margin-bottom:8px">
+                <div class="field"><label>学生情绪</label><select class="input select" id="talk-mood"><option>平稳</option><option>低落</option><option>积极</option><option>激动</option></select></div>
+                <div class="field"><label>需要跟进</label><div class="flex" style="padding-top:4px;gap:6px"><input type="checkbox" id="talk-need-follow" onchange="document.getElementById('talk-follow-row').style.display=this.checked?'':'none'"><span class="text-sm text-muted">是</span></div></div>
+              </div>
+              <div class="form-row" style="display:none;margin-bottom:8px" id="talk-follow-row">
+                <div class="field"><label>下次跟进日期</label><input class="input" type="date" id="talk-follow-date"></div>
+              </div>
+              <button class="btn btn-primary" onclick="createTalk()" style="width:100%;justify-content:center">保存并归档</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ===== 查寝考勤 ===== -->
+      <div id="tab-dorm" style="display:none">
+        <div class="hero" style="margin-bottom:14px"><div><div class="t1">🏠 查寝考勤</div><div class="t2">三色网格总览一栋楼，异常名单一键处置</div></div></div>
+        <div class="flex" style="gap:8px;margin-bottom:12px;flex-wrap:wrap;align-items:center">
+          <span class="text-sm" style="color:var(--ink-500)">楼栋：</span>
+          <select class="input select" id="dorm-building" onchange="loadDormGrid()" style="width:160px"></select>
+          <div class="spacer"></div>
+          <button class="btn btn-secondary btn-sm" onclick="seedDorms()">🎲 生成演示数据</button>
+          <span class="text-sm text-muted" id="dorm-progress"></span>
+        </div>
+        <div class="card" style="margin-bottom:14px">
+          <div class="cb" id="dorm-grid">
+            <div class="empty"><p>暂无宿舍数据，点击"生成演示数据"体验</p></div>
+          </div>
+        </div>
+        <div class="card" id="dorm-anomaly-card" style="display:none">
+          <div class="ch"><h4>⚠️ 异常名单</h4></div>
+          <div class="cb" style="padding:0" id="dorm-anomaly-list"></div>
+        </div>
+      </div>
+
+      <!-- ===== 设置 ===== -->
+      <div id="tab-settings" style="display:none">
+        <div class="card" style="max-width:500px">
+          <div class="ch"><h4>账号信息</h4></div>
+          <div class="cb">
+            <div class="flex" style="margin-bottom:14px">
+              <div class="av lg" id="settings-avatar"></div>
+              <div><div style="font-size:14px;font-weight:700" id="settings-email"></div><div class="text-sm text-muted">辅导员</div></div>
+            </div>
+            <button class="btn btn-secondary" onclick="doLogout()">退出登录</button>
+            <div class="disclaimer" style="margin-top:12px;margin-bottom:0">⚠️ AI输出仅为草稿，涉及学生、思政、危机材料必须人工复核。</div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<script>
+// ===== 状态 =====
+let token = '', user = null, currentTab = 'home';
+let currentTaskId = null, excelTaskId = null, excelResultId = null;
+let websitesCache = null;
+let currentStuPage = 1, stuTotalPages = 1;
+let currentStudentId = null;
+
+// ===== API =====
+function api(path, options = {}) {
+  const headers = { ...options.headers };
+  if (token) headers['Authorization'] = `Bearer ${token}`;
+  return fetch(path, { ...options, headers }).then(r => r.json().then(data => ({ status: r.status, data })));
+}
+function show(el) { el.style.display = ''; }
+function hide(el) { el.style.display = 'none'; }
+
+// ===== 登录 =====
+function switchAuthTab(t) {
+  document.getElementById('auth-tab-login').classList.toggle('on', t==='login');
+  document.getElementById('auth-tab-register').classList.toggle('on', t==='register');
+  document.getElementById('login-form').style.display = t==='login'?'':'none';
+  document.getElementById('register-form').style.display = t==='register'?'':'none';
+}
+async function doRegister() {
+  const e=document.getElementById('reg-email').value.trim(),p=document.getElementById('reg-password').value,c=document.getElementById('reg-invite-code').value.trim();
+  hide(document.getElementById('reg-error')); hide(document.getElementById('reg-success'));
+  const {status,data}=await api('/api/v1/auth/register',{method:'POST',body:JSON.stringify({email:e,password:p,invite_code:c}),headers:{'Content-Type':'application/json'}});
+  if(status===201){show(document.getElementById('reg-success'));document.getElementById('reg-success').textContent='注册成功！请切换到登录标签登录';}
+  else{show(document.getElementById('reg-error'));document.getElementById('reg-error').textContent=data.detail||data.error?.message||'注册失败';}
+}
+async function doLogin() {
+  const e=document.getElementById('login-email').value.trim(),p=document.getElementById('login-password').value;
+  hide(document.getElementById('login-error'));
+  const {status,data}=await api('/api/v1/auth/login',{method:'POST',body:JSON.stringify({email:e,password:p}),headers:{'Content-Type':'application/json'}});
+  if(status===200){token=data.access_token;user=data.user;localStorage.setItem('sb_token',token);localStorage.setItem('sb_user',JSON.stringify(user));showMain();}
+  else{show(document.getElementById('login-error'));document.getElementById('login-error').textContent=data.detail||'登录失败';}
+}
+function showMain() {
+  document.getElementById('login-overlay').style.display='none';document.getElementById('main-app').style.display='flex';
+  const initial=user.email[0].toUpperCase();
+  document.getElementById('sidebar-avatar').textContent=initial;document.getElementById('sidebar-email').textContent=user.email;
+  document.getElementById('settings-avatar').textContent=initial;document.getElementById('settings-email').textContent=user.email;
+  switchNav('home');
+}
+(function(){const t=localStorage.getItem('sb_token'),u=localStorage.getItem('sb_user');if(t&&u){token=t;user=JSON.parse(u);showMain();}})();
+function doLogout(){token='';user=null;localStorage.removeItem('sb_token');localStorage.removeItem('sb_user');location.reload();}
+
+// ===== 导航 =====
+function switchNav(tab) {
+  currentTab=tab;
+  document.querySelectorAll('.nav a').forEach(a=>a.classList.toggle('active',a.dataset.tab===tab));
+  const titles={home:'工作台首页',students:'学生档案',talks:'谈心谈话',dorm:'查寝考勤',chat:'知识库问答',doc:'文稿生成',excel:'台账处理',experts:'专家智能体',links:'常用网站',settings:'设置'};
+  document.getElementById('topbar-crumb').innerHTML='学工Buddy / <b>'+titles[tab]+'</b>';
+  document.querySelectorAll('#page-content > div').forEach(d=>d.style.display='none');
+  const target=document.getElementById('tab-'+tab);
+  if(target)target.style.display='';
+  if(tab==='home')loadHomeSummary();
+  if(tab==='students'){loadStudentFilters();loadStudents();}
+  if(tab==='chat')loadDocuments();
+  if(tab==='doc')loadTemplates();
+  if(tab==='links')loadWebsites();
+  if(tab==='experts')loadExperts();
+  if(tab==='talks')loadTalks();
+  if(tab==='dorm'){loadDormBuildings();loadDormGrid();}
+}
+
+// ===== 工作台首页 =====
+async function loadHomeSummary() {
+  const {status,data}=await api('/api/v1/home/summary');
+  if(status!==200)return;
+  const s=data.stats;
+  document.getElementById('stat-talks').textContent=s.pending_talks;
+  document.getElementById('stat-dorms').textContent=s.abnormal_dorms;
+  document.getElementById('stat-risks').textContent=s.risk_students;
+  document.getElementById('kpi-talks').innerHTML=s.pending_talks+' <small>人</small>';
+  document.getElementById('kpi-dorms').innerHTML=s.abnormal_dorms+' <small>间</small>';
+  document.getElementById('kpi-risks').innerHTML=s.risk_students+' <small>人</small>';
+  document.getElementById('todo-count').textContent='共 '+data.todos.length+' 项';
+
+  const icons={talk:'#i-chat',dorm:'#i-bed',material:'#i-file'};
+  const colors={talk:'var(--violet-50);color:var(--violet-500)',dorm:'var(--warning-bg);color:var(--warning)',material:'var(--fill);color:var(--ink-500)'};
+  const labels={talk:'谈话',dorm:'查寝',material:'材料'};
+
+  if(!data.todos.length){
+    document.getElementById('todo-list').innerHTML='<div class="empty" style="padding:40px"><p>今日无待办 🎉</p></div>';
+    return;
+  }
+
+  document.getElementById('todo-list').innerHTML=data.todos.map(t=>{
+    const icon=icons[t.source_type]||'#i-file';
+    const color=colors[t.source_type]||'var(--fill)';
+    const label=labels[t.source_type]||'任务';
+    const isOverdue=t.priority>=100;
+    return `<div class="todo-item" style="display:flex;align-items:center;gap:12px;padding:12px 18px;border-bottom:1px solid var(--line-soft)">
+      <div style="width:34px;height:34px;border-radius:8px;display:flex;align-items:center;justify-content:center;flex-shrink:0;${color}"><svg width="17" height="17"><use href="${icon}"/></svg></div>
+      <div style="flex:1;min-width:0">
+        <div style="font-size:13px;font-weight:600;color:var(--ink-900)">${escapeHtml(t.title)}</div>
+        <div style="font-size:11.5px;color:var(--ink-400);margin-top:2px">${escapeHtml(t.target_name||'')} · ${t.due_date||''}${isOverdue?' <span class="tag tag-red">逾期</span>':''}</div>
+      </div>
+      <button class="btn btn-soft btn-sm" onclick="resolveTodo(${t.id},this)">标记完成</button>
+    </div>`;
+  }).join('');
+}
+
+async function resolveTodo(id, btn) {
+  btn.disabled=true;btn.textContent='...';
+  await api('/api/v1/home/todos/'+id+'/resolve',{method:'POST'});
+  btn.textContent='✓ 已处理';btn.classList.remove('btn-soft');btn.classList.add('btn-ghost');
+  setTimeout(()=>{const row=btn.closest('.todo-item');if(row)row.style.opacity='0.4';},500);
+}
+
+// ===== 学生档案 =====
+async function loadStudentFilters() {
+  const {status,data}=await api('/api/v1/students/filters');
+  if(status!==200)return;
+  const g=document.getElementById('stu-grade'),c=document.getElementById('stu-class');
+  g.innerHTML='<option value="">全部年级</option>'+data.grades.map(v=>'<option>'+v+'</option>').join('');
+  c.innerHTML='<option value="">全部班级</option>'+data.classes.map(v=>'<option>'+v+'</option>').join('');
+}
+
+async function loadStudents(page=1) {
+  currentStuPage=page;
+  const params=new URLSearchParams({page,size:50});
+  const search=document.getElementById('stu-search').value.trim();
+  const grade=document.getElementById('stu-grade').value;
+  const cls=document.getElementById('stu-class').value;
+  const risk=document.getElementById('stu-risk').value;
+  if(search)params.set('search',search);
+  if(grade)params.set('grade',grade);
+  if(cls)params.set('class_name',cls);
+  if(risk)params.set('risk_level',risk);
+
+  const {status,data}=await api('/api/v1/students?'+params);
+  if(status!==200)return;
+
+  document.getElementById('stu-total').textContent=data.total;
+  stuTotalPages=Math.ceil(data.total/50);
+  document.getElementById('stu-page-info').textContent='共 '+data.total+' 条 · 第 '+page+'/'+stuTotalPages+' 页';
+  document.getElementById('stu-prev').style.visibility=page<=1?'hidden':'';
+  document.getElementById('stu-next').style.visibility=page>=stuTotalPages?'hidden':'';
+  document.getElementById('stu-pager').style.display=data.total>50?'':'none';
+
+  document.getElementById('stu-tbody').innerHTML=data.students.map(s=>{
+    const gpaColor=s.gpa<2.0?'var(--danger)':s.gpa<3.0?'var(--warning)':'var(--success)';
+    const attColor=s.attendance<90?'var(--danger)':s.attendance<95?'var(--warning)':'var(--success)';
+    const tags=(s.tags||[]).map(t=>{
+      const cls=t.includes('心理')||t.includes('危机')?'tag-red':t.includes('学业')||t.includes('预警')?'tag-amber':t.includes('经济')||t.includes('困难')?'tag-blue':t.includes('干部')?'tag-violet':'tag-gray';
+      return '<span class="tag '+cls+'">'+escapeHtml(t)+'</span>';
+    }).join('');
+    const avClass='av'+(s.risk_score>=3?' a5':s.risk_score>=1?' a3':'');
+    const initial=s.name[0];
+    return '<tr style="height:44px" onclick="openStudentDrawer('+s.id+')" class="stu-row">'+
+      '<td><div style="display:flex;align-items:center;gap:8px"><div class="'+avClass+' sm">'+escapeHtml(initial)+'</div><div><div style="font-size:13px;font-weight:600">'+escapeHtml(s.name)+'</div><div style="font-size:11px;color:var(--ink-400)">'+escapeHtml(s.student_id)+'</div></div></div></td>'+
+      '<td style="font-size:12.5px">'+escapeHtml(s.class_name)+'</td>'+
+      '<td><div class="flex" style="gap:6px"><span style="font-weight:600;font-size:12px;color:'+gpaColor+'">'+(s.gpa||0).toFixed(2)+'</span><div class="bar flex-1"><i class="'+(s.gpa<2.0?'r':s.gpa<3.0?'a':'g')+'" style="width:'+Math.min(s.gpa/4*100,100)+'%"></i></div></div></td>'+
+      '<td><div class="flex" style="gap:6px"><span style="font-weight:600;font-size:12px;color:'+attColor+'">'+(s.attendance||100).toFixed(0)+'%</span><div class="bar flex-1"><i class="'+(s.attendance<90?'r':s.attendance<95?'a':'g')+'" style="width:'+(s.attendance||100)+'%"></i></div></div></td>'+
+      '<td><div class="flex flex-wrap" style="gap:4px">'+tags+'</div></td>'+
+      '<td><button class="btn btn-ghost btn-sm" onclick="event.stopPropagation();openStudentDrawer('+s.id+')">详情</button></td>'+
+      '</tr>';
+  }).join('');
+}
+
+async function openStudentDrawer(id) {
+  currentStudentId=id;
+  const {status,data}=await api('/api/v1/students/'+id);
+  if(status!==200)return;
+
+  document.getElementById('drawer-avatar').textContent=data.name[0];
+  document.getElementById('drawer-name').textContent=data.name;
+  document.getElementById('drawer-info').textContent=data.student_id+' · '+data.class_name;
+
+  document.getElementById('drawer-basic').innerHTML=
+    '<div><div class="k">性别</div><div class="v">'+(data.gender||'-')+'</div></div>'+
+    '<div><div class="k">年级</div><div class="v">'+(data.grade||'-')+'</div></div>'+
+    '<div><div class="k">班级</div><div class="v">'+(data.class_name||'-')+'</div></div>'+
+    '<div><div class="k">宿舍</div><div class="v">'+(data.dorm_building?data.dorm_building+' '+data.dorm_room:'-')+'</div></div>'+
+    '<div><div class="k">电话</div><div class="v">'+(data.phone||'-')+'</div></div>'+
+    '<div><div class="k">状态</div><div class="v">'+(data.status==='active'?'在校':'已离校')+'</div></div>';
+
+  const gpaColor=data.gpa<2.0?'var(--danger)':data.gpa<3.0?'var(--warning)':'var(--success)';
+  const attColor=data.attendance<90?'var(--danger)':data.attendance<95?'var(--warning)':'var(--success)';
+  document.getElementById('drawer-academic').innerHTML=
+    '<div style="margin-bottom:10px"><div class="flex"><span class="text-sm text-muted">GPA</span><span style="margin-left:auto;font-weight:600;color:'+gpaColor+'">'+(data.gpa||0).toFixed(2)+' / 4.0</span></div><div class="bar mt6"><i class="'+(data.gpa<2.0?'r':data.gpa<3.0?'a':'g')+'" style="width:'+Math.min(data.gpa/4*100,100)+'%"></i></div></div>'+
+    '<div><div class="flex"><span class="text-sm text-muted">出勤率</span><span style="margin-left:auto;font-weight:600;color:'+attColor+'">'+(data.attendance||100).toFixed(0)+'%</span></div><div class="bar mt6"><i class="'+(data.attendance<90?'r':data.attendance<95?'a':'g')+'" style="width:'+(data.attendance||100)+'%"></i></div></div>';
+
+  document.getElementById('drawer-tags').innerHTML=(data.tags||[]).map(t=>{
+    const cls=t.includes('心理')||t.includes('危机')?'tag-red':t.includes('学业')||t.includes('预警')?'tag-amber':t.includes('经济')||t.includes('困难')?'tag-blue':t.includes('干部')?'tag-violet':'tag-gray';
+    return '<span class="tag '+cls+'"><i class="dot"></i>'+escapeHtml(t)+'</span>';
+  }).join('')||'<span class="text-sm text-muted">暂无标签</span>';
+
+  document.getElementById('student-drawer-overlay').style.display='';
+  document.getElementById('student-drawer').style.display='';
+}
+
+function closeStudentDrawer() {
+  document.getElementById('student-drawer-overlay').style.display='none';
+  document.getElementById('student-drawer').style.display='none';
+}
+
+async function importStudents() {
+  const file=document.getElementById('stu-import-file').files[0];
+  if(!file)return;
+  const fd=new FormData();fd.append('file',file);
+  const resp=await fetch('/api/v1/students/import',{method:'POST',headers:{'Authorization':'Bearer '+token},body:fd});
+  const data=await resp.json();
+  if(resp.ok){alert('导入成功！新增/更新 '+data.imported+' 名学生');loadStudentFilters();loadStudents();}
+  else{alert('导入失败: '+(data.detail||'未知错误'));}
+  document.getElementById('stu-import-file').value='';
+}
+
+// ===== 知识库（保留） =====
+async function doUpload() {
+  const file=document.getElementById('file-input').files[0];
+  hide(document.getElementById('upload-error'));hide(document.getElementById('upload-success'));
+  if(!file)return;
+  const fd=new FormData();fd.append('file',file);
+  const resp=await fetch('/api/v1/kb/upload',{method:'POST',headers:{'Authorization':'Bearer '+token},body:fd});
+  const data=await resp.json();
+  if(resp.status===201){show(document.getElementById('upload-success'));document.getElementById('upload-success').textContent='"'+file.name+'" 上传成功，正在向量化...';document.getElementById('file-input').value='';setTimeout(loadDocuments,2000);}
+  else{show(document.getElementById('upload-error'));document.getElementById('upload-error').textContent=data.detail||data.error?.message||'上传失败';}
+}
+async function loadDocuments() {
+  const {status,data}=await api('/api/v1/kb/documents');
+  const list=document.getElementById('doc-list');
+  if(status!==200||!data.documents?.length){list.innerHTML='<p class="text-sm text-muted">暂无文档，上传一份政策文件试试</p>';return;}
+  list.innerHTML=data.documents.map(d=>'<div class="doc-item"><span>📎 '+escapeHtml(d.filename)+' <span class="status-badge '+d.status+'">'+(statusLabel(d.status))+'</span></span><button class="btn btn-ghost btn-sm" onclick="deleteDoc('+d.id+')">删除</button></div>').join('');
+}
+function statusLabel(s){const m={uploaded:'已上传',chunking:'分段中',vectorizing:'向量化中',done:'已完成',failed:'失败'};return m[s]||s;}
+async function deleteDoc(id){await api('/api/v1/kb/documents/'+id,{method:'DELETE'});loadDocuments();}
+
+async function doChat() {
+  const input=document.getElementById('chat-input'),question=input.value.trim();
+  if(!question)return;
+  const btn=document.getElementById('chat-btn'),area=document.getElementById('chat-area');
+  hide(document.getElementById('chat-error'));
+  if(area.querySelector('.empty'))area.innerHTML='';
+  area.innerHTML+='<div class="msg user"><div class="content">'+escapeHtml(question)+'</div></div>';
+  const aiDiv=document.createElement('div');aiDiv.className='msg assistant';aiDiv.innerHTML='<div class="content" id="ai-content"></div>';area.appendChild(aiDiv);
+  const aiContent=aiDiv.querySelector('#ai-content');
+  input.value='';btn.disabled=true;area.scrollTop=area.scrollHeight;
+
+  let fullText='';
+  try{
+    const response=await fetch('/api/v1/kb/chat?q='+encodeURIComponent(question),{headers:{'Authorization':'Bearer '+token}});
+    if(!response.ok){const err=await response.json().catch(()=>({}));throw new Error(err.detail||err.error?.message||'HTTP '+response.status);}
+    const reader=response.body.getReader(),decoder=new TextDecoder();let buffer='';
+    while(true){const {done,value}=await reader.read();if(done)break;buffer+=decoder.decode(value,{stream:true});
+      const lines=buffer.split('\n');buffer=lines.pop()||'';let et='';
+      for(const line of lines){
+        if(line.startsWith('event: '))et=line.slice(7).trim();
+        else if(line.startsWith('data: ')&&et){const p=JSON.parse(line.slice(6));
+          if(et==='chunk'){fullText+=p.content;aiContent.textContent=fullText;area.scrollTop=area.scrollHeight;}
+          else if(et==='done'){if(p.citations?.length)aiDiv.innerHTML+='<div class="citations">'+p.citations.map(c=>'📖 <strong>'+escapeHtml(c.doc_name)+'</strong>: '+escapeHtml((c.chunk_text||'').substring(0,150))+'...').join('<br>')+'</div>';}
+          else if(et==='error'){show(document.getElementById('chat-error'));document.getElementById('chat-error').textContent=p.error?.message||'问答失败';}
+          et='';
+        }
+      }
+    }
+  }catch(err){show(document.getElementById('chat-error'));document.getElementById('chat-error').textContent=err.message||'连接失败';if(!fullText)aiContent.textContent='（发生错误）';}
+  btn.disabled=false;
+}
+
+// ===== 文稿生成 =====
+async function loadTemplates(){const{status,data}=await api('/api/v1/doc/templates');if(status!==200)return;document.getElementById('doc-template').innerHTML='<option value="">-- 选择模板 --</option>'+data.templates.map(t=>'<option value="'+t.id+'">'+t.name+'（'+t.category+'）</option>').join('');}
+async function loadTemplateDetail(){const id=document.getElementById('doc-template').value;if(!id){document.getElementById('doc-variables').innerHTML='';return;}const{status,data}=await api('/api/v1/doc/templates/'+id);if(status!==200)return;document.getElementById('doc-style').value=data.style||'formal';const vars=JSON.parse(data.variables||'[]');document.getElementById('doc-variables').innerHTML=vars.map(v=>'<div class="doc-var-row"><label for="var-'+v+'">'+v+'</label><input class="input flex-1" type="text" id="var-'+v+'" placeholder="'+v+'"></div>').join('');}
+async function doGenerateDoc(){const templateId=document.getElementById('doc-template').value;if(!templateId)return;const style=document.getElementById('doc-style').value,btn=document.getElementById('doc-btn');hide(document.getElementById('doc-error'));hide(document.getElementById('doc-result-card'));const variables={};document.querySelectorAll('#doc-variables input').forEach(inp=>{variables[inp.id.replace('var-','')]=inp.value||'【'+inp.id.replace('var-','')+'】';});btn.disabled=true;btn.textContent='生成中...';const{status,data}=await api('/api/v1/doc/generate',{method:'POST',body:JSON.stringify({template_id:parseInt(templateId),variables,style}),headers:{'Content-Type':'application/json'}});btn.disabled=false;btn.innerHTML='<svg width="14" height="14"><use href="#i-edit"/></svg>生成文稿';if(status===201){currentTaskId=data.task_id;document.getElementById('doc-content').textContent=data.content;document.getElementById('doc-task-id').textContent='任务 #'+data.task_id+' · '+(data.status==='done'?'已完成':'处理中');show(document.getElementById('doc-result-card'));}else{show(document.getElementById('doc-error'));document.getElementById('doc-error').textContent=data.detail||'生成失败';}}
+function downloadDocx(){if(!currentTaskId)return;const a=document.createElement('a');a.href='/api/v1/doc/download/'+currentTaskId;a.download='文稿_'+currentTaskId+'.docx';a.click();}
+
+// ===== 台账 =====
+async function uploadExcel(){const file=document.getElementById('excel-input').files[0];if(!file)return;hide(document.getElementById('excel-error'));hide(document.getElementById('excel-preview-card'));hide(document.getElementById('batch-result-card'));const fd=new FormData();fd.append('file',file);const resp=await fetch('/api/v1/excel/upload/read',{method:'POST',headers:{'Authorization':'Bearer '+token},body:fd});const data=await resp.json();if(resp.status!==200){show(document.getElementById('excel-error'));document.getElementById('excel-error').textContent=data.detail||'上传失败';return;}excelTaskId=data.task_id;document.getElementById('excel-info').textContent='共 '+data.total_rows+' 行，预览前 '+data.preview.length+' 行';const headers=data.headers;let html='<table><thead><tr>';headers.forEach(h=>html+='<th>'+escapeHtml(h)+'</th>');html+='</tr></thead><tbody>';data.preview.forEach(row=>{html+='<tr>';headers.forEach(h=>html+='<td>'+escapeHtml(row[h]||'')+'</td>');html+='</tr>';});html+='</tbody></table>';document.getElementById('excel-table').innerHTML=html;show(document.getElementById('excel-preview-card'));}
+async function doBatchGenerate(){if(!excelTaskId)return;const maxRows=parseInt(document.getElementById('batch-max-rows').value)||10,btn=document.getElementById('batch-btn');hide(document.getElementById('batch-error'));hide(document.getElementById('batch-result-card'));btn.disabled=true;btn.textContent='生成中...';const resp=await fetch('/api/v1/excel/batch-generate?max_rows='+maxRows,{method:'POST',headers:{'Authorization':'Bearer '+token}});const data=await resp.json();btn.disabled=false;btn.textContent='🪄 批量生成评语';if(resp.status!==200){show(document.getElementById('batch-error'));document.getElementById('batch-error').textContent=data.detail||'生成失败';return;}excelResultId=data.task_id;document.getElementById('batch-download-url').textContent='已生成 '+data.row_count+' 条评语';show(document.getElementById('batch-result-card'));}
+function downloadExcel(){if(!excelResultId)return;const a=document.createElement('a');a.href='/api/v1/excel/download/'+excelResultId;a.download='reviews_'+excelResultId+'.xlsx';a.click();}
+
+// ===== Markdown 渲染 =====
+function renderMd(text){
+  if(!text)return'';
+  let html=escapeHtml(text);
+  // 表格
+  html=html.replace(/\n(\|[^\n]+\|)\n\|[\s\-:]+\|\n((?:\|[^\n]+\|\n?)*)/g,(_,hdr,rows)=>{
+    const ths=hdr.split('|').filter(c=>c.trim()).map(c=>'<th>'+c.trim()+'</th>').join('');
+    const trs=rows.trim().split('\n').map(r=>'<tr>'+r.split('|').filter(c=>c.trim()).map(c=>'<td>'+c.trim()+'</td>').join('')+'</tr>').join('');
+    return '<table style="border-collapse:collapse;width:100%;margin:8px 0;font-size:12px"><thead><tr>'+ths+'</tr></thead><tbody>'+trs+'</tbody></table>';
+  });
+  // 标题
+  html=html.replace(/^### (.+)$/gm,'<h4 style="font-size:14px;margin:10px 0 6px">$1</h4>');
+  html=html.replace(/^## (.+)$/gm,'<h4 style="font-size:14px;font-weight:700;margin:10px 0 6px">$1</h4>');
+  // 分割线
+  html=html.replace(/^---$/gm,'<hr style="border:none;border-top:1px solid var(--line-soft);margin:10px 0">');
+  // 粗体
+  html=html.replace(/\*\*(.+?)\*\*/g,'<b>$1</b>');
+  // 无序列表
+  html=html.replace(/^- (.+)$/gm,'<li>$1</li>');
+  html=html.replace(/((?:<li>[^<]*<\/li>\n?)+)/g,'<ul style="margin:4px 0;padding-left:18px">$1</ul>');
+  // 换行
+  html=html.replace(/\n\n/g,'<br><br>');
+  html=html.replace(/\n/g,'<br>');
+  return html;
+}
+
+// ===== 专家智能体 =====
+let expertData=null,currentExpertId=null,currentSessionId=null,expertStreamAbort=null;
+async function loadExperts(){
+  const{status,data}=await api('/api/v1/experts');
+  if(status!==200)return;
+  expertData=data;
+  const grid=document.getElementById('expert-grid');
+  const colors={teal:'var(--teal-50);color:var(--teal-600)',red:'var(--red-50);color:var(--danger)',blue:'var(--brand-50);color:var(--brand-600)',amber:'var(--warning-bg);color:var(--warning)',coral:'var(--brand-50);color:var(--brand-600)'};
+  grid.innerHTML=data.experts.map(e=>{
+    const c=colors[e.accent]||colors.blue;
+    return '<div style="padding:12px 14px;border-bottom:1px solid var(--line-soft);cursor:pointer" onclick="selectExpert(\''+e.id+'\')" id="expert-card-'+e.id+'">'+
+      '<div class="flex" style="margin-bottom:4px"><b style="font-size:13px">'+escapeHtml(e.name)+'</b><span class="tag" style="'+c+'">'+escapeHtml(e.category_name||'')+'</span></div>'+
+      '<div class="text-sm text-muted" style="margin-bottom:6px">'+escapeHtml(e.desc)+'</div>'+
+      '<div style="font-size:11px;color:var(--ink-400)">'+escapeHtml(e.boundary||'')+'</div></div>';
+  }).join('');
+  // Sessions
+  if(data.sessions?.length){
+    document.getElementById('expert-sessions-card').style.display='';
+    document.getElementById('expert-sessions-list').innerHTML=data.sessions.map(s=>
+      '<div style="padding:10px 14px;cursor:pointer;font-size:12px;border-bottom:1px solid var(--line-soft)" onclick="openExpertSession('+s.id+',\''+s.expert_id+'\')">📝 '+escapeHtml(s.title)+'</div>'
+    ).join('');
+  }
+}
+function selectExpert(id){
+  currentExpertId=id;currentSessionId=null;
+  const e=expertData.experts.find(x=>x.id===id);if(!e)return;
+  document.getElementById('expert-chat-name').innerHTML='🧠 '+escapeHtml(e.name);
+  const cat=document.getElementById('expert-chat-cat');cat.style.display='';cat.textContent=e.category_name||'';
+  cat.style.background='var(--fill)';cat.style.color='var(--ink-500)';
+  const msgs=document.getElementById('expert-messages');
+  const empty=document.getElementById('expert-empty');
+  msgs.innerHTML='';msgs.appendChild(empty);
+  empty.innerHTML='<div class="ico">🧠</div><p><b>'+escapeHtml(e.name)+'</b></p><p class="text-sm text-muted mt4">'+escapeHtml(e.desc)+'</p>'+
+    '<div style="margin-top:12px;text-align:left;display:inline-block">'+e.samples.map((s,i)=>'<div class="text-sm" style="padding:6px 10px;margin:4px 0;background:var(--fill);border-radius:8px;cursor:pointer;color:var(--brand-600)" onclick="quickAsk(\''+s.replace(/'/g,"\\'")+'\')">💬 '+escapeHtml(s)+'</div>').join('')+'</div>';
+  document.getElementById('expert-input').focus();
+  // Highlight selected card
+  document.querySelectorAll('#expert-grid > div').forEach(d=>d.style.background='');
+  document.getElementById('expert-card-'+id).style.background='var(--brand-50)';
+}
+function quickAsk(q){document.getElementById('expert-input').value=q;sendExpertMsg();}
+async function loadExpertSessions(){
+  const{status,data}=await api('/api/v1/experts/sessions');
+  if(status!==200)return;
+  document.getElementById('expert-sessions-card').style.display='';
+  document.getElementById('expert-sessions-list').innerHTML=data.sessions.length
+    ? data.sessions.map(s=>'<div style="padding:10px 14px;cursor:pointer;font-size:12px;border-bottom:1px solid var(--line-soft)" onclick="openExpertSession('+s.id+',\''+s.expert_id+'\')">📝 '+escapeHtml(s.title)+'</div>').join('')
+    : '<div class="text-sm text-muted" style="padding:14px">暂无历史会话</div>';
+}
+async function openExpertSession(sid,eid){
+  const{status,data}=await api('/api/v1/experts/sessions?expert_id='+eid);
+  if(status!==200)return;
+  const s=data.sessions.find(x=>x.id===sid);if(!s)return;
+  currentSessionId=sid;currentExpertId=eid;
+  const e=expertData.experts.find(x=>x.id===eid);
+  if(e){selectExpert(eid);}
+  const msgs=document.getElementById('expert-messages');
+  msgs.innerHTML='';const empty=document.getElementById('expert-empty');if(empty)empty.style.display='none';
+  s.messages.forEach(m=>{
+    const cls=m.role==='assistant'?'msg-assistant':'msg-user';
+    const div=document.createElement('div');div.className=cls;div.style.cssText='margin-bottom:12px;padding:10px 14px;border-radius:10px;max-width:85%;font-size:13px;line-height:1.7;'+(m.role==='assistant'?'background:var(--fill);margin-right:auto':'background:var(--brand-50);margin-left:auto;color:var(--ink-900)');
+    div.innerHTML=renderMd(m.content);msgs.appendChild(div);
+  });
+  msgs.scrollTop=msgs.scrollHeight;
+}
+async function newExpertChat(){currentSessionId=null;const msgs=document.getElementById('expert-messages');msgs.innerHTML='';const empty=document.createElement('div');empty.className='empty';empty.id='expert-empty';empty.innerHTML='<div class="ico">🧠</div><p>在右侧选择一个专家开始对话</p>';msgs.appendChild(empty);document.getElementById('expert-input').value='';}
+async function sendExpertMsg(){
+  const input=document.getElementById('expert-input');const msg=input.value.trim();if(!msg||!currentExpertId){alert('请先在右侧选择一位专家');return;}
+  input.value='';input.disabled=true;
+  document.getElementById('expert-send-btn').style.display='none';document.getElementById('expert-stop-btn').style.display='';
+  const msgs=document.getElementById('expert-messages');const empty=document.getElementById('expert-empty');if(empty)empty.style.display='none';
+  // User bubble
+  const ub=document.createElement('div');ub.className='msg-user';ub.style.cssText='margin-bottom:12px;padding:10px 14px;border-radius:10px;max-width:85%;margin-left:auto;background:var(--brand-50);color:var(--ink-900);font-size:13px;line-height:1.7';ub.textContent=msg;msgs.appendChild(ub);
+  // Assistant bubble
+  const ab=document.createElement('div');ab.className='msg-assistant';ab.style.cssText='margin-bottom:12px;padding:10px 14px;border-radius:10px;max-width:85%;margin-right:auto;background:var(--fill);font-size:13px;line-height:1.7';ab.textContent='…';msgs.appendChild(ab);msgs.scrollTop=msgs.scrollHeight;
+
+  const messages=[{role:'user',content:msg}];
+  const body=JSON.stringify({expert_id:currentExpertId,session_id:currentSessionId,messages});
+  const headers={'Content-Type':'application/json','Authorization':'Bearer '+token};
+  try{
+    expertStreamAbort=new AbortController();
+    const resp=await fetch('/api/v1/experts/chat',{method:'POST',headers,body,signal:expertStreamAbort.signal});
+    const reader=resp.body.getReader();const decoder=new TextDecoder();let buffer='',full='';
+    while(true){
+      const{value,done}=await reader.read();if(done)break;
+      buffer+=decoder.decode(value,{stream:true});
+      const lines=buffer.split('\n');buffer=lines.pop();
+      for(const line of lines){
+        if(line.startsWith('data: ')){
+          try{const d=JSON.parse(line.slice(6));if(d.token){full+=d.token;ab.innerHTML=renderMd(full);msgs.scrollTop=msgs.scrollHeight;}}catch(e){}
+        }else if(line.startsWith('event: done')){
+          try{
+            const d=JSON.parse(line.slice(12));
+            if(d.session_id)currentSessionId=d.session_id;
+          }catch(e){}
+        }else if(line.startsWith('event: error')){ab.textContent='❌ 出错了，请重试';}
+      }
+    }
+    loadExpertSessions();
+  }catch(e){if(e.name!=='AbortError'){ab.textContent='❌ 请求失败: '+e.message;}}
+  input.disabled=false;document.getElementById('expert-send-btn').style.display='';document.getElementById('expert-stop-btn').style.display='none';
+}
+function stopExpertStream(){if(expertStreamAbort){expertStreamAbort.abort();}}
+
+// ===== 常用网站 =====
+const SITE_GRADS=['linear-gradient(135deg,#3B82F6,#1D4ED8)','linear-gradient(135deg,#0EA5A4,#0F766E)','linear-gradient(135deg,#7C3AED,#5B21B6)','linear-gradient(135deg,#F59E0B,#D97706)','linear-gradient(135deg,#16A34A,#15803D)','linear-gradient(135deg,#EF4444,#B91C1C)','linear-gradient(135deg,#64748B,#334155)','linear-gradient(135deg,#F59E0B,#EF4444)','linear-gradient(135deg,#0EA5A4,#16A34A)','linear-gradient(135deg,#7C3AED,#3B82F6)','linear-gradient(135deg,#3B82F6,#0EA5A4)'];
+
+async function loadWebsites(){
+  const grid=document.getElementById('links-grid');
+  if(!websitesCache){try{const resp=await fetch('/api/v1/websites');if(resp.ok)websitesCache=await resp.json();else websitesCache=null;}catch(e){websitesCache=null;}}
+  if(!websitesCache||!Array.isArray(websitesCache)||!websitesCache.length){grid.innerHTML='<div class="empty"><p>暂无网站数据</p></div>';return;}
+  let html='',gradIdx=0;
+  if(websitesCache[0].sites){
+    websitesCache.forEach(cat=>{
+      html+='<div class="link-cat-title">'+escapeHtml(cat.category)+'</div>';
+      cat.sites.forEach(s=>{const grad=SITE_GRADS[gradIdx%SITE_GRADS.length];gradIdx++;html+='<a class="link-card" href="'+escapeHtml(s.url||'#')+'" target="_blank" rel="noopener" style="text-decoration:none"><div class="link-icon" style="background:'+grad+'">'+escapeHtml(s.name[0])+'</div><div class="link-info"><div class="link-name">'+escapeHtml(s.name)+'</div><div class="link-desc">'+escapeHtml(s.desc||'')+'</div></div><svg class="link-chev" width="14" height="14"><use href="#i-chev"/></svg></a>';});
+    });
+  }else{
+    websitesCache.forEach(s=>{const grad=SITE_GRADS[gradIdx%SITE_GRADS.length];gradIdx++;html+='<a class="link-card" href="'+escapeHtml(s.url||'#')+'" target="_blank" rel="noopener" style="text-decoration:none"><div class="link-icon" style="background:'+grad+'">'+escapeHtml((s.name||'?')[0])+'</div><div class="link-info"><div class="link-name">'+escapeHtml(s.name||'')+'</div><div class="link-desc">'+escapeHtml(s.desc||'')+'</div></div><svg class="link-chev" width="14" height="14"><use href="#i-chev"/></svg></a>';});
+  }
+  grid.innerHTML=html;
+}
+
+// ===== 谈心谈话 =====
+async function loadTalks(){
+  const{status,data}=await api('/api/v1/talks');
+  const hist=document.getElementById('talk-history');
+  if(status!==200||!data.items?.length){hist.innerHTML='<div class="empty" style="padding:30px"><p>暂无谈话记录</p></div>';return;}
+  hist.innerHTML=data.items.map(t=>{
+    const topicCls=t.topic==='心理疏导'?'tag-red':t.topic==='学业压力'?'tag-amber':t.topic==='生活困难'?'tag-blue':t.topic==='就业指导'?'tag-green':'tag-gray';
+    const moodEmoji=t.mood==='低落'?'😔':t.mood==='积极'?'😊':t.mood==='激动'?'😤':'😐';
+    return '<div style="padding:14px 16px;border-bottom:1px solid var(--line-soft);cursor:default">'+
+      // 头部：姓名 + 标签 + 时间
+      '<div class="flex" style="margin-bottom:6px">'+
+        '<b style="font-size:14px">'+escapeHtml(t.student_name)+'</b>'+
+        '<span class="tag '+topicCls+'">'+escapeHtml(t.topic||'未分类')+'</span>'+
+        '<span style="margin-left:auto;font-size:11px;color:var(--ink-400)">'+escapeHtml(t.method)+' · '+(t.created_at||'').substr(0,10)+'</span>'+
+      '</div>'+
+      // 谈话内容
+      '<div style="background:var(--fill);padding:10px 12px;border-radius:8px;margin-bottom:8px;font-size:13px;color:var(--ink-700);line-height:1.7">'+escapeHtml(t.content||'')+'</div>'+
+      // 结论
+      '<div style="margin-bottom:8px;padding:10px 12px;background:var(--brand-50);border-radius:8px;border-left:3px solid var(--brand-500)">'+
+        '<span style="font-size:11px;font-weight:600;color:var(--brand-600)">📝 结论</span>'+
+        '<div style="font-size:13px;color:var(--ink-700);margin-top:4px">'+escapeHtml(t.conclusion||'（未填写）')+'</div>'+
+      '</div>'+
+      // 底部信息行
+      '<div class="flex" style="font-size:11px;color:var(--ink-400)">'+
+        '<span>情绪: '+moodEmoji+' '+escapeHtml(t.mood)+'</span>'+
+        (t.need_follow
+          ? (t.follow_closed
+            ? '<span class="tag tag-gray" style="margin-left:auto">✅ 跟进已闭环</span>'
+            : '<span class="tag tag-amber" style="margin-left:auto">🔔 待跟进 · '+escapeHtml(t.follow_date)+' <button class="btn btn-ghost btn-sm" style="margin-left:6px;font-size:10px" onclick="event.stopPropagation();closeFollow('+t.id+')">标记闭环</button></span>')
+          : '<span class="tag tag-gray" style="margin-left:auto">无需跟进</span>')+
+      '</div></div>';
+  }).join('');
+}
+async function closeFollow(id){
+  const c=prompt('闭环结论（可选）','');
+  if(c===null)return;
+  const{status,data}=await api('/api/v1/talks/'+id+'/close-follow?conclusion='+encodeURIComponent(c||''),{method:'POST'});
+  if(status===200){loadTalks();loadHomeSummary();}
+  else{alert(data.detail||'操作失败');}
+}
+async function createTalk(){
+  const name=document.getElementById('talk-student').value.trim();
+  const content=document.getElementById('talk-content').value.trim();
+  const conclusion=document.getElementById('talk-conclusion').value.trim();
+  if(!name||!content||!conclusion){alert('学生姓名、谈话内容、结论为必填');return;}
+  const params=new URLSearchParams({
+    student_name:name,method:document.getElementById('talk-method').value,
+    topic:document.getElementById('talk-topic').value,content,conclusion,
+    mood:document.getElementById('talk-mood').value,
+    need_follow:document.getElementById('talk-need-follow').checked?1:0,
+    follow_date:document.getElementById('talk-follow-date').value,
+  });
+  const{status,data}=await api('/api/v1/talks?'+params,{method:'POST'});
+  if(status===200){alert('已保存并归档');loadTalks();loadHomeSummary();
+    document.getElementById('talk-student').value='';document.getElementById('talk-content').value='';document.getElementById('talk-conclusion').value='';}
+  else{alert(data.detail||'保存失败');}
+}
+
+// ===== 查寝考勤 =====
+async function seedDorms(){const{status,data}=await api('/api/v1/dorm/seed-demo',{method:'POST'});if(status===200){alert(data.message);loadDormBuildings();loadDormGrid();loadHomeSummary();}}
+async function loadDormBuildings(){
+  const{status,data}=await api('/api/v1/dorm/buildings');
+  if(status!==200)return;
+  document.getElementById('dorm-building').innerHTML='<option value="">全部楼栋</option>'+data.buildings.map(b=>'<option>'+b+'</option>').join('');
+}
+async function loadDormGrid(){
+  const building=document.getElementById('dorm-building')?.value||'';
+  const params=building?'?building='+encodeURIComponent(building):'';
+  const{status,data}=await api('/api/v1/dorm/grid'+params);
+  const grid=document.getElementById('dorm-grid');
+  if(status!==200||!Object.keys(data.buildings).length){grid.innerHTML='<div class="empty"><p>暂无宿舍数据，点击"生成演示数据"体验</p></div>';return;}
+
+  let checked=0,total=0;
+  let html='';
+  for(const[bldg,floors] of Object.entries(data.buildings)){
+    if(!building)html+='<div style="font-size:14px;font-weight:700;color:var(--ink-900);margin:14px 0 8px;padding:6px 0">'+escapeHtml(bldg)+'</div>';
+    for(const[floor,rooms] of Object.entries(floors)){
+      html+='<div style="font-size:11px;font-weight:600;color:var(--ink-400);margin:10px 0 6px">'+escapeHtml(floor)+'</div>';
+      html+='<div style="display:flex;gap:8px;flex-wrap:wrap;margin-bottom:8px">';
+      rooms.forEach(r=>{
+        total++;if(r.status!=='unchecked')checked++;
+        const bg=r.status==='normal'?'var(--success-bg)':r.status==='abnormal'?'var(--danger-bg)':'var(--fill)';
+        const bd=r.status==='normal'?'var(--success-line)':r.status==='abnormal'?'var(--danger-line)':'var(--line)';
+        const statusIcon=r.status==='normal'?'✓':r.status==='abnormal'?'⚠':'·';
+        html+='<div title="'+escapeHtml(r.room)+' '+statusIcon+'" style="width:56px;height:56px;border-radius:8px;background:'+bg+';border:1px solid '+bd+';display:flex;flex-direction:column;align-items:center;justify-content:center;cursor:pointer;font-size:13px;font-weight:600;color:var(--ink-900)" onclick="markDorm('+r.id+',\''+r.status+'\')">'+
+          '<span>'+escapeHtml(r.room)+'</span>'+
+          '<span style="font-size:16px">'+statusIcon+'</span></div>';
+      });
+      html+='</div>';
+    }
+  }
+  grid.innerHTML=html;
+  document.getElementById('dorm-progress').textContent='已查 '+checked+' / '+total+' 间 · '+(total>0?Math.round(checked/total*100):0)+'%';
+
+  // 异常名单
+  const{status:s2,data:d2}=await api('/api/v1/dorm/anomalies');
+  if(s2===200&&d2.anomalies?.length){
+    document.getElementById('dorm-anomaly-card').style.display='';
+    document.getElementById('dorm-anomaly-list').innerHTML=d2.anomalies.map(a=>
+      '<div style="display:flex;align-items:center;gap:12px;padding:12px 16px;border-bottom:1px solid var(--line-soft)">'+
+      '<span class="tag tag-red">'+escapeHtml(a.abnormal_type||'异常')+'</span>'+
+      '<div style="flex:1"><b>'+escapeHtml(a.building+' '+a.room)+'</b><div class="text-sm text-muted">'+escapeHtml(a.note||'')+' · '+(a.members||[]).join(', ')+'</div></div>'+
+      '<button class="btn btn-secondary btn-sm">📞 打电话</button>'+
+      '</div>'
+    ).join('');
+  }else{document.getElementById('dorm-anomaly-card').style.display='none';}
+}
+async function markDorm(id,currentStatus){
+  const newStatus=currentStatus==='normal'?'abnormal':'normal';
+  const abnormalType=prompt('异常类型（夜不归宿/违规电器/拒查/卫生不合格 等，正常标记留空）','');
+  const params='dorm_id='+id+'&status='+newStatus+'&abnormal_type='+encodeURIComponent(abnormalType||'');
+  const{status,data}=await api('/api/v1/dorm/check?'+params,{method:'POST'});
+  if(status===200){loadDormGrid();loadHomeSummary();}
+}
+
+function escapeHtml(str){const div=document.createElement('div');div.textContent=str;return div.innerHTML;}
+</script>
+</body>
+</html>

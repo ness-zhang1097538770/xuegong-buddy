@@ -1,0 +1,141 @@
+[p1 "学工 Buddy · 辅导员 AI 助手" | space "学工Buddy 阶段3-第1阶段 验证"(1): 1 managed, 0 untracked — p1* "学工 Buddy · 辅导员 AI 助手"]
+root
+  container
+    container
+      container
+        heading
+          text "欢迎回来，"
+          text "pm_v03a@school.edu.cn"
+        button [ref=203]
+          svg_root
+          text "退出"
+      container [ref=204]
+        container
+          container
+            heading
+              text "一人一页"
+            paragraph
+              text "打开就能回答「这孩子啥情况」——基本信息、学业考勤、叙事时间轴、交接包。"
+          container
+            button [ref=205]
+              svg_root
+              text "生成演示数据"
+            container
+              svg_root
+              text "导入 Excel"
+        container
+          container
+            container
+              svg_root
+              textbox [ref=206, loc=css:input[placeholder="搜索姓名 / 学号"]]
+                text "搜索姓名 / 学号"
+            combobox [ref=207]
+              text "全部年级"
+            combobox [ref=208]
+              text "全部班级"
+            combobox [ref=209]
+              text "全部风险"
+            button [ref=210]
+              text "筛选"
+          paragraph
+            text "共"
+            text "8"
+            text "人"
+          unordered_list
+            list_item
+              button [ref=211]
+                container
+                  svg_root
+                  container
+                    paragraph
+                      text "李浩然"
+                      text "2023010108"
+                    paragraph
+                      text "计算机2301班"
+                      text "·"
+                      text "2023级"
+                text "高风险"
+            list_item
+              button [ref=212]
+                container
+                  svg_root
+                  container
+                    paragraph
+                      text "李亮"
+                      text "2023010105"
+                    paragraph
+                      text "计算机2301班"
+                      text "·"
+                      text "2023级"
+                text "高风险"
+            list_item
+              button [ref=213]
+                container
+                  svg_root
+                  container
+                    paragraph
+                      text "王雨桐"
+                      text "2023010101"
+                    paragraph
+                      text "计算机2301班"
+                      text "·"
+                      text "2023级"
+                text "中风险"
+            list_item
+              button [ref=214]
+                container
+                  svg_root
+                  container
+                    paragraph
+                      text "陈思远"
+                      text "2023010115"
+                    paragraph
+                      text "软件2302班"
+                      text "·"
+                      text "2023级"
+                text "中风险"
+            list_item
+              button [ref=215]
+                container
+                  svg_root
+                  container
+                    paragraph
+                      text "刘子墨"
+                      text "2023010130"
+                    paragraph
+                      text "软件2302班"
+                      text "·"
+                      text "2023级"
+                text "中风险"
+    container [ref=216]
+      anchor [ref=217, url=http://127.0.0.1:3000/]
+        svg_root
+        text "首页"
+      anchor [ref=218, url=http://127.0.0.1:3000/talks]
+        svg_root
+        text "谈话"
+      anchor [ref=219, url=http://127.0.0.1:3000/students]
+        svg_root
+        text "一人一页"
+      anchor [ref=220, url=http://127.0.0.1:3000/notice]
+        svg_root
+        text "通知"
+      anchor [ref=221, url=http://127.0.0.1:3000/kb]
+        svg_root
+        text "问答"
+      anchor [ref=222, url=http://127.0.0.1:3000/doc]
+        svg_root
+        text "文稿"
+      anchor [ref=223, url=http://127.0.0.1:3000/excel]
+        svg_root
+        text "台账"
+      anchor [ref=224, url=http://127.0.0.1:3000/sites]
+  container
+    button "Open issues overlay" [ref=225, loc=css:button[aria-label="Open issues overlay"]]
+      svg_root
+      container
+        text "0"
+        text "1"
+      text "Issue"
+    button "Collapse issues badge" [ref=226, loc=css:button[aria-label="Collapse issues badge"]]
+      svg_root

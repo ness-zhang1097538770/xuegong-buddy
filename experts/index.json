@@ -1,0 +1,109 @@
+{
+  "version": "0.1.0",
+  "updated": "2026-09-21",
+  "note": "专家注册表。产品后端直接读此文件；prompt_file 指向提示词源文件，platform_bot_id 接第三方平台后回填。",
+  "categories": [
+    { "id": "student-work", "name": "学生工作" },
+    { "id": "mental-health", "name": "心理健康" },
+    { "id": "admin-doc", "name": "行政文书" },
+    { "id": "student-affairs", "name": "学生事务" },
+    { "id": "study-style", "name": "学风建设" }
+  ],
+  "experts": [
+    {
+      "id": "talk-coach",
+      "name": "谈心谈话教练",
+      "category": "student-work",
+      "desc": "谈话前给提纲，谈话中给话术，谈话后生成规范记录",
+      "accent": "teal",
+      "temperature": 0.4,
+      "prompt_file": "talk-coach.md",
+      "platform_bot_id": "",
+      "sort": 1,
+      "samples": [
+        "有个学生连续两周旷课，我想找他谈谈，怎么开口？",
+        "学生挂了三门课，谈话时他一直沉默，我该怎么接？",
+        "帮我把这段对话整理成正式的谈心谈话记录",
+        "我想和学生聊他沉迷游戏的问题，给一份完整提纲"
+      ],
+      "trigger_words": ["谈心谈话", "谈话提纲", "谈话记录", "约谈", "找学生聊", "怎么开口", "谈话话术"],
+      "boundary": "不代替辅导员做判断，不对学生做定性结论，不生成心理诊断"
+    },
+    {
+      "id": "psych-crisis",
+      "name": "心理危机应对顾问",
+      "category": "mental-health",
+      "desc": "危机信号识别、风险分级、处置流程、转介与家长沟通话术",
+      "accent": "red",
+      "temperature": 0.3,
+      "prompt_file": "psych-crisis.md",
+      "platform_bot_id": "",
+      "sort": 2,
+      "samples": [
+        "学生在朋友圈发了很消极的话，我该怎么办？",
+        "学生说'活着没意思'，这是不是危机信号？",
+        "已经确认学生有自伤行为，接下来的处置流程是什么？",
+        "怎么跟家长说孩子需要去心理中心？家长很抗拒"
+      ],
+      "trigger_words": ["心理危机", "自杀", "自伤", "抑郁", "不想活", "活着没意思", "割腕", "情绪崩溃", "精神疾病", "转介"],
+      "boundary": "不做诊断、不开药、不替代专业心理评估。识别到高危信号时第一输出永远是处置动作。"
+    },
+    {
+      "id": "official-writing",
+      "name": "笔杆子",
+      "category": "admin-doc",
+      "desc": "通知、公示、新闻稿、讲话稿、述职报告、计划与总结",
+      "accent": "blue",
+      "temperature": 0.7,
+      "prompt_file": "official-writing.md",
+      "platform_bot_id": "",
+      "sort": 3,
+      "samples": [
+        "写一份关于端午节放假安全教育的班级通知",
+        "帮我写学院学风建设月活动的新闻稿，600 字",
+        "写辅导员年度述职报告，我带 4 个班共 156 人",
+        "把这段内容改写成正式的请示报告"
+      ],
+      "trigger_words": ["写通知", "写公示", "新闻稿", "讲话稿", "述职", "工作总结", "工作计划", "请示", "公文", "主持词", "发言稿"],
+      "boundary": "生成的是初稿，涉及事实数据、政策表述、领导排序的内容必须由辅导员核实后使用"
+    },
+    {
+      "id": "funding-award",
+      "name": "资助与评奖专员",
+      "category": "student-affairs",
+      "desc": "资助政策解读、综测规则、资格初筛、公示与异议处理",
+      "accent": "amber",
+      "temperature": 0.3,
+      "prompt_file": "funding-award.md",
+      "platform_bot_id": "",
+      "sort": 4,
+      "samples": [
+        "国家助学金的评定流程是什么？需要哪些材料？",
+        "有学生家庭突发变故，可以申请什么资助？",
+        "综合素质测评成绩怎么算？给我一个测算表",
+        "评奖公示后有同学质疑结果，我该怎么处理？"
+      ],
+      "trigger_words": ["助学金", "励志奖学金", "国家奖学金", "助学贷款", "勤工助学", "绿色通道", "困难补助", "综测", "综合素质测评", "评奖评优", "公示", "贫困生认定"],
+      "boundary": "政策各省各校差异大，所有政策口径必须标注'以本校最新文件为准'"
+    },
+    {
+      "id": "academic-warning",
+      "name": "学业预警助手",
+      "category": "study-style",
+      "desc": "学业数据研判、归因分析、分级帮扶方案、家长沟通函",
+      "accent": "coral",
+      "temperature": 0.4,
+      "prompt_file": "academic-warning.md",
+      "platform_bot_id": "",
+      "sort": 5,
+      "samples": [
+        "这个学生这学期挂了 4 门课，帮我分析原因和帮扶方案",
+        "给出一套学业预警的分级标准",
+        "写一封给家长的学业预警告知函，语气要缓和",
+        "有学生沉迷游戏导致成绩下滑，怎么跟他谈"
+      ],
+      "trigger_words": ["学业预警", "挂科", "不及格", "成绩下滑", "学分不够", "退学", "留级", "学业帮扶", "家长告知", "沉迷游戏"],
+      "boundary": "不对学生能力做定性评价，不生成处分建议；数据由辅导员手动提供，需脱敏"
+    }
+  ]
+}

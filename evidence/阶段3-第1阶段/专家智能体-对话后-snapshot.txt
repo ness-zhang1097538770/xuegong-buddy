@@ -1,0 +1,76 @@
+[p1 "学工 Buddy · 辅导员 AI 助手" | space "学工Buddy 阶段3-第1阶段 验证"(1): 1 managed, 0 untracked — p1* "学工 Buddy · 辅导员 AI 助手"]
+root
+  container
+    container
+      container
+        heading
+          text "欢迎回来，"
+          text "pm_v03a@school.edu.cn"
+        button [ref=245]
+          svg_root
+          text "退出"
+      container [ref=246]
+        container
+          container
+            button [ref=251]
+              svg_root
+              container
+                text "学业预警助手"
+                text "学业数据研判、归因分析、分级帮扶方案、家长沟通函"
+            paragraph
+              text "最近会话"
+            container
+              button [ref=278]
+                text "有个学生连续两周旷课，我想找他谈谈，怎么开口？"
+              button [ref=279]
+                svg_root
+          container
+            container
+              container
+                svg_root
+                paragraph
+                  text "谈心谈话教练"
+              button [ref=252]
+                svg_root
+                text "新会话"
+            container [ref=253]
+              text "有个学生连续两周旷课，我想找他谈谈，怎么开口？"
+              text "收到！你马上就要去谈话，先给你一份**信息有限版·应急开口指南**（可直接用，30秒内就能说出口）： --- ### ✅ 【开场第一句话】（语气平和、不带�..."
+            container
+              textbox [ref=258, loc=css:textarea[placeholder="向当前专家提问，回车发送（Shift+回车换行）"]]
+                text "向当前专家提问，回车发送（Shift+回车换行）"
+              button [ref=259]
+                svg_root
+                text "发送"
+    container [ref=260]
+      anchor [ref=261, url=http://127.0.0.1:3000/]
+        svg_root
+        text "首页"
+      anchor [ref=262, url=http://127.0.0.1:3000/talks]
+        svg_root
+        text "谈话"
+      anchor [ref=263, url=http://127.0.0.1:3000/students]
+        svg_root
+        text "一人一页"
+      anchor [ref=264, url=http://127.0.0.1:3000/notice]
+        svg_root
+        text "通知"
+      anchor [ref=265, url=http://127.0.0.1:3000/kb]
+        svg_root
+        text "问答"
+      anchor [ref=266, url=http://127.0.0.1:3000/doc]
+        svg_root
+        text "文稿"
+      anchor [ref=267, url=http://127.0.0.1:3000/excel]
+        svg_root
+        text "台账"
+      anchor [ref=268, url=http://127.0.0.1:3000/experts]
+  container
+    button "Open issues overlay" [ref=276, loc=css:button[aria-label="Open issues overlay"]]
+      svg_root
+      container
+        text "0"
+        text "1"
+      text "Issue"
+    button "Collapse issues badge" [ref=277, loc=css:button[aria-label="Collapse issues badge"]]
+      svg_root

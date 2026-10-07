@@ -1,0 +1,98 @@
+[p1 "学工 Buddy · 辅导员 AI 助手" | space "学工Buddy 阶段3-第1阶段 验证"(1): 1 managed, 0 untracked — p1* "学工 Buddy · 辅导员 AI 助手"]
+root
+  container
+    container
+      container
+        heading
+          text "欢迎回来，"
+          text "pm_v03a@school.edu.cn"
+        button [ref=183]
+          svg_root
+          text "退出"
+      container [ref=184]
+        container
+          heading
+            text "谈话记录仪"
+          paragraph
+            text "录入即归档、归档即进档案，需要跟进自动回到待办。AI 只拟草稿，保存前请人工复核。"
+        container
+          container
+            container
+              paragraph
+                svg_root
+                text "历史记录"
+              container
+                checkbox [ref=185]
+                text "仅看待跟进"
+            container
+              paragraph
+                text "李浩然"
+              container
+                paragraph
+                  text "2026-09-22"
+                  text "·"
+                  text "面谈"
+                  text "· 学业/生活"
+                paragraph
+                  text "1. 协助制定本周起的课表打卡计划，约定每日课前30分钟向辅导员发送定位截图（可选教室/图书馆等学习场所）； 2. 预约学业发展中心教师开展一次课�..."
+          container
+            container
+              container
+                container
+                  text "学生"
+                  text "从一人一页选择，自动归档"
+                combobox [ref=186]
+                  text "选择学生（或下方手填姓名）"
+              container
+                text "学生姓名"
+                textbox [ref=187, loc=css:input[placeholder="必填"]]
+                  text "必填"
+              container
+                text "谈话方式"
+                combobox [ref=188]
+                  text "面谈"
+              container
+                text "主题标签"
+                combobox [ref=189]
+                  text "未归类"
+            container
+              container
+                text "本次要点"
+                text "AI 初稿基于本次要点 + 该生历史生成"
+              textbox [ref=190]
+                text "例：连续两周旷课、三门挂科、宿舍打游戏、家长反映不接电话"
+            button [ref=191]
+              svg_root
+              text "生成 AI 初稿"
+    container [ref=192]
+      anchor [ref=193, url=http://127.0.0.1:3000/]
+        svg_root
+        text "首页"
+      anchor [ref=194, url=http://127.0.0.1:3000/talks]
+        svg_root
+        text "谈话"
+      anchor [ref=195, url=http://127.0.0.1:3000/students]
+        svg_root
+        text "一人一页"
+      anchor [ref=196, url=http://127.0.0.1:3000/notice]
+        svg_root
+        text "通知"
+      anchor [ref=197, url=http://127.0.0.1:3000/kb]
+        svg_root
+        text "问答"
+      anchor [ref=198, url=http://127.0.0.1:3000/doc]
+        svg_root
+        text "文稿"
+      anchor [ref=199, url=http://127.0.0.1:3000/excel]
+        svg_root
+        text "台账"
+      anchor [ref=200, url=http://127.0.0.1:3000/sites]
+  container
+    button "Open issues overlay" [ref=201, loc=css:button[aria-label="Open issues overlay"]]
+      svg_root
+      container
+        text "0"
+        text "1"
+      text "Issue"
+    button "Collapse issues badge" [ref=202, loc=css:button[aria-label="Collapse issues badge"]]
+      svg_root

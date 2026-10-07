@@ -1,0 +1,246 @@
+[p1 "学工 Buddy · 辅导员 AI 助手" | space "学工Buddy 阶段3-第1阶段 验证"(1): 1 managed, 0 untracked — p1* "学工 Buddy · 辅导员 AI 助手"]
+root
+  container
+    container
+      container
+        svg_root
+        container
+          paragraph
+            text "学工 Buddy"
+          paragraph
+            text "辅导员 AI 副驾"
+      container
+        container
+          paragraph
+            text "副驾"
+          container
+            anchor [ref=97, url=http://127.0.0.1:3000/]
+              svg_root
+              text "副驾首页"
+            anchor [ref=98, url=http://127.0.0.1:3000/talks]
+              svg_root
+              text "谈话记录仪"
+            anchor [ref=99, url=http://127.0.0.1:3000/students]
+              svg_root
+              text "一人一页"
+            anchor [ref=100, url=http://127.0.0.1:3000/notice]
+              svg_root
+              text "通知变材料"
+        container
+          paragraph
+            text "生产"
+          container
+            anchor [ref=101, url=http://127.0.0.1:3000/kb]
+              svg_root
+              text "知识库问答"
+            anchor [ref=102, url=http://127.0.0.1:3000/doc]
+              svg_root
+              text "文稿生成"
+            anchor [ref=103, url=http://127.0.0.1:3000/excel]
+              svg_root
+              text "台账处理"
+        container
+          paragraph
+            text "其他"
+          anchor [ref=104, url=http://127.0.0.1:3000/sites]
+            svg_root
+            text "常用网站"
+      paragraph
+        text "AI 输出仅为草稿，涉及学生评价、思政与危机材料必须人工复核。"
+    container
+      container
+        heading
+          text "欢迎回来，"
+          text "pm_v03a@school.edu.cn"
+        button [ref=105]
+          svg_root
+          text "退出"
+      container [ref=106]
+        container
+          container
+            heading
+              text "一人一页"
+            paragraph
+              text "打开就能回答「这孩子啥情况」——基本信息、学业考勤、叙事时间轴、交接包。"
+          container
+            button [ref=107]
+              svg_root
+              text "生成演示数据"
+            container
+              svg_root
+              text "导入 Excel"
+        container
+          container
+            container
+              svg_root
+              textbox [ref=108, loc=css:input[placeholder="搜索姓名 / 学号"]]
+                text "搜索姓名 / 学号"
+            combobox [ref=109]
+              text "全部年级"
+            combobox [ref=110]
+              text "全部班级"
+            combobox [ref=111]
+              text "全部风险"
+            button [ref=112]
+              text "筛选"
+          paragraph
+            text "共"
+            text "8"
+            text "人"
+          unordered_list
+            list_item
+              button [ref=113]
+                container
+                  svg_root
+                  container
+                    paragraph
+                      text "李浩然"
+                      text "2023010108"
+                    paragraph
+                      text "计算机2301班"
+                      text "·"
+                      text "2023级"
+                container
+                  container
+                    text "GPA"
+                    text "1.9"
+                    text "· 出勤"
+                    text "68"
+                    text "%"
+                  text "高风险"
+            list_item
+              button [ref=114]
+                container
+                  svg_root
+                  container
+                    paragraph
+                      text "李亮"
+                      text "2023010105"
+                    paragraph
+                      text "计算机2301班"
+                      text "·"
+                      text "2023级"
+                container
+                  container
+                    text "GPA"
+                    text "1.8"
+                    text "· 出勤"
+                    text "72"
+                    text "%"
+                  text "高风险"
+            list_item
+              button [ref=115]
+                container
+                  svg_root
+                  container
+                    paragraph
+                      text "王雨桐"
+                      text "2023010101"
+                    paragraph
+                      text "计算机2301班"
+                      text "·"
+                      text "2023级"
+                container
+                  container
+                    text "GPA"
+                    text "3.2"
+                    text "· 出勤"
+                    text "96"
+                    text "%"
+                  text "中风险"
+            list_item
+              button [ref=116]
+                container
+                  svg_root
+                  container
+                    paragraph
+                      text "陈思远"
+                      text "2023010115"
+                    paragraph
+                      text "软件2302班"
+                      text "·"
+                      text "2023级"
+                container
+                  container
+                    text "GPA"
+                    text "2.6"
+                    text "· 出勤"
+                    text "82"
+                    text "%"
+                  text "中风险"
+            list_item
+              button [ref=117]
+                container
+                  svg_root
+                  container
+                    paragraph
+                      text "刘子墨"
+                      text "2023010130"
+                    paragraph
+                      text "软件2302班"
+                      text "·"
+                      text "2023级"
+                container
+                  container
+                    text "GPA"
+                    text "2.2"
+                    text "· 出勤"
+                    text "88"
+                    text "%"
+                  text "中风险"
+            list_item
+              button [ref=118]
+        container
+          container
+            container
+              heading
+                text "李浩然"
+              paragraph
+                text "2023010108"
+                text "·"
+                text "计算机2301班"
+                text "·"
+                text "2023级"
+            button [ref=129]
+              svg_root
+          container
+            paragraph
+              text "学业与考勤"
+            container
+              container
+                text "GPA"
+                text "1.9"
+              container
+                text "出勤率"
+                text "68"
+            container
+              text "学业预警"
+              text "3门挂科"
+          container
+            container
+              paragraph
+                text "叙事时间轴"
+              button [ref=130]
+                svg_root
+                text "导出交接包"
+            container
+              paragraph
+                text "2026-09-22"
+                text "·"
+                text "面谈"
+                text "· 学业/生活"
+              paragraph
+                text "1. 协助制定本周起的课表打卡计划，约定每日课前30分钟向辅导员发送定位截图（可选教室/图书馆等学习场所）； 2. 预约学业发展中心教师开展一次课�..."
+          anchor [ref=131, url=http://127.0.0.1:3000/talks]
+            button [ref=132]
+              svg_root
+              text "发起一次谈话"
+  container
+    button "Open issues overlay" [ref=127, loc=css:button[aria-label="Open issues overlay"]]
+      svg_root
+      container
+        text "0"
+        text "1"
+      text "Issue"
+    button "Collapse issues badge" [ref=128, loc=css:button[aria-label="Collapse issues badge"]]
+      svg_root

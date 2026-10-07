@@ -1,0 +1,201 @@
+[p1 "学工 Buddy · 辅导员 AI 助手" | space "学工Buddy 阶段3-第1阶段 验证"(1): 1 managed, 0 untracked — p1* "学工 Buddy · 辅导员 AI 助手"]
+root
+  container
+    container
+      container
+        svg_root
+        container
+          paragraph
+            text "学工 Buddy"
+          paragraph
+            text "辅导员 AI 副驾"
+      container
+        container
+          paragraph
+            text "副驾"
+          container
+            anchor [ref=64, url=http://127.0.0.1:3000/]
+              svg_root
+              text "副驾首页"
+            anchor [ref=65, url=http://127.0.0.1:3000/talks]
+              svg_root
+              text "谈话记录仪"
+            anchor [ref=66, url=http://127.0.0.1:3000/students]
+              svg_root
+              text "一人一页"
+            anchor [ref=67, url=http://127.0.0.1:3000/notice]
+              svg_root
+              text "通知变材料"
+        container
+          paragraph
+            text "生产"
+          container
+            anchor [ref=68, url=http://127.0.0.1:3000/kb]
+              svg_root
+              text "知识库问答"
+            anchor [ref=69, url=http://127.0.0.1:3000/doc]
+              svg_root
+              text "文稿生成"
+            anchor [ref=70, url=http://127.0.0.1:3000/excel]
+              svg_root
+              text "台账处理"
+        container
+          paragraph
+            text "其他"
+          anchor [ref=71, url=http://127.0.0.1:3000/sites]
+            svg_root
+            text "常用网站"
+      paragraph
+        text "AI 输出仅为草稿，涉及学生评价、思政与危机材料必须人工复核。"
+    container
+      container
+        heading
+          text "欢迎回来，"
+          text "pm_v03a@school.edu.cn"
+        button [ref=72]
+          svg_root
+          text "退出"
+      container [ref=73]
+        container
+          heading
+            text "谈话记录仪"
+          paragraph
+            text "录入即归档、归档即进档案，需要跟进自动回到待办。AI 只拟草稿，保存前请人工复核。"
+        container
+          container
+            container
+              paragraph
+                svg_root
+                text "历史记录"
+              container
+                checkbox [ref=74]
+                text "仅看待跟进"
+            container
+              svg_root
+              paragraph
+                text "暂无谈话记录"
+              paragraph
+                text "右侧录入第一条谈话记录。"
+          container
+            container
+              container
+                container
+                  text "学生"
+                  text "从一人一页选择，自动归档"
+                combobox [ref=75]
+                  text "选择学生（或下方手填姓名）"
+              container
+                text "学生姓名"
+                textbox [ref=76, loc=css:input[placeholder="必填"]]
+                  text "必填"
+              container
+                text "谈话方式"
+                combobox [ref=77]
+                  text "面谈"
+              container
+                text "主题标签"
+                combobox [ref=78]
+                  text "未归类"
+            container
+              container
+                text "本次要点"
+                text "AI 初稿基于本次要点 + 该生历史生成"
+              textbox [ref=79]
+                text "例：连续两周旷课、三门挂科、宿舍打游戏、家长反映不接电话"
+            button [ref=80]
+              svg_root
+              text "生成 AI 初稿"
+            container
+              text "谈话内容"
+              textbox [ref=81, loc=css:textarea[placeholder="客观陈述事实，不做诊断、不下结论"]]
+                text "客观陈述事实，不做诊断、不下结论"
+            container
+              container
+                text "结论"
+                text "结论与处置建议"
+              textbox [ref=82, loc=css:textarea[placeholder="例：协助梳理补考安排，两周后复盘"]]
+                text "例：协助梳理补考安排，两周后复盘"
+            text "情绪状态"
+            combobox [ref=83]
+              text "平稳"
+            text "需要跟进"
+            container
+              checkbox [ref=84]
+              text "否"
+            container
+              checkbox [ref=85]
+              text "敏感记录（心理/危机/家庭变故，仅本人与学院负责人可见）"
+            button [ref=86]
+              svg_root
+              text "保存并归档"
+  container
+    svg_root
+    container
+      container
+        container
+          text "👋 Hi，想聊点什么～"
+          text "下笔没话说？"
+          text "告诉我主题，文案、标题、Slogan我都行"
+          text "名词听不懂？"
+          text "别自己搜了，直接问我，三秒给你讲明白"
+          text "脑袋空空了？"
+          text "一起脑暴，给产品起名、给活动想点子"
+          text "方案没头绪？"
+          text "思路我来理，框架我来搭，你来做决策"
+        container
+          svg_root
+          text "新会话"
+        container
+          svg_root
+          text "历史"
+        textbox [ref=87, loc=css:textarea[placeholder="输入您的问题... (Enter 发送，Shift+Enter 换行)"]]
+          text "输入您的问题... (Enter 发送，Shift+Enter 换行)"
+        container
+          image
+          text "智谱GLM-4-Flash"
+          svg_root
+        button "联网" [ref=88, loc=css:button[aria-label="联网"]]
+          image
+          text "联网"
+        svg_root
+        text "内容由AI生成，仅供参考"
+      container
+        container
+          svg_root
+          text "Chat"
+        container
+          svg_root
+          text "云笔记"
+        container
+          svg_root
+          text "账号"
+        container
+          svg_root
+          text "互动"
+        container
+          svg_root
+          text "通知"
+        container
+          svg_root
+          text "设置"
+        anchor [ref=89, loc=href:https://yiban.io/style_center?from=side-panel, url=https://yiban.io/style_center?from=side-panel]
+          svg_root
+        anchor [ref=90, loc=href:https://yiban.io/dashboard?from=side-panel, url=https://yiban.io/dashboard?from=side-panel]
+          svg_root
+        anchor [ref=91, loc=href:https://yiban.io/pricing?from=side-panel, url=https://yiban.io/pricing?from=side-panel]
+          svg_root
+        container
+          image
+          button [ref=92]
+            text "开通"
+  unordered_list
+  container
+    button "Open issues overlay" [ref=93, loc=css:button[aria-label="Open issues overlay"]]
+      svg_root
+      container
+        text "0"
+        text "1"
+      text "Issue"
+    button "Collapse issues badge" [ref=94, loc=css:button[aria-label="Collapse issues badge"]]
+      svg_root
+  alert
